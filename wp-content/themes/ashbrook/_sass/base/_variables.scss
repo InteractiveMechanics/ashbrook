@@ -1,11 +1,23 @@
 // Colors
-$lightgray:         #f1f2f2;
-$midgray:           #939598;
-$black:             #231f20;
+$black: 			#000000;
+$white:				#ffffff;
+
+$gray:				#555457;
+$midgray:			#323E4A;
+$lightgray:			#A5AEB6;
+
+$gold: 				#C49F21;
+$darkgold:			#8A721A;
+
+$blue:				#455466;
+$darkblue:			#111519; // this is a very, very dark deep blue
+
 
 
 // Typography
-$sans-serif:         'Helvetica-Neue', sans-serif;                      // Define your basic fonts here, for consistency
+$sans-serif:        'Helvetica-Neue', sans-serif;                      // Define your basic fonts here, for consistency
+$vollkhorn:			'Vollkorn', Garamond, Georgia, serif;
+$lato:				'Lato', 'Helvetica-Neue', Helvetica, Ariel, sans-serif;
 
 
 // Media Queries
