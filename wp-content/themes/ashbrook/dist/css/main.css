@@ -1,0 +1,58 @@
+@import url("https://fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700,700i|Vollkorn:400,400i");
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+@-moz-keyframes fadeIn {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+@-ms-keyframes fadeIn {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+@keyframes fadeIn {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+.fade-in {
+  -webkit-animation: fadeIn 1s 1 forwards;
+  -moz-animation: fadeIn 1s 1 forwards;
+  -o-animation: fadeIn 1s 1 forwards;
+  animation: fadeIn 1s 1 forwards; }
+
+h1, h3, h4, h5, h5 {
+  font-family: "Lato", "Helvetica-Neue", Helvetica, Ariel, sans-serif; }
+
+h2, p {
+  font-family: "Vollkorn", Garamond, Georgia, serif; }
+
+h3 {
+  font-size: 1.4em; }
+
+p {
+  font-size: 1em; }
+
+p > a {
+  color: #C49F21;
+  transition: all 0.5s; }
+  p > a:hover {
+    color: #8A721A; }
+
+.navbar-default {
+  background-color: #ffffff;
+  border: none; }
+
+.navbar-nav {
+  font-family: "Lato", "Helvetica-Neue", Helvetica, Ariel, sans-serif;
+  text-transform: uppercase; }
+
+.navbar-default .navbar-nav > li > a {
+  color: #000000;
+  font-size: 1.4em; }
+
+/*# sourceMappingURL=main.css.map */
