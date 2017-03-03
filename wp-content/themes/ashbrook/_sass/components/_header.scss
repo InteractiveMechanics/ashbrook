@@ -1,3 +1,8 @@
+.navbar {
+	border-radius: 0px;
+	min-height: 115px;
+}
+
 .navbar-default {
 	background-color: $white;
 	border: none;
@@ -11,4 +16,109 @@
 .navbar-default .navbar-nav>li>a {
 	color: $black;
 	font-size: 1.4em;
+    margin: 0px 15px;
+    padding: 10px 0px;
+	transition: $transition;
+	&:after {
+		content: "";
+	    border-bottom: 1px solid rgba(0,0,0,0.5);
+	    position: absolute;
+	    margin-right: -15px;
+	    left: 50%;
+	    height: 2px;
+	    background: transparent;
+	    width: 0%;
+	    bottom: 0px;
+	    transition: width 0.5s ease, left 0.5s ease;
+	}
+
+}
+
+.navbar-default .navbar-nav>.active>a, 
+.navbar-default .navbar-nav>.active>a:focus, 
+.navbar-default .navbar-nav>.active>a:hover,
+.navbar-default .navbar-nav>li>a:focus,
+.navbar-default .navbar-nav>li>a:hover,
+.navbar-default .navbar-nav>.open>a, 
+.navbar-default .navbar-nav>.open>a:focus, 
+.navbar-default .navbar-nav>.open>a:hover {
+	color: $gold;
+	background-color: transparent;
+	&:after {
+		right: 0;
+    	height: 2px;
+    	width: 100%;
+    	left: 0;
+	}
+}
+
+
+.navbar-brand {
+	align-items: center;
+	display: flex;
+	height: 115px;
+	padding: 0px 15px;
+
+}
+
+.navbar-right {
+	height: 115px;
+    display: flex;
+    align-items: center;
+}
+
+.navbar-right .dropdown-menu {
+	right: -200px;
+}
+
+
+.dropdown-menu.columns-2 {
+	min-width: 400px;
+}
+
+.dropdown-menu.columns-3 {
+	min-width: 700px;
+	padding: 0px;
+	border: none;
+    border-radius: 0px;
+}
+
+.multi-column-dropdown-wrapper {
+	padding: 0px;
+}
+
+.multi-column-dropdown-wrapper.skew {
+	-ms-transform: skewX(20deg); /* IE 9 */
+    -webkit-transform: skewX(20deg); /* Safari */
+    transform: skewX(20deg);
+    background-color: $white;
+    z-index: 1;
+    height: 150px;
+    position: relative;
+    left: 27px;
+    .multi-column-dropdown {
+    	-ms-transform: skewX(-20deg); /* IE 9 */
+	    -webkit-transform: skewX(-20deg); /* Safari */
+	    transform: skewX(-20deg);
+	    padding-left: 0px;
+    }
+}
+
+
+.multi-column-dropdown {
+	list-style: none;
+	padding: 15px;
+}
+
+.multi-column-dropdown li a {
+	display: block;
+	clear: both;
+	white-space: normal;
+}
+
+.nav-dropdown-img {
+	background-image: url(https://placekitten.com/g/500/200);
+	background-size: cover;
+	height: 150px;
+	width: auto;
 }

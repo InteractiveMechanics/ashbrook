@@ -58,7 +58,7 @@
 				        <span class="icon-bar"></span>
 				        <span class="icon-bar"></span>
 				      </button>
-				      <a class="navbar-brand" href="#">Brand</a>
+				      <a class="navbar-brand" href="#"><img src="wp-content/themes/ashbrook/img/logo.svg" alt="logo"></a>
 				    </div>
 
 				    <!-- Collect the nav links, forms, and other content for toggling -->
@@ -66,15 +66,61 @@
 				      <ul class="nav navbar-nav navbar-right">
 				        <li class="dropdown">
 				          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Library</a>
-				          <ul class="dropdown-menu">
-				            <li><a href="#">Action</a></li>
-				            <li><a href="#">Another action</a></li>
-				            <li><a href="#">Something else here</a></li>
-				            <li role="separator" class="divider"></li>
-				            <li><a href="#">Separated link</a></li>
-				          </ul>
+				          	
+
+				          	<ul class="dropdown-menu multi-column columns-3">
+
+					          	<li class="col-sm-3 multi-column-dropdown-wrapper">
+
+					          		<ul class="multi-column-dropdown">
+
+						            	<li><a href="#">Sources</a></li>
+						            	<li><a href="#">Type</a></li>
+						            	<li><a href="#">Time Period</a></li>
+						            	<li><a href="#">Author</a></li>
+
+					            	</ul>
+
+					          	</li>
+				         
+
+				          	
+
+					          	<li class="col-sm-3 multi-column-dropdown-wrapper">
+
+					          		<ul class="multi-column-dropdown">
+
+						            	<li><a href="#">Collections</a></li>
+						            	<li><a href="#">25 Core Documents</a></li>
+						            	<li><a href="#">Theme of the Months</a></li>
+						            	<li><a href="#">View All</a></li>
+
+					            	</ul>
+
+					          	</li>
+				          	
+
+				          	
+					          	<li class="col-sm-2 multi-column-dropdown-wrapper skew">
+
+					          		<ul class="multi-column-dropdown">
+
+						            	<li><a href="#">Analysis</a></li>
+						            	<li><a href="#">Art</a></li>
+						            	<li><a href="#">Essays</a></li>
+						            
+					            	</ul>
+
+					          	</li>
+
+					          	<li class="col-sm-4 multi-column-dropdown-wrapper">
+					          		<div class="nav-dropdown-img"></div>
+					        	</li>
+
+				          	</ul>
+
 				        </li>
-				        <li><a href="#">Place of Faith Map</a></li>
+				        <li><a href="#">Places <span class="tiny-text">of</span> Faith Map</a></li>
 				        <li><a href="#">Search</a></li>
 				      </ul>
 				    </div><!-- /.navbar-collapse -->
