@@ -51,7 +51,7 @@ p > a {
 
 .navbar {
   border-radius: 0px;
-  min-height: 115px; }
+  height: 115px; }
 
 .navbar-default {
   background-color: #ffffff;
@@ -106,24 +106,34 @@ p > a {
   align-items: center;
   display: flex;
   height: 115px;
-  padding: 0px 15px; }
+  padding: 0px 15px;
+  transition: all 0.5s; }
+  .navbar-brand:hover, .navbar-brand:focus, .navbar-brand:active:focus {
+    opacity: 0.5; }
 
 .navbar-right {
-  height: 115px;
+  height: 90px;
   display: flex;
-  align-items: center; }
+  align-items: flex-end; }
 
 .navbar-right .dropdown-menu {
-  right: -200px; }
+  right: -200px;
+  top: 50px; }
 
 .dropdown-menu.columns-2 {
   min-width: 400px; }
 
 .dropdown-menu.columns-3 {
-  min-width: 700px;
+  min-width: 750px;
   padding: 0px;
   border: none;
-  border-radius: 0px; }
+  border-radius: 0px;
+  box-shadow: -2px 0px 24px 0px rgba(0, 0, 0, 0.185); }
+  .dropdown-menu.columns-3 li:nth-of-type(2) {
+    position: relative;
+    left: -25px; }
+  .dropdown-menu.columns-3 li ul li:nth-of-type(2) {
+    left: auto; }
 
 .multi-column-dropdown-wrapper {
   padding: 0px; }
@@ -136,30 +146,86 @@ p > a {
   transform: skewX(20deg);
   background-color: #ffffff;
   z-index: 1;
-  height: 150px;
+  height: 161px;
   position: relative;
-  left: 27px; }
+  left: 30px; }
   .multi-column-dropdown-wrapper.skew .multi-column-dropdown {
     -ms-transform: skewX(-20deg);
     /* IE 9 */
     -webkit-transform: skewX(-20deg);
     /* Safari */
     transform: skewX(-20deg);
-    padding-left: 0px; }
+    padding-left: 0px;
+    position: relative;
+    left: -25px; }
 
 .multi-column-dropdown {
   list-style: none;
   padding: 15px; }
+  .multi-column-dropdown li {
+    position: relative;
+    display: table; }
+    .multi-column-dropdown li:first-of-type {
+      font-size: 1.4em;
+      margin-bottom: 7px; }
 
 .multi-column-dropdown li a {
-  display: block;
+  display: inline-block;
   clear: both;
-  white-space: normal; }
+  white-space: normal;
+  color: #000000;
+  font-size: 0.90em;
+  padding-bottom: 0px;
+  margin-bottom: 10px;
+  transition: all 0.5s; }
+  .multi-column-dropdown li a:after {
+    content: "";
+    border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+    position: absolute;
+    margin-right: -15px;
+    left: 50%;
+    height: 2px;
+    background: transparent;
+    width: 0%;
+    bottom: 9px;
+    transition: width 0.5s ease, left 0.5s ease; }
+  .multi-column-dropdown li a:hover, .multi-column-dropdown li a:active, .multi-column-dropdown li a:focus, .multi-column-dropdown li a:active:focus {
+    color: #C49F21;
+    text-decoration: none; }
+    .multi-column-dropdown li a:hover:after, .multi-column-dropdown li a:active:after, .multi-column-dropdown li a:focus:after, .multi-column-dropdown li a:active:focus:after {
+      right: 0;
+      height: 2px;
+      width: 100%;
+      left: 0; }
 
 .nav-dropdown-img {
   background-image: url(https://placekitten.com/g/500/200);
   background-size: cover;
-  height: 150px;
+  height: 161px;
   width: auto; }
+
+.subnav {
+  float: right !important;
+  position: absolute !important;
+  top: 18px;
+  right: 30px;
+  list-style-type: none;
+  font-weight: 300; }
+
+.subnav-item {
+  display: inline-block; }
+  .subnav-item:first-of-type {
+    padding-right: 10px; }
+    .subnav-item:first-of-type:after {
+      content: "\\";
+      position: relative;
+      left: 5px; }
+  .subnav-item a {
+    color: #555457;
+    font-size: 0.95em;
+    transition: all 0.5s; }
+    .subnav-item a:hover, .subnav-item a:active, .subnav-item a:focus, .subnav-item a:active:focus {
+      color: #A5AEB6;
+      text-decoration: none; }
 
 /*# sourceMappingURL=main.css.map */

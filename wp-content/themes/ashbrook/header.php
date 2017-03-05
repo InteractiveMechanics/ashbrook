@@ -64,6 +64,7 @@
 				    <!-- Collect the nav links, forms, and other content for toggling -->
 				    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 				      <ul class="nav navbar-nav navbar-right">
+
 				        <li class="dropdown">
 				          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Library</a>
 				          	
@@ -92,7 +93,7 @@
 
 						            	<li><a href="#">Collections</a></li>
 						            	<li><a href="#">25 Core Documents</a></li>
-						            	<li><a href="#">Theme of the Months</a></li>
+						            	<li><a href="#">Theme of the Month</a></li>
 						            	<li><a href="#">View All</a></li>
 
 					            	</ul>
@@ -122,8 +123,26 @@
 				        </li>
 				        <li><a href="#">Places <span class="tiny-text">of</span> Faith Map</a></li>
 				        <li><a href="#">Search</a></li>
-				      </ul>
+				    
+				    </ul>
+
+
 				    </div><!-- /.navbar-collapse -->
+
+				    <div class="nav navbar-nav navbar-right">
+				    	<ul class="subnav visible-lg">
+
+				    		<li class="subnav-item">
+				    			<a href="">Blog</a>
+				    		</li>
+
+				    		<li class="subnav-item">
+				    			<a href="">About</a>
+				    		</li>
+
+				    	</ul>
+				    </div>
+
 				  </div><!-- /.container-fluid -->
 				</nav>
 
