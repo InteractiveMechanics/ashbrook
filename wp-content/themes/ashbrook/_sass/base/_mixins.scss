@@ -1,3 +1,30 @@
+// anchors
+
+@mixin gold-anchor {
+  color: $gold;
+  transition: $transition;
+  &:hover {
+    color: $darkgold;
+  }
+  &:focus {
+    outline: none;
+  }
+}
+
+@mixin gray-anchor {
+  color: $gray;
+  transition: $transition;
+  border-bottom: 1px solid $gray;
+  &:hover, &:focus, &:active, &:active:focus {
+    color: $gold;
+    text-decoration: none;
+    outline: none;
+    border-bottom: 1px solid $gold;
+  }
+}
+
+
+
 // Media Queries
 
 @mixin screen-xxs {

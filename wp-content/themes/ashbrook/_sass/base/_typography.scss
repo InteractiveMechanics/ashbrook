@@ -3,13 +3,24 @@ h1, h3, h4, h5, h5 {
 	font-family: $lato;
 }
 
-h2, p {
+h2, h6, p {
 	font-family: $vollkhorn;
 }
+
 
 h3 {
 	font-size: 1.4em;
 }
+
+h5 {
+	text-transform: uppercase;
+	letter-spacing: 2px;
+}
+
+h2, h6 {
+	font-style: italic;
+}
+
 
 p {
 	font-size: 1em;
@@ -24,6 +35,10 @@ p>a {
 	&:focus {
 		outline: none;
 	}
+}
+
+h6>a {
+	@include gray-anchor;
 }
 
 .tiny-text {

@@ -1,4 +1,18 @@
 <footer>
+	<div class="container-fluid">
+			<div class="col-sm-6">
+				<h5>Religion in America</h5>
+				<h6>Copyright &copy; 2017 <a href="">Ashbrook Center at Ashland University</a></h6>
+
+			</div>
+			<div class="col-sm-6">
+				<div class="float-right">
+					<h6>The Religion in American History Program</h6>
+					<h6>is part of <a href="">Teaching American History</a></h6>
+				</div>
+
+			</div>
+	</div>
 
 </footer>
 

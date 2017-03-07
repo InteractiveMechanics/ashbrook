@@ -34,14 +34,24 @@ ul {
   font-family: "Lato", "Helvetica-Neue", Helvetica, Ariel, sans-serif;
   font-weight: 700; }
 
+.float-right {
+  float: right; }
+
 h1, h3, h4, h5, h5 {
   font-family: "Lato", "Helvetica-Neue", Helvetica, Ariel, sans-serif; }
 
-h2, p {
+h2, h6, p {
   font-family: "Vollkorn", Garamond, Georgia, serif; }
 
 h3 {
   font-size: 1.4em; }
+
+h5 {
+  text-transform: uppercase;
+  letter-spacing: 2px; }
+
+h2, h6 {
+  font-style: italic; }
 
 p {
   font-size: 1em; }
@@ -53,6 +63,16 @@ p > a {
     color: #8A721A; }
   p > a:focus {
     outline: none; }
+
+h6 > a {
+  color: #555457;
+  transition: all 0.5s;
+  border-bottom: 1px solid #555457; }
+  h6 > a:hover, h6 > a:focus, h6 > a:active, h6 > a:active:focus {
+    color: #C49F21;
+    text-decoration: none;
+    outline: none;
+    border-bottom: 1px solid #C49F21; }
 
 .tiny-text {
   font-size: 0.5em; }
@@ -255,14 +275,38 @@ p > a {
   width: 40px;
   margin-bottom: 9px; }
 
+footer {
+  color: #555457;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  height: 66px; }
+  footer h5 {
+    margin: 0px; }
+  footer h6 {
+    margin-top: 5px;
+    margin-bottom: 0px; }
+
 .home-slider {
-  height: calc(100vh - 115px); }
+  height: calc(100vh - 181px); }
 
 .home-single-slide {
   background-position: center center;
   background-size: cover;
-  height: calc(100vh - 115px);
+  height: calc(100vh - 181px);
   position: relative; }
+
+.home-single-slide-heading {
+  position: absolute;
+  bottom: 25px;
+  height: 300px;
+  right: 575px;
+  color: #ffffff; }
+  .home-single-slide-heading h1, .home-single-slide-heading h2 {
+    text-align: right; }
+  .home-single-slide-heading h1 {
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-size: 4.3em; }
 
 .home-single-slide-callout {
   background-image: url("../../img/hero-text-box.svg");
