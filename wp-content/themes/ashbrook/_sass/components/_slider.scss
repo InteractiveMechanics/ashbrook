@@ -1,0 +1,53 @@
+.home-slider {
+	height: calc(100vh - 115px);
+}
+
+.home-single-slide {
+	background-position: center center;
+	background-size: cover;
+	height: calc(100vh - 115px);
+	position: relative;
+}
+
+.home-single-slide-callout {
+	background-image: url('../../img/hero-text-box.svg');
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: cover;
+	width: 510px;
+	height: 332px;
+	position: absolute;
+	bottom: 25px;
+	right: 40px;
+	padding: 20px 20px 20px 110px;
+	p {
+		font-size: 18px;
+		line-height: 30px;
+	}
+}
+
+
+
+.slick-dotted.slick-slider {
+	margin-bottom: 0px;
+}
+
+.slick-dots {
+	bottom: 60px;
+	text-align: right;
+    right: 225px;
+}
+
+.slick-dots li button:before {
+	content: '';
+	background-color: rgba(0,0,0, 0.5);
+	border-radius: 50%;
+	width: 10px;
+    height: 10px;
+    opacity: 0.75;
+}
+
+.slick-dots li.slick-active button:before {
+	background-color: transparent;
+	border: 2px solid rgba(0,0,0, 0.5);
+}

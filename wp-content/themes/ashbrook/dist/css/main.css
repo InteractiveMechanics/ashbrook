@@ -28,6 +28,12 @@
 ul {
   -webkit-padding-start: 0px; }
 
+.read-more {
+  color: #C49F21;
+  text-transform: uppercase;
+  font-family: "Lato", "Helvetica-Neue", Helvetica, Ariel, sans-serif;
+  font-weight: 700; }
+
 h1, h3, h4, h5, h5 {
   font-family: "Lato", "Helvetica-Neue", Helvetica, Ariel, sans-serif; }
 
@@ -45,13 +51,20 @@ p > a {
   transition: all 0.5s; }
   p > a:hover {
     color: #8A721A; }
+  p > a:focus {
+    outline: none; }
 
 .tiny-text {
   font-size: 0.5em; }
 
+.tiny-text-parent {
+  position: relative;
+  top: 2px; }
+
 .navbar {
   border-radius: 0px;
-  height: 115px; }
+  height: 115px;
+  margin-bottom: 0px; }
 
 .navbar-default {
   background-color: #ffffff;
@@ -225,7 +238,69 @@ p > a {
     font-size: 0.95em;
     transition: all 0.5s; }
     .subnav-item a:hover, .subnav-item a:active, .subnav-item a:focus, .subnav-item a:active:focus {
-      color: #A5AEB6;
+      color: #C49F21;
       text-decoration: none; }
+
+.navbar-default .navbar-toggle {
+  border: none;
+  transition: all 0.5s; }
+  .navbar-default .navbar-toggle:hover {
+    background-color: transparent; }
+    .navbar-default .navbar-toggle:hover .icon-bar {
+      background-color: #C49F21; }
+
+.navbar-default .navbar-toggle .icon-bar {
+  background-color: #555457;
+  height: 1px;
+  width: 40px;
+  margin-bottom: 9px; }
+
+.home-slider {
+  height: calc(100vh - 115px); }
+
+.home-single-slide {
+  background-position: center center;
+  background-size: cover;
+  height: calc(100vh - 115px);
+  position: relative; }
+
+.home-single-slide-callout {
+  background-image: url("../../img/hero-text-box.svg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  width: 510px;
+  height: 332px;
+  position: absolute;
+  bottom: 25px;
+  right: 40px;
+  padding: 20px 20px 20px 110px; }
+  .home-single-slide-callout p {
+    font-size: 18px;
+    line-height: 30px; }
+
+.slick-dotted.slick-slider {
+  margin-bottom: 0px; }
+
+.slick-dots {
+  bottom: 60px;
+  text-align: right;
+  right: 225px; }
+
+.slick-dots li button:before {
+  content: '';
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+  width: 10px;
+  height: 10px;
+  opacity: 0.75; }
+
+.slick-dots li.slick-active button:before {
+  background-color: transparent;
+  border: 2px solid rgba(0, 0, 0, 0.5); }
+
+.jumbotron.home-jumbotron {
+  padding: 0px;
+  margin-bottom: 0px; }
 
 /*# sourceMappingURL=main.css.map */

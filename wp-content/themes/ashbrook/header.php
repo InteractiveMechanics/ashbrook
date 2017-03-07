@@ -31,6 +31,8 @@
 		
 		<!-- stylesheets -->
 		<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+		<link rel="stylesheet" type="text/css" href="<?php printThemePath(); ?>/js/lib/slick/slick.css">
+		<link rel="stylesheet" type="text/css" href="<?php printThemePath(); ?>/js/lib/slick/slick-theme.css">
 		<link rel="stylesheet" href="<?php printThemePath(); ?>/style.css">
 		<link rel="stylesheet" href="<?php printThemePath(); ?>/dist/css/main.css">
 
@@ -121,7 +123,7 @@
 				          	</ul>
 
 				        </li>
-				        <li><a href="#">Places <span class="tiny-text">of</span> Faith Map</a></li>
+				        <li><a href="#" class="tiny-text-parent">Places <span class="tiny-text">of</span> Faith Map</a></li>
 				        <li><a href="#">Search</a></li>
 				    
 				    </ul>
@@ -130,7 +132,7 @@
 				    </div><!-- /.navbar-collapse -->
 
 				    <div class="nav navbar-nav navbar-right">
-				    	<ul class="subnav visible-lg">
+				    	<ul class="subnav visible-md visible-lg">
 
 				    		<li class="subnav-item">
 				    			<a href="">Blog</a>

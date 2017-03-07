@@ -21,9 +21,17 @@ p>a {
 	&:hover {
 		color: $darkgold;
 	}
+	&:focus {
+		outline: none;
+	}
 }
 
 .tiny-text {
 	font-size: 0.5em;
 }
 
+// corrects positioning
+.tiny-text-parent {
+	position: relative;
+	top: 2px;
+}

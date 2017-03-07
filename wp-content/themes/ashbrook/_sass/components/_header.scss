@@ -1,6 +1,7 @@
 .navbar {
 	border-radius: 0px;
 	height: 115px;
+	margin-bottom: 0px;
 }
 
 .navbar-default {
@@ -207,4 +208,22 @@
     		text-decoration: none;
     	}
     }
+}
+
+.navbar-default .navbar-toggle {
+	border: none;
+	transition: $transition;
+	&:hover {
+		background-color: transparent;
+		.icon-bar {
+			background-color: $gold;
+		}
+	}
+}
+
+.navbar-default .navbar-toggle .icon-bar {
+	background-color: $gray;
+	height: 1px;
+	width: 40px;
+	margin-bottom: 9px;
 }
