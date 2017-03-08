@@ -1,7 +1,9 @@
 
-h1, h3, h4, h5, h5 {
+h1, h3, h4, h5, h5, small {
 	font-family: $lato;
 }
+
+ 
 
 h2, h6, p {
 	font-family: $vollkhorn;
@@ -26,9 +28,25 @@ p {
 	font-size: 1em;
 }
 
+a {
+	transition: $transition;
+}
+
+h1>a {
+	color: $gold;
+	font-size: 22px;
+	text-transform: uppercase;
+	font-weight: 700;
+		&:hover, &:focus, &:active, &:active:focus {
+		color: $gold;
+		text-decoration: none;
+		border-bottom: 1px solid $black;
+
+	}
+}
+
 p>a {
 	color: $gold;
-	transition: $transition;
 	&:hover {
 		color: $darkgold;
 	}

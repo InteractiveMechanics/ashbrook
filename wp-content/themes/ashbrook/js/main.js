@@ -6,6 +6,11 @@ $(document).ready(function(){
    		dots: true
   });
 
+  $('.library-slider').slick({
+  		slidesToShow: 4,
+  		slidesToScroll: 1
+  });
+
 
 
 });
