@@ -11,6 +11,12 @@ $(document).ready(function(){
   		slidesToScroll: 1
   });
 
+  $('.slick-prev.slick-arrow').hide();
+
+  $('.slick-next.slick-arrow').click(function() {
+  	$(this).parent().find('.slick-prev.slick-arrow').show(); 
+  });
+
 
 
 });
