@@ -46,9 +46,9 @@
 	.trap-sq {
 		position: absolute;
 		bottom: 0px;
-		right: 30px;
-		width: 212px;
-		height: 100px;
+		right: 10%;
+		width: 70%;
+		height: 85px;
 		padding: 5px;
 		background-color: $bluealpha;
 		h3 {
@@ -60,16 +60,17 @@
 			color: $white;
 			font-weight: 300;
 			opacity: 0.75;
+			display: block;
 		}
 	}
 	.trap-tri {
 		width: 0;
 		height: 0;
 		border-style: solid;
-		border-width: 0 40px 100px 0;
+		border-width: 0 30px 85px 0;
 		border-color: transparent $bluealpha transparent transparent;
 		position: absolute;
     	bottom: 0px;
-    	right: 242px;
+    	right: 80%;
 	}
 }

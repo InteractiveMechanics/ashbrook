@@ -3,8 +3,11 @@
 @mixin gold-anchor {
   color: $gold;
   transition: $transition;
+  border-bottom: 1px solid $gold;
   &:hover {
     color: $darkgold;
+    border-bottom: 1px solid $darkgold;
+    text-decoration: none;
   }
   &:focus {
     outline: none;
@@ -20,6 +23,18 @@
     text-decoration: none;
     outline: none;
     border-bottom: 1px solid $gold;
+  }
+}
+
+@mixin gold-black-anchor {
+  color: $gold;
+  text-transform: uppercase;
+  font-weight: 700;
+    &:hover, &:focus, &:active, &:active:focus {
+    color: $gold;
+    text-decoration: none;
+    border-bottom: 1px solid $black;
+
   }
 }
 
