@@ -1,0 +1,55 @@
+.rahp-object-title {
+	margin-left: 15px;
+	li {
+		display: inline;
+		&:nth-of-type(2) {
+			margin-left: 20px;
+			&:after {
+				content: '\\';
+				color: $lightgray;
+				font-size: 1.4em;
+				padding-left: 10px;
+				padding-right: 10px;
+			}
+		}
+		h2, h3 {
+			display: inline-block;
+		}
+		h3 {
+			color: $lightgray;
+		}
+	}
+}
+
+.rahp-object-subheading {
+	padding-left: 15px;
+	padding-right: 15px;
+}
+
+.rahp-object-body {
+	padding-left: 80px;
+	padding-right: 80px;
+	padding-top: 20px;
+	position: relative;
+}
+
+.core-docs-tag {
+	float: left;
+	h3 {
+		font-family: $vollkhorn;
+		font-style: italic;
+		a {
+			font-family: $lato;
+			color: $gold;
+			text-transform: uppercase;
+			font-style: initial;
+		}
+	}
+}
+
+.object-callouts {
+	position: relative;
+	float: right;
+	background-color: red;
+}
+

@@ -113,10 +113,52 @@ main {
     .breadcrumb li h5 {
       display: inline; }
 
-.trap-sq {
-  width: 80%;
-  height: 150px;
-  background-color: rgba(85, 84, 87, 0.5); }
+.slim-jumbotron {
+  height: 385px;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end; }
+
+.slim-jumbotron-callout {
+  background-image: url("../../img/hero-text-box.svg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  margin-right: 80px;
+  width: 510px;
+  height: 332px;
+  padding: 20px 20px 20px 110px;
+  overflow: hidden; }
+  .slim-jumbotron-callout p {
+    font-family: "Lato", "Helvetica-Neue", Helvetica, Ariel, sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 30px; }
+
+.sharing {
+  float: right; }
+  .sharing li {
+    display: inline-block; }
+    .sharing li:first-child:before {
+      content: url("../../img/icons/icon-print.svg");
+      margin-right: 10px; }
+    .sharing li:nth-of-type(2):before {
+      content: url("../../img/icons/icon-share.svg");
+      margin-left: 5px;
+      margin-right: 10px; }
+    .sharing li:nth-of-type(3):before {
+      content: url("../../img/icons/icon-download.svg");
+      margin-left: 5px;
+      margin-right: 10px; }
+    .sharing li:nth-of-type(-n+2):after {
+      content: '\\';
+      color: #323E4A;
+      font-size: 22px;
+      margin-left: 5px;
+      margin-right: 5px; }
+    .sharing li h1 {
+      display: inline; }
 
 .navbar {
   border-radius: 0px;
@@ -456,5 +498,48 @@ footer {
   display: inline-block; }
   .library-heading li:last-child {
     margin-left: 10px; }
+
+.rahp-object-title {
+  margin-left: 15px; }
+  .rahp-object-title li {
+    display: inline; }
+    .rahp-object-title li:nth-of-type(2) {
+      margin-left: 20px; }
+      .rahp-object-title li:nth-of-type(2):after {
+        content: '\\';
+        color: #A5AEB6;
+        font-size: 1.4em;
+        padding-left: 10px;
+        padding-right: 10px; }
+    .rahp-object-title li h2, .rahp-object-title li h3 {
+      display: inline-block; }
+    .rahp-object-title li h3 {
+      color: #A5AEB6; }
+
+.rahp-object-subheading {
+  padding-left: 15px;
+  padding-right: 15px; }
+
+.rahp-object-body {
+  padding-left: 80px;
+  padding-right: 80px;
+  padding-top: 20px;
+  position: relative; }
+
+.core-docs-tag {
+  float: left; }
+  .core-docs-tag h3 {
+    font-family: "Vollkorn", Garamond, Georgia, serif;
+    font-style: italic; }
+    .core-docs-tag h3 a {
+      font-family: "Lato", "Helvetica-Neue", Helvetica, Ariel, sans-serif;
+      color: #C49F21;
+      text-transform: uppercase;
+      font-style: initial; }
+
+.object-callouts {
+  position: relative;
+  float: right;
+  background-color: red; }
 
 /*# sourceMappingURL=main.css.map */

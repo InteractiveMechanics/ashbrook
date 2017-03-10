@@ -33,6 +33,7 @@
 		<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 		<link rel="stylesheet" type="text/css" href="<?php printThemePath(); ?>/js/lib/slick/slick.css">
 		<link rel="stylesheet" type="text/css" href="<?php printThemePath(); ?>/js/lib/slick/slick-theme.css">
+		<link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.css" rel="stylesheet">
 		<link rel="stylesheet" href="<?php printThemePath(); ?>/style.css">
 		<link rel="stylesheet" href="<?php printThemePath(); ?>/dist/css/main.css">
 
@@ -72,7 +73,7 @@
 				          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Library</a>
 				          	
 
-				          	<ul class="dropdown-menu multi-column columns-3">
+				          	<ul class="dropdown-menu multi-column columns-3 animated fadeInDown">
 
 					          	<li class="col-sm-3 multi-column-dropdown-wrapper">
 
