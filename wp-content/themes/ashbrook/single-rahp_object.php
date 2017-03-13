@@ -131,6 +131,7 @@
 	    		<div class="row">
 	    			<div class="col-sm-12">
 	    				<div class="columns-container">
+	    					<h2>Related Content</h2>
 		    				<div class="columns-wrapper" data-columns="4">
 		    					<div class="single-column">
 		    						

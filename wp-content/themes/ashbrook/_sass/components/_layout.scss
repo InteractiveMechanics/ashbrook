@@ -83,7 +83,7 @@ main {
 				content: '\\';
 				color: $midgray;
 				font-size: 22px;
-				margin-left: 5px;
+				margin-left: 10px;
 				margin-right: 5px;
 			}
 		}
@@ -129,8 +129,11 @@ main {
 			background-color: $blue;
 			color: $white;
 			padding: 7px;
+			border-bottom: none;
 			&:hover, &:active, &:focus, &:active:focus {
 				background-color: $darkblue;
+				text-decoration: none;
+				border-bottom: none;
 			}
 		}
 	}

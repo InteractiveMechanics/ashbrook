@@ -12,6 +12,12 @@
 		padding-top: 30px;
 		padding-bottom: 30px;
 		position: relative;
+		h2 {
+			margin-left: 30px;
+			margin-bottom: 0px;
+			font-size: 1.5em;
+			color: $white;
+		}
 	}
 	.columns-wrapper {
 		overflow: auto;
@@ -36,8 +42,24 @@
 	position: relative;
 	padding: 8px 8px 40px 8px;
 	margin-bottom: 20px;
+	transition: $transition;
+	top: 0px;
 	img {
 		width: 100%;
 		margin-bottom: 8px;
+		transition: $transition;
+	}
+	&:hover, &:active, &:focus, &:active:focus {
+		top: -15px;
+		img {
+			opacity: 0.7
+		}
+		.trapezoid {
+			.trap-sq {
+				h3, small {
+					color: $gold;
+				}
+			}
+		}
 	}
 }
