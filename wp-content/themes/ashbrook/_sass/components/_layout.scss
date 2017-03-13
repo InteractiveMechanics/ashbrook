@@ -93,3 +93,45 @@ main {
 		}
 	}
 }
+
+.tags-wrapper {
+	display: flex;
+    align-items: center;
+    padding: 20px 15px;
+    h2 {
+    	display: initial;
+	    padding-right: 30px;
+	    color: white;
+	    font-size: 1.5em;
+    }
+}
+
+.tags {
+	margin-bottom: 0px;
+	li {
+		display: inline;
+		&:nth-child(n+2) {
+			&:before {
+				content: '\\';
+				color: $white;
+				font-size: 29px;
+				margin-left: 7px;
+				margin-right: 13px;
+				position: relative;
+				top: 5px;
+
+			}
+		}
+		h5 {
+			display: inline;
+		}
+		h5 > a {
+			background-color: $blue;
+			color: $white;
+			padding: 7px;
+			&:hover, &:active, &:focus, &:active:focus {
+				background-color: $darkblue;
+			}
+		}
+	}
+}
