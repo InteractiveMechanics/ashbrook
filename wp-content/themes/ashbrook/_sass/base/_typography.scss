@@ -25,17 +25,25 @@ h2, h6 {
 
 
 p {
-	font-size: 1em;
+	font-size: 1.15em;
 }
 
 a {
 	transition: $transition;
 }
 
+figure {
+	display: table;
+}
+
 figcaption {
 	font-family: $lato;
 	color: $lightgray;
 	font-weight: 300;
+	margin-top: 7px;
+    line-height: 1.8;
+    display: table-caption;
+    caption-side: bottom;
 }
 
 h1>a {

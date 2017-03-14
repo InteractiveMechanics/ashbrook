@@ -34,6 +34,7 @@
 		<link rel="stylesheet" type="text/css" href="<?php printThemePath(); ?>/js/lib/slick/slick.css">
 		<link rel="stylesheet" type="text/css" href="<?php printThemePath(); ?>/js/lib/slick/slick-theme.css">
 		<link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.css" rel="stylesheet">
+		<link type="text/css" rel="stylesheet" href="<?php printThemePath(); ?>/js/lib/lightGallery/css/lightGallery.css" /> 
 		<link rel="stylesheet" href="<?php printThemePath(); ?>/style.css">
 		<link rel="stylesheet" href="<?php printThemePath(); ?>/dist/css/main.css">
 
