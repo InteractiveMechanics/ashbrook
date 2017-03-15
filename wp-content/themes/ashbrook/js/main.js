@@ -39,10 +39,21 @@ $(document).ready(function(){
   });
 
 
-
-
   // LIGHTGALLERY ON ANALYSIS 
-  $(".lightgallery").lightGallery(); 
+  $(".lightgallery").lightGallery();
+
+  
+  // HIDE SEARCH SUBMIT BUTTON, SUBMIT ON PRESSING ENTER
+  $('.search').each(function() {
+        $(this).find('input').keypress(function(e) {
+            // Enter pressed?
+            if(e.which == 10 || e.which == 13) {
+                this.form.submit();
+            }
+        });
+
+        $(this).find('button[type=submit]').hide();
+    });  
 
 
 });

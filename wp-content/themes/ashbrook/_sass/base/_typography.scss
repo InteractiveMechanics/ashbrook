@@ -1,5 +1,5 @@
 
-h1, h3, h4, h5, h5, small {
+h1, h3, h4, h5, h5, small, figcaption, input, button {
 	font-family: $lato;
 }
 
@@ -37,13 +37,16 @@ figure {
 }
 
 figcaption {
-	font-family: $lato;
 	color: $lightgray;
 	font-weight: 300;
 	margin-top: 7px;
     line-height: 1.8;
     display: table-caption;
     caption-side: bottom;
+}
+
+input, button {
+	font-weight: 300;
 }
 
 h1>a {

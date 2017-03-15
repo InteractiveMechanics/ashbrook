@@ -1,0 +1,87 @@
+#search-page {
+	.related-content .columns-container {
+		background-color: transparent;
+	}
+}
+
+.search {
+	background-color: $black;
+	padding: 20px 30px;
+	.btn-default {
+		background-color: transparent;
+		border: none;
+		font-family: $lato;
+		font-weight: 300;
+		font-size: 1.2em;
+		color: $darkgold;
+	}
+	.open>.dropdown-toggle.btn-default {
+		background-color: transparent;
+	}
+	.dropdown-menu {
+		font-size: 0.90em;
+		font-family: $lato;
+		text-transform: uppercase;
+		border-radius: 0px;
+		border: none;
+	}
+
+	.dropdown-menu>li>a:focus, 
+	.dropdown-menu>li>a:hover {
+		color: $gold;
+		background: $black;
+	}
+
+	.btn-default.active, 
+	.btn-default:active, 
+	.open>.dropdown-toggle.btn-default {
+		color: $darkgold;
+	}
+	
+}
+
+.search-input {
+	border: none;
+	padding: 12px;
+	width: 250px;
+	&:focus, &:active, &:active:focus {
+		outline: none !important;
+		color: $black;
+	}
+}
+
+.bootstrap-select:not([class*=col-]):not([class*=form-control]):not(.input-group-btn) {
+	width: auto;
+	max-width: 300px;
+}
+
+.bootstrap-select>.dropdown-toggle.bs-placeholder, 
+.bootstrap-select>.dropdown-toggle.bs-placeholder:active, 
+.bootstrap-select>.dropdown-toggle.bs-placeholder:focus, 
+.bootstrap-select>.dropdown-toggle.bs-placeholder:hover {
+	color: $gold;
+	text-transform: uppercase;
+} 
+
+button[type="reset"] {
+	float: right;
+	border: 1px solid $white;
+	background: transparent;
+	text-transform: uppercase;
+	color: gold;
+	top: 9px;
+    position: relative;
+    vertical-align: middle;
+    padding: 6px 12px;
+    font-size: 1.2em;
+    transition: $transition;
+    &:hover, &:active, &:focus, &:active:focus {
+    	color: $darkgold;
+    	border-color: $darkgold;
+    }
+
+}
+
+.bootstrap-select .dropdown-toggle:focus {
+	outline: none !important;
+}
