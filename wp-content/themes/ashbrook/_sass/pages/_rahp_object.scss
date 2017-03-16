@@ -2,17 +2,22 @@
 	margin-left: 15px;
 	li {
 		display: inline;
-		&:nth-of-type(2) {
-			margin-left: 20px;
+		&:first-child {
+			margin-right: 20px;
 		}
-		&:nth-of-type(n+3) {
-			margin-left: 20px;
+		&:nth-of-type(n+2) {
+			margin-left: 0px;
 			&:after {
 				content: '\\';
 				color: $lightgray;
 				font-size: 1.4em;
 				padding-left: 10px;
 				padding-right: 10px;
+			}
+		}
+		&:last-child {
+			&:after {
+				content: "";
 			}
 		}
 		h2, h3 {
@@ -48,6 +53,12 @@
 			width: 100%;
 		}
 	}
+	p {
+		padding-right: 100px;
+		&:last-child {
+			padding-bottom: 40px;
+		}
+	}
 }
 
 .core-docs-tag {
@@ -68,6 +79,8 @@
 	position: relative;
 	float: right;
 	color: $gray;
+	position: relative;
+	top: -80px;
 	h2 {
 		font-size: 1.5em;
 	}

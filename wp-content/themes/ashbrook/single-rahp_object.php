@@ -52,11 +52,15 @@
 	    			<div class="col-sm-12">
 
 		    			<figure class="col-sm-4">
-		    				<div>
-		    				<img src="<?php printThemePath(); ?>/img/Capitol_Prayer_Room_stained_glass_window.jpg"> 
+		    				<div class="lightgallery">
+		    					<a href="<?php printThemePath(); ?>/img/Capitol_Prayer_Room_stained_glass_window.jpg" data-sub-html="#caption1">
+		    						<img src="<?php printThemePath(); ?>/img/Capitol_Prayer_Room_stained_glass_window.jpg" class="lightgallery">
+		    						<div class="lightgallery-caption" id="caption1">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </div>
+		    					</a>
 		    				</div>
 		    				<figcaption>Capitol Prayer Room stained-glass window. <i>Suspendisse Vitae Risus Ipsum.</i> Etiam a tincidunt magna.</figcaption>
 		    			</figure>
+
 		    			<p>Gentlemen:</p>
 
 						<p>While I received with much satisfaction your address replete with expressions of esteem, I rejoice in the opportunity of assuring you that I shall always retain grateful remembrance of the cordial welcome I experienced on my visit to Newport from all classes of citizens.</p>

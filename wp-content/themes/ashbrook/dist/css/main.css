@@ -261,6 +261,9 @@ main {
   position: relative;
   right: 7px; }
 
+.lightgallery a:hover img, .lightgallery a:active img, .lightgallery a:focus img {
+  opacity: 0.75; }
+
 .navbar {
   border-radius: 0px;
   height: 115px;
@@ -738,16 +741,18 @@ footer {
   margin-left: 15px; }
   .rahp-object-title li {
     display: inline; }
-    .rahp-object-title li:nth-of-type(2) {
-      margin-left: 20px; }
-    .rahp-object-title li:nth-of-type(n+3) {
-      margin-left: 20px; }
-      .rahp-object-title li:nth-of-type(n+3):after {
+    .rahp-object-title li:first-child {
+      margin-right: 20px; }
+    .rahp-object-title li:nth-of-type(n+2) {
+      margin-left: 0px; }
+      .rahp-object-title li:nth-of-type(n+2):after {
         content: '\\';
         color: #A5AEB6;
         font-size: 1.4em;
         padding-left: 10px;
         padding-right: 10px; }
+    .rahp-object-title li:last-child:after {
+      content: ""; }
     .rahp-object-title li h2, .rahp-object-title li h3 {
       display: inline-block; }
     .rahp-object-title li h3 {
@@ -773,6 +778,10 @@ footer {
       overflow: hidden; }
     .rahp-object-body figure img {
       width: 100%; }
+  .rahp-object-body p {
+    padding-right: 100px; }
+    .rahp-object-body p:last-child {
+      padding-bottom: 40px; }
 
 .core-docs-tag {
   float: left; }
@@ -788,7 +797,9 @@ footer {
 .object-callouts {
   position: relative;
   float: right;
-  color: #555457; }
+  color: #555457;
+  position: relative;
+  top: -80px; }
   .object-callouts h2 {
     font-size: 1.5em; }
   .object-callouts h5 {

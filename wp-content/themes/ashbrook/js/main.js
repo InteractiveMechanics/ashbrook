@@ -39,7 +39,7 @@ $(document).ready(function(){
   });
 
 
-  // LIGHTGALLERY ON ANALYSIS 
+  // LIGHTGALLERY 
   $(".lightgallery").lightGallery();
 
   

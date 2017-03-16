@@ -180,4 +180,12 @@ main {
     right: 7px;
 }
 
-
+.lightgallery {
+	a {
+		&:hover, &:active, &:focus {
+			img {
+				opacity: 0.75;
+			}
+		}
+	}
+}
