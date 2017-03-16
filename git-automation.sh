@@ -1,1 +1,1 @@
-cd /var/www/vhosts/interactivemechanics.com/dev/ashbrook; git pull origin staging;
+cd /var/www/vhosts/interactivemechanics.com/dev/ashbrook; git pull origin staging; echo "git pull origin staging";
