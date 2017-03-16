@@ -119,6 +119,12 @@ h6 > a {
     outline: none;
     border-bottom: 1px solid #C49F21; }
 
+div[class$="body"] ul, div[class$="body"] ol, div[class$="body"] li {
+  font-family: "Vollkorn", Garamond, Georgia, serif;
+  font-size: 1.10em; }
+div[class$="body"] ul, div[class$="body"] ol {
+  padding-left: 20px; }
+
 .tiny-text {
   font-size: 0.5em; }
 
@@ -773,7 +779,8 @@ footer {
     float: right;
     padding-right: 0px;
     margin-left: 10px;
-    margin-bottom: 10px; }
+    margin-bottom: 10px;
+    padding-left: 0px; }
     .rahp-object-body figure div {
       height: 400px;
       overflow: hidden; }

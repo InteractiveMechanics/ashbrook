@@ -66,6 +66,16 @@ h6>a {
 	@include gray-anchor;
 }
 
+div[class$="body"] {
+	ul, ol, li {
+		font-family: $vollkhorn;
+		font-size: 1.10em;
+	}
+	ul, ol {
+		padding-left: 20px;
+	}
+}
+
 .tiny-text {
 	font-size: 0.5em;
 }
