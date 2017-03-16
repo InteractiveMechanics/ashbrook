@@ -1,0 +1,1 @@
+cd /var/www/vhosts/interactivemechanics.com/dev/ashbrook; git pull origin staging
