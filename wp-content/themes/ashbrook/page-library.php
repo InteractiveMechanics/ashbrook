@@ -139,8 +139,12 @@ get_header(); ?>
 
 						<div class="trapezoid">
 							<div class="trap-sq">
+								<h3>Essays</h3>
+								<small>Authors A to Z</small>
 							</div>
-							<div class="trap-tri"></div>
+							<div class="trap-tri">
+								
+							</div>
 						</div>
 					</div>
 

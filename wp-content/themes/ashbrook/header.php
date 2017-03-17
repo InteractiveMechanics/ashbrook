@@ -58,13 +58,36 @@
   					
 				    <!-- Brand and toggle get grouped for better mobile display -->
 				    <div class="navbar-header">
-				      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-				        <span class="sr-only">Toggle navigation</span>
-				        <span class="icon-bar"></span>
-				        <span class="icon-bar"></span>
-				        <span class="icon-bar"></span>
-				      </button>
-				      <a class="navbar-brand" href="#"><img src="<?php printTHemePath(); ?>/img/logo.svg" alt="logo"></a>
+					    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+					        <span class="sr-only">Toggle navigation</span>
+					        <span class="icon-bar"></span>
+					        <span class="icon-bar"></span>
+					        <span class="icon-bar"></span>
+					    </button>
+					    <div class="mobile-search-bar">
+					    	<form>
+					    	<input type="text" name="mobile-search" id="mobile-search" value="search">
+					    	<input type="submit" value="submit">
+					    	</form>
+					    </div>
+					    <button type="button" class="collapsed visible-xs-inline-block search-btn" data-toggle="collapse" aria-expanded="false">
+				    		<svg version="1.1"
+							 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/"
+	 						x="0px" y="0px" width="35.7px" height="34.6px" viewBox="0 0 35.7 34.6" style="enable-background:new 0 0 35.7 34.6;"
+	 						xml:space="preserve">
+								<style type="text/css">
+									.st0{fill:;}
+								</style>
+								<defs>
+								</defs>
+								<g id="mobile-header_copy">
+									<path class="st0" d="M35.7,33.5L22.8,21c1.8-2.2,2.9-5,2.9-8.1C25.7,5.8,20,0,12.9,0C5.8,0,0,5.8,0,12.9c0,7.1,5.8,12.9,12.9,12.9
+									c3.3,0,6.4-1.3,8.6-3.3l12.8,12.3L35.7,33.5z M12.9,24.4c-6.4,0-11.5-5.2-11.5-11.5c0-6.4,5.2-11.5,11.5-11.5
+									c6.4,0,11.5,5.2,11.5,11.5C24.4,19.2,19.2,24.4,12.9,24.4z"/>
+								</g>
+							</svg>
+				    	</button>
+				      	<a class="navbar-brand" href="#"><img src="<?php printTHemePath(); ?>/img/logo.svg" alt="logo"></a>
 				    </div>
 
 				    <!-- Collect the nav links, forms, and other content for toggling -->

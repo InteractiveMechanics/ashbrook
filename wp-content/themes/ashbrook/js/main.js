@@ -10,7 +10,33 @@ $(document).ready(function(){
   // LIBRARY SLIDER
   $('.library-slider').slick({
   		slidesToShow: 4,
-  		slidesToScroll: 1
+  		slidesToScroll: 1,
+      responsive: [
+    {
+      breakpoint: 1024,
+      settings: {
+        slidesToShow: 3,
+        slidesToScroll: 3
+      }
+    },
+    {
+      breakpoint: 767,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 2
+      }
+    },
+    {
+      breakpoint: 480,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1
+      }
+    }
+    // You can unslick at a given breakpoint now by adding:
+    // settings: "unslick"
+    // instead of a settings object
+  ]
   });
 
 
@@ -53,7 +79,17 @@ $(document).ready(function(){
         });
 
         $(this).find('button[type=submit]').hide();
-    });  
+    });
+
+    //MOBILE SEARCH BAR
+    $('.mobile-search-bar').hide();
+
+    $('.search-btn').click(function() {
+        console.log('button clicked');
+        $('.mobile-search-bar').toggle();
+        
+    });
+
 
 
 });

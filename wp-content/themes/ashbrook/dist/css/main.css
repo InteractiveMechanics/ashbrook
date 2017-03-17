@@ -275,6 +275,9 @@ main {
   border-radius: 0px;
   height: 115px;
   margin-bottom: 0px; }
+  @media (max-width: 767px) {
+    .navbar {
+      height: 75px; } }
 
 .navbar-default {
   background-color: #ffffff;
@@ -333,6 +336,11 @@ main {
   transition: all 0.5s; }
   .navbar-brand:hover, .navbar-brand:focus, .navbar-brand:active:focus {
     opacity: 0.5; }
+  @media (max-width: 767px) {
+    .navbar-brand {
+      height: 75px; }
+      .navbar-brand img {
+        height: 45px; } }
 
 .navbar > .container-fluid .navbar-brand {
   margin-left: 0px; }
@@ -464,12 +472,31 @@ main {
     background-color: transparent; }
     .navbar-default .navbar-toggle:hover .icon-bar {
       background-color: #C49F21; }
+  @media (max-width: 767px) {
+    .navbar-default .navbar-toggle {
+      margin-top: 18px; } }
 
 .navbar-default .navbar-toggle .icon-bar {
   background-color: #555457;
   height: 1px;
   width: 40px;
   margin-bottom: 9px; }
+
+.search-btn {
+  float: right;
+  margin-top: 18px; }
+  .search-btn svg {
+    width: 30px;
+    fill: #6D6E70; }
+
+.mobile-search-bar {
+  background-color: #000000;
+  position: absolute;
+  bottom: -47px;
+  z-index: 3;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  width: 100%; }
 
 footer {
   color: #555457;
@@ -478,9 +505,20 @@ footer {
   height: 66px; }
   footer h5 {
     margin: 0px; }
+    @media (max-width: 767px) {
+      footer h5 {
+        letter-spacing: 7px; } }
   footer h6 {
     margin-top: 5px;
     margin-bottom: 0px; }
+  @media (max-width: 767px) {
+    footer .container-fluid .col-sm-6:first-child {
+      text-align: center;
+      margin-bottom: 15px; } }
+  @media (max-width: 767px) {
+    footer .container-fluid .col-sm-6:last-child .float-right {
+      float: none;
+      text-align: center; } }
 
 .home-slider {
   height: calc(100vh - 181px); }
@@ -509,6 +547,12 @@ footer {
     margin-top: 5px; }
   .home-single-slide-heading h2 {
     margin-bottom: 0px; }
+  @media (max-width: 991px) {
+    .home-single-slide-heading {
+      bottom: initial;
+      top: 0px;
+      right: 50px;
+      width: 90%; } }
 
 .home-single-slide-callout {
   background-image: url("../../img/hero-text-box.svg");
@@ -570,7 +614,8 @@ footer {
 
 .library-single-slide {
   position: relative;
-  height: 425px; }
+  height: 425px;
+  width: 20%; }
   .library-single-slide .img-wrapper {
     height: 375px;
     overflow: hidden; }

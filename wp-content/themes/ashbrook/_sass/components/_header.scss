@@ -2,6 +2,9 @@
 	border-radius: 0px;
 	height: 115px;
 	margin-bottom: 0px;
+	@include screen-xs {
+		height: 75px;
+	}
 }
 
 .navbar-default {
@@ -62,6 +65,12 @@
 	transition: $transition;
 	&:hover, &:focus, &:active:focus {
 		opacity: 0.5;
+	}
+	@include screen-xs {
+		height: 75px;
+		img {
+			height: 45px;
+		}
 	}
 
 }
@@ -227,6 +236,9 @@
 			background-color: $gold;
 		}
 	}
+	@include screen-xs {
+		margin-top: 18px;
+	}
 }
 
 .navbar-default .navbar-toggle .icon-bar {
@@ -234,4 +246,23 @@
 	height: 1px;
 	width: 40px;
 	margin-bottom: 9px;
+}
+
+.search-btn {
+	float: right;
+	margin-top: 18px;
+	svg {
+		width: 30px;
+		fill: #6D6E70;
+	}
+}
+
+.mobile-search-bar {
+	background-color: $black;
+	position: absolute;
+	bottom: -47px;
+	z-index: 3;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	width: 100%;
 }
