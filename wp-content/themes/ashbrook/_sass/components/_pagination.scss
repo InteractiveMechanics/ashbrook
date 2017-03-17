@@ -1,0 +1,38 @@
+.pagination {
+	display: flex;
+	justify-content: space-around;
+	.next, .prev {
+		top: 100%;
+		font-size: 1.4em;
+		line-height: 1.8;
+		color: $gold;
+		text-transform: uppercase;
+		width: auto;
+		height: auto;
+		letter-spacing: 2px;
+		background: transparent;
+		border: none;
+	}
+	.prev {
+		&:before {
+			content: url('../../img/icons/icon-arrow-left-sm.svg');
+			position: relative;
+    		right: 10px;
+   	 		height: auto;
+    		top: -1px;
+		}
+	}
+
+	.next {
+		&:after {
+			content: url('../../img/icons/icon-arrow-right-sm.svg');
+			position: relative;
+    		left: 10px;
+   	 		height: auto;
+    		top: -1px;
+		}
+	}
+	.paging-info {
+		position: initial;
+	}
+}

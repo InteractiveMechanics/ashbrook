@@ -1,0 +1,83 @@
+.home-slider {
+	height: calc(100vh - 181px);
+}
+
+.home-single-slide {
+	background-position: center center;
+	background-size: cover;
+	height: calc(100vh - 181px); //header is 115px and footer is 66px
+	position: relative;
+}
+
+.home-single-slide-heading {
+	position: absolute;
+	bottom: 25px;
+	height: 300px;
+	right: 575px;
+	color: $white;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	h1, h2 {
+		text-align: right;
+		// TODO add text shadow
+	}
+	h1 {
+		letter-spacing: 1px;
+		text-transform: uppercase;
+		font-size: 3.3em;
+		margin-top: 5px;
+	}
+	h2 {
+		margin-bottom: 0px;
+	}
+	@include screen-ltmd {
+		bottom: initial;
+    	top: 0px;
+    	right: 50px;
+    	width: 90%;
+	}
+}
+
+.home-single-slide-callout {
+	background-image: url('../../img/hero-text-box.svg');
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: cover;
+	width: 510px;
+	height: 332px;
+	position: absolute;
+	bottom: 25px;
+	right: 40px;
+	padding: 20px 20px 20px 110px;
+	p {
+		font-size: 18px;
+		line-height: 30px;
+	}
+}
+
+
+
+.slick-dotted.slick-slider {
+	margin-bottom: 0px;
+}
+
+.slick-dots {
+	bottom: 60px;
+	text-align: right;
+    right: 225px;
+}
+
+.slick-dots li button:before {
+	content: '';
+	background-color: rgba(0,0,0, 0.5);
+	border-radius: 50%;
+	width: 10px;
+    height: 10px;
+    opacity: 0.75;
+}
+
+.slick-dots li.slick-active button:before {
+	background-color: transparent;
+	border: 2px solid rgba(0,0,0, 0.5);
+}

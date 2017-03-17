@@ -1,0 +1,36 @@
+footer {
+	color: $gray;
+	padding-top: 15px;
+	padding-bottom: 15px;
+	height: 66px;
+	h5{
+		margin: 0px;
+		@include screen-xs {
+			letter-spacing: 7px;
+		}
+	}
+	h6 {
+		margin-top: 5px;
+		margin-bottom: 0px;
+	}
+	.container-fluid {
+		.col-sm-6 {
+			&:first-child {
+				@include screen-xs {
+					text-align: center;
+					margin-bottom: 15px;
+				}
+			}
+			&:last-child {
+				.float-right {
+					@include screen-xs {
+						float: none;
+						text-align: center;
+					}
+				}
+			}
+		}
+	}
+
+	
+}

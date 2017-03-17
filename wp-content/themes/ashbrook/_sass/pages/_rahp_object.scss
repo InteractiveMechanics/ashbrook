@@ -1,0 +1,110 @@
+.rahp-object-title {
+	margin-left: 15px;
+	li {
+		display: inline;
+		&:first-child {
+			margin-right: 20px;
+		}
+		&:nth-of-type(n+2) {
+			margin-left: 0px;
+			&:after {
+				content: '\\';
+				color: $lightgray;
+				font-size: 1.4em;
+				padding-left: 10px;
+				padding-right: 10px;
+			}
+		}
+		&:last-child {
+			&:after {
+				content: "";
+			}
+		}
+		h2, h3 {
+			display: inline-block;
+		}
+		h3 {
+			color: $lightgray;
+			margin-top: 0px;
+		}
+	}
+}
+
+.rahp-object-subheading {
+	padding-left: 15px;
+	padding-right: 15px;
+}
+
+.rahp-object-body {
+	padding-left: 80px;
+	padding-right: 80px;
+	padding-top: 20px;
+	position: relative;
+	figure {
+		float: right;
+		padding-right: 0px;
+		margin-left: 10px;
+    	margin-bottom: 10px;
+    	padding-left: 0px;
+		div {
+			height: 400px;
+			overflow: hidden;
+		}
+		img {
+			width: 100%;
+		}
+	}
+	p {
+		padding-right: 100px;
+		&:last-child {
+			padding-bottom: 40px;
+		}
+	}
+}
+
+.core-docs-tag {
+	float: left;
+	h3 {
+		font-family: $vollkhorn;
+		font-style: italic;
+		a {
+			font-family: $lato;
+			color: $gold;
+			text-transform: uppercase;
+			font-style: initial;
+		}
+	}
+}
+
+.object-callouts {
+	position: relative;
+	float: right;
+	color: $gray;
+	position: relative;
+	top: -80px;
+	h2 {
+		font-size: 1.5em;
+	}
+	h5 {
+		margin-top: 1.67em;
+	}
+
+	.studyqs-headings-wrapper {
+		display: flex;
+		justify-content: space-between;
+	}
+
+	.callout-studyqs, .callout-compare {
+		border-left: 2px solid $lightgray;
+		padding-left: 10px;
+	}
+	p {
+		font-family: $lato;
+	}
+}
+
+.object-references {
+	p>a {
+		font-family: $lato;
+	}
+}

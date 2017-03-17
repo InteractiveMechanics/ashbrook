@@ -1,0 +1,41 @@
+.library-slider {
+	margin-left: -15px;
+	margin-bottom: 30px;
+	.slick-next {
+		right: -30px;
+    	height: 100%;
+    	width: 43px;
+		box-shadow: -20px -2px 62px 35px white;
+		background-color: $white;
+		&:before {
+			content: url('../../img/icons/icon-arrow-right.svg');
+			position: relative;
+    		right: 10px;
+		}
+	}
+	.slick-prev {
+		left: 0px;
+		height: 100%;
+		width: 43px;
+		box-shadow: 20px -2px 62px 35px $white;
+		background-color: $white;
+		z-index: 3;
+		&:before {
+			content: url('../../img/icons/icon-arrow-left.svg'); 
+		}
+
+	}
+}
+
+.library-single-slide {
+	position: relative;
+	height: 425px;
+	width: 20%;
+	.img-wrapper {
+		height: 375px;
+		overflow: hidden;
+	}
+}
+
+
+
