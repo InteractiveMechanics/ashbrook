@@ -64,10 +64,11 @@
 					        <span class="icon-bar"></span>
 					        <span class="icon-bar"></span>
 					    </button>
-					    <div class="mobile-search-bar">
+					    <div class="mobile-search-bar animated fadeIn">
 					    	<form>
-					    	<input type="text" name="mobile-search" id="mobile-search" value="search">
-					    	<input type="submit" value="submit">
+					    	<input type="text" name="mobile-search" id="mobile-search" value="search...">
+					  		<span class="sm-parallelogram"></span>
+					    	<input type="submit" value="search">
 					    	</form>
 					    </div>
 					    <button type="button" class="collapsed visible-xs-inline-block search-btn" data-toggle="collapse" aria-expanded="false">

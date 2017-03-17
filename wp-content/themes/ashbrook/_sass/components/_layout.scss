@@ -180,6 +180,21 @@ main {
     right: 7px;
 }
 
+.sm-parallelogram {
+	display: inline-block;
+	width: 25px;
+    height: 38px;
+    -ms-transform: skewX(20deg);
+    -webkit-transform: skewX(20deg);
+    transform: skewX(20deg);
+    background-color: black;
+    float: none;
+    position: absolute;
+    top: 0px;
+    left: 181px;
+
+}
+
 .lightgallery {
 	a {
 		&:hover, &:active, &:focus {

@@ -260,9 +260,31 @@
 .mobile-search-bar {
 	background-color: $black;
 	position: absolute;
-	bottom: -47px;
+	bottom: -56px;
 	z-index: 3;
 	padding-top: 10px;
 	padding-bottom: 10px;
 	width: 100%;
+	form {
+		position: relative;
+	}
+	input[type="submit"] {
+		float: right;
+	    margin-right: 15px;
+	    color: $gold;
+	    background: transparent;
+	    border: 1px solid $white;
+	    text-transform: uppercase;
+	    padding: 6px 12px;
+	}
 }
+
+#mobile-search {
+	margin-left: 15px;
+	font-size: 16px;
+    text-transform: uppercase;
+    padding: 5px 10px;
+    color: $lightgray;
+}
+
+
