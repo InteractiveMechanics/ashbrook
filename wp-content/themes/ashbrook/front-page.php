@@ -21,7 +21,13 @@ get_header(); ?>
 						<h1>Women's Voices, Religion, &amp; The United States Government</h1>
 					</div>
 					<div class="home-single-slide-callout">
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse...<a href="" class="read-more">More</a></p>
+							<img src="<?php printThemePath(); ?>/img/hero-text-box.svg" class="visible-xs-block">
+
+							<!-- 25 word max for mobile -->
+							<p class="visible-xs-block">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam...<a href="" class="read-more">More</a></p>
+
+							<!--50 word max for desktop -->
+							<p class="hidden-xs">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse... <a href="" class="read-more"> More</a></p>
 					</div>
 		
 				</div>
@@ -31,7 +37,13 @@ get_header(); ?>
 						<h1>Here is another Heading</h1>
 					</div>
 					<div class="home-single-slide-callout">
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur...<a href="" class="read-more">More</a></p>
+							<img src="<?php printThemePath(); ?>/img/hero-text-box.svg" class="visible-xs-block">
+
+							<!-- 25 word max for mobile -->
+							<p class="visible-xs-block">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam...<a href="" class="read-more">More</a></p>
+
+							<!--50 word max for desktop -->
+							<p class="hidden-xs">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse... <a href="" class="read-more"> More</a></p>
 					</div>
 
 				</div>

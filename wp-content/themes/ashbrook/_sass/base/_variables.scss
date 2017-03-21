@@ -23,6 +23,7 @@ $lato:				'Lato', 'Helvetica-Neue', Helvetica, Ariel, sans-serif;
 
 
 // Media Queries
+$screen-xxxs: 		'max-width: 350px';
 $screen-xxs:        'max-width: 480px';
 $screen-xs:         'max-width: 767px';
 $screen-sm:         'min-width: 768px) and (max-width: 991px';        // These are the precanned bootstrap queries, plus a few extras for fine tuning
@@ -37,6 +38,7 @@ $screen-ltxl:       'max-width: 1439px';
 $screen-gtxs:       'min-width: 768px';
 $screen-gtsm:       'min-width: 992px';
 $screen-gtmd:       'min-width: 1200px';
+
 
 
 // Transition

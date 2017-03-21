@@ -85,9 +85,14 @@ $(document).ready(function(){
     $('.mobile-search-bar').hide();
 
     $('.search-btn').click(function() {
-        console.log('button clicked');
         $('.mobile-search-bar').toggle();
         
+    });
+
+    // MOBILE MENU CLOSE
+    $('.mobile-menu-close').click(function() {
+      console.log('button clicked');
+      $('#bs-example-navbar-collapse-1').removeClass('in');
     });
 
 

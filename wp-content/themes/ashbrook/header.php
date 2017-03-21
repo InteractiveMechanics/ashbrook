@@ -92,13 +92,15 @@
 				    </div>
 
 				    <!-- Collect the nav links, forms, and other content for toggling -->
-				    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+				 	<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+				 	  <div class="close-skew"></div>
+				 	  <button class="mobile-menu-close visible-xs" type="button">X</button>
 				      <ul class="nav navbar-nav navbar-right">
 
 				        <li class="dropdown">
 				          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Library</a>
 				          	
-
+				         
 				          	<ul class="dropdown-menu multi-column columns-3 animated fadeInDown">
 
 					          	<li class="col-sm-3 multi-column-dropdown-wrapper">
@@ -151,8 +153,11 @@
 				          	</ul>
 
 				        </li>
-				        <li><a href="#" class="tiny-text-parent">Places <span class="tiny-text">of</span> Faith Map</a></li>
-				        <li><a href="#">Search</a></li>
+
+				        <!-- <li><a href="#" class="tiny-text-parent">Places <span class="tiny-text">of</span> Faith Map</a></li> -->
+				        <li class="hidden-xs"><a href="#">Search</a></li>
+				        <li class="visible-xs"><a href="#">About</a></li>
+				        <li class="visible-xs"><a href="#">Blog</a></li>
 				    
 				    </ul>
 
@@ -171,8 +176,8 @@
 				    		</li>
 
 				    	</ul>
-				   
 				    </div>
+
 				  </div><!-- /.container-fluid -->
 				</nav>
 

@@ -42,6 +42,12 @@
 
 // Media Queries
 
+@mixin screen-xxxs {
+  @media (#{$screen-xxxs}) {
+    @content;
+  }
+}
+
 @mixin screen-xxs {
   @media (#{$screen-xxs}) {
     @content;
@@ -110,6 +116,13 @@
 
 @mixin screen-gtmd  {
   @media (#{$screen-gtmd}) {
+    @content;
+  }
+}
+
+
+@mixin landscape {
+  @media only screen and (#{$screen-xs}) and (orientation: landscape) {
     @content;
   }
 }

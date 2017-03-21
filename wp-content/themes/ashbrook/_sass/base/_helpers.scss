@@ -46,3 +46,20 @@ ul {
   margin-left: -15px;
   margin-right: -15px;
 }
+
+.fadeInDown {
+  @include screen-xs {
+    animation-name: none;
+    -webkit-animation-name: none;
+  }
+}
+
+// No Animated CSS animation on mobile
+.animated {
+  @include screen-xs {
+    -webkit-animation-duration: 0s;
+    animation-duration: 0s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+  }
+}
