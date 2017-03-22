@@ -21,6 +21,7 @@
 .navbar-default .navbar-nav>li>a {
 	color: $black;
 	font-size: 1.4em;
+	letter-spacing: 2px;
     margin: 0px 15px;
     padding: 10px 0px;
 	transition: $transition;
@@ -101,7 +102,7 @@
 }
 
 .navbar-right .dropdown-menu {
-	right: -200px;
+	right: -92px;
 	top: 50px;
 	@include screen-xs {
 		right: initial;
@@ -168,9 +169,10 @@
     transform: skewX(20deg);
     background-color: $white;
     z-index: 1;
-    height: 161px;
+    height: auto;
     position: relative;
-    left: 30px;
+    left: 34px;
+    flex: 1;
     @include screen-xs {
     	-ms-transform: skewX(0deg); /* IE 9 */
     	-webkit-transform: skewX(0deg); /* Safari */
@@ -200,13 +202,15 @@
 
 .multi-column-dropdown {
 	list-style: none;
-	padding: 15px;
+	padding: 18px;
 	li {
 		position: relative;
 		display: table;
 		&:first-of-type {
 			font-size: 1.4em;
-			margin-bottom: 7px;
+			margin-bottom: 3px;
+			line-height: initial;
+    		top: -4px;
 			a {
 				@include screen-xs {
 					font-weight: 400;
@@ -231,6 +235,7 @@
 	white-space: normal;
 	color: $black;
 	font-size: 0.90em;
+	letter-spacing: 2px;
 	padding-bottom: 0px;
 	margin-bottom: 10px;
 	transition: $transition;
@@ -267,7 +272,7 @@
 .nav-dropdown-img {
 	background-image: url(https://placekitten.com/g/500/200);
 	background-size: cover;
-	height: 161px;
+	height: 100%;
 	width: auto;
 	@include screen-xs {
 		background-image: none;
@@ -302,6 +307,7 @@
     	color: $gray;
     	font-size: 0.95em;
     	transition: $transition;
+    	letter-spacing: 2px;
     	&:hover, &:active, &:focus, &:active:focus {
     		color: $gold;
     		text-decoration: none;
@@ -410,4 +416,10 @@
     transform: skewX(20deg);
     border-top: 1px solid white;
     border-left: 1px solid white;
+}
+
+ul.nav li.dropdown:hover > ul.dropdown-menu {
+    @include screen-gtxs {
+    	display: flex;
+    } 
 }

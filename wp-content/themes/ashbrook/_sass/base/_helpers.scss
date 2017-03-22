@@ -31,14 +31,25 @@ ul {
 
 .read-more {
   color: $gold;
+  display: inline-block;
+  margin-left: 5px;
   text-transform: uppercase;
+  letter-spacing: 2px;
   font-family: $lato;
-  font-weight: 700;
+  font-weight: 400;
   border-bottom: none;
 }
 
 .float-right {
   float: right;
+}
+
+.lightgallery {
+  a {
+    &:focus {
+      outline: none;
+    }
+  }
 }
 
 .black-divider {
@@ -47,7 +58,7 @@ ul {
   margin-right: -15px;
 }
 
-.fadeInDown {
+.fadeIn {
   @include screen-xs {
     animation-name: none;
     -webkit-animation-name: none;
@@ -56,6 +67,8 @@ ul {
 
 // No Animated CSS animation on mobile
 .animated {
+   -webkit-animation-duration: 0.5s;
+  animation-duration: 0.5s;
   @include screen-xs {
     -webkit-animation-duration: 0s;
     animation-duration: 0s;

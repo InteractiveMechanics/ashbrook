@@ -85,6 +85,9 @@
 
 					</div>
 
+				</div>
+			</div>
+
 					<?php get_template_part('content-rahp_relatedcontent', get_post_format()); ?>
 
 

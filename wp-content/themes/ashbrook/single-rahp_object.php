@@ -103,7 +103,7 @@
 							<div class="callout-studyqs">
 								<div class="studyqs-headings-wrapper">
 									<h2>Study Questions...</h2>
-									<h5><a href="">View All</a></h5>
+									<h1><a href="">View All</a></h1>
 								</div>
 								<p>What is the difference between toleration and religious freedom? Would tolerance be acceptable given the argument of the Declaration of Independence about the rights that men are endowed with?</p>
 							</div>

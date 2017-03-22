@@ -20,6 +20,7 @@
     		right: 10px;
    	 		height: auto;
     		top: -1px;
+    		display: inherit;
 		}
 	}
 
@@ -30,9 +31,13 @@
     		left: 10px;
    	 		height: auto;
     		top: -1px;
+    		display: inherit;
 		}
 	}
 	.paging-info {
 		position: initial;
+		h2 {
+			margin: 4px 0px 0px;
+		}
 	}
 }

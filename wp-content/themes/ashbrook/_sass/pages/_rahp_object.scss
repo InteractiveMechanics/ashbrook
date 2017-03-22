@@ -71,6 +71,8 @@
 			font-family: $lato;
 			color: $gold;
 			text-transform: uppercase;
+			font-weight: 300;
+			letter-spacing: 2px;
 			font-style: initial;
 		}
 	}
@@ -82,11 +84,15 @@
 	color: $gray;
 	position: relative;
 	top: -80px;
-	h2 {
-		font-size: 1.5em;
+	h2, h1 {
+		//font-size: 1.5em;
+		margin: 0px;
+		line-height: initial;
 	}
-	h5 {
-		margin-top: 1.67em;
+
+	h1 {
+		position: relative;
+		top: -7px;
 	}
 
 	.studyqs-headings-wrapper {
@@ -96,10 +102,14 @@
 
 	.callout-studyqs, .callout-compare {
 		border-left: 2px solid $lightgray;
-		padding-left: 10px;
+		padding-left: 25px;
+		margin-bottom: 40px;
 	}
 	p {
 		font-family: $lato;
+		line-height: 1.8;
+		// TODO if/when callouts are removed from rahp-object-body can adjust padding
+		padding-bottom: 0px !important;
 	}
 }
 

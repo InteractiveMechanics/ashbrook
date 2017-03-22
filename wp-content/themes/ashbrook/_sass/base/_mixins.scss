@@ -29,7 +29,8 @@
 @mixin gold-black-anchor {
   color: $gold;
   text-transform: uppercase;
-  font-weight: 700;
+  font-weight: 300;
+  letter-spacing: 2px;
     &:hover, &:focus, &:active, &:active:focus {
     color: $gold;
     text-decoration: none;

@@ -91,7 +91,6 @@ $(document).ready(function(){
 
     // MOBILE MENU CLOSE
     $('.mobile-menu-close').click(function() {
-      console.log('button clicked');
       $('#bs-example-navbar-collapse-1').removeClass('in');
     });
 

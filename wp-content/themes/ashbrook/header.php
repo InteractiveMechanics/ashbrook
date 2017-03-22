@@ -88,12 +88,12 @@
 								</g>
 							</svg>
 				    	</button>
-				      	<a class="navbar-brand" href="#"><img src="<?php printTHemePath(); ?>/img/logo.svg" alt="logo"></a>
+				      	<a class="navbar-brand" href="#"><img src="<?php printTHemePath(); ?>/img/header-logo.svg" alt="logo"></a>
 				    </div>
 
 				    <!-- Collect the nav links, forms, and other content for toggling -->
 				 	<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-				 	  <div class="close-skew"></div>
+				 	  <div class="close-skew visible-xs"></div>
 				 	  <button class="mobile-menu-close visible-xs" type="button">X</button>
 				      <ul class="nav navbar-nav navbar-right">
 
@@ -101,7 +101,7 @@
 				          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Library</a>
 				          	
 				         
-				          	<ul class="dropdown-menu multi-column columns-3 animated fadeInDown">
+				          	<ul class="dropdown-menu multi-column columns-3 animated fadeIn">
 
 					          	<li class="col-sm-3 multi-column-dropdown-wrapper">
 
