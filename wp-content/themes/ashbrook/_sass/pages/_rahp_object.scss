@@ -31,8 +31,8 @@
 }
 
 .rahp-object-subheading {
-	padding-left: 15px;
-	padding-right: 15px;
+	padding-left: 80px;
+	padding-right: 80px;
 }
 
 .rahp-object-body {
@@ -43,10 +43,10 @@
 	figure {
 		float: right;
 		padding-right: 0px;
-		margin-left: 10px;
+		margin-left: 40px;
     	margin-bottom: 10px;
     	padding-left: 0px;
-		div {
+		.lightgallery {
 			height: 400px;
 			overflow: hidden;
 		}
@@ -55,7 +55,7 @@
 		}
 	}
 	p {
-		padding-right: 100px;
+		max-width: 80%;
 		&:last-child {
 			padding-bottom: 40px;
 		}
@@ -83,7 +83,7 @@
 	float: right;
 	color: $gray;
 	position: relative;
-	top: -80px;
+	//top: -80px;
 	h2, h1 {
 		//font-size: 1.5em;
 		margin: 0px;
@@ -94,6 +94,8 @@
 		position: relative;
 		top: -7px;
 	}
+
+
 
 	.studyqs-headings-wrapper {
 		display: flex;
@@ -110,10 +112,14 @@
 		line-height: 1.8;
 		// TODO if/when callouts are removed from rahp-object-body can adjust padding
 		padding-bottom: 0px !important;
+		max-width: 100%;
 	}
 }
 
 .object-references {
+	h2 {
+		margin-top: 0px;
+	}
 	p>a {
 		font-family: $lato;
 	}

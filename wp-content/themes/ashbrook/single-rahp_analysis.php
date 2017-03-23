@@ -46,7 +46,7 @@
 	    <div class="container-fluid rahp-object-body">
 	    		<div class="row">
 	    			<div class="col-sm-6 col-sm-offset-3">
-	    				<figure>
+	    				<figure id="analysis-main-image">
 	    					<img src="http://cdn.loc.gov/service/pnp/highsm/24900/24991v.jpg" alt="">
 	    					<figcaption><i>Religion</i> by Millard Owen Sheets. Mural at the Department of the Interior, Washington, D.C., Photograph in the Carol M. Highsmith Archive, Library of Congress. Prints and Photographs Division. LC-DIG-highsm-24731</figcaption>
 	    				</figure>
