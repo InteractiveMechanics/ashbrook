@@ -103,6 +103,12 @@
   }
 }
 
+@mixin screen-gtxxxs  {
+  @media (#{$screen-gtxxxs}) {
+    @content;
+  }
+}
+
 @mixin screen-gtxs  {
   @media (#{$screen-gtxs}) {
     @content;

@@ -44,6 +44,23 @@ ul {
   float: right;
 }
 
+.visible-xxxs {
+  @include screen-xxxs {
+    display: block;
+  }
+  @include screen-gtxxxs {
+    display: none;
+  }
+} 
+
+.hidden-xxxs {
+  @include screen-xxxs {
+    display: none;
+  }
+  @include screen-gtxxxs {
+    display: block;
+  }
+}
 .lightgallery {
   a {
     &:focus {

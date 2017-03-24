@@ -21,15 +21,16 @@ get_header(); ?>
 						<h1>Women's Voices, Religion, &amp; The United States Government</h1>
 					</div>
 					<div class="home-single-slide-callout">
-							<img src="<?php printThemePath(); ?>/img/hero-text-box.svg" class="visible-xs-block">
+							
+								<p class="visible-xxxs">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor<a href="" class="read-more"> More</a></p>
 
-							<!-- 25 word max for mobile -->
-							<p class="visible-xs-block">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam...<a href="" class="read-more">More</a></p>
-
-							<!--50 word max for desktop -->
-							<p class="hidden-xs">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse... <a href="" class="read-more"> More</a></p>
+								<p class="hidden-xxxs">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse... <a href="" class="read-more"> More</a></p>
+							
+					
+							
 					</div>
-		
+					
+					
 				</div>
 				<div class="home-single-slide" style="background-image: url('http://s3.amazonaws.com/vosegalleries/photos/images/000/026/471/full/Demers-35549-web.jpg?1413049077');">
 					<div class="home-single-slide-heading">
@@ -37,13 +38,10 @@ get_header(); ?>
 						<h1>Here is another Heading</h1>
 					</div>
 					<div class="home-single-slide-callout">
-							<img src="<?php printThemePath(); ?>/img/hero-text-box.svg" class="visible-xs-block">
 
-							<!-- 25 word max for mobile -->
-							<p class="visible-xs-block">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam...<a href="" class="read-more">More</a></p>
-
-							<!--50 word max for desktop -->
-							<p class="hidden-xs">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse... <a href="" class="read-more"> More</a></p>
+							<p class="visible-xxxs">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor<a href="" class="read-more"> More</a></p>
+							
+							<p class="hidden-xxxs">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.... <a href="" class="read-more"> More</a></p>
 					</div>
 
 				</div>

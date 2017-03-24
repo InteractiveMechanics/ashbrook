@@ -65,6 +65,7 @@ p>a {
 
 h6>a {
 	@include gray-anchor;
+	white-space: pre;
 }
 
 div[class$="body"] {

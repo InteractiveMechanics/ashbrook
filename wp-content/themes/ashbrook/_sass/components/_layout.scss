@@ -22,6 +22,9 @@ main {
 		padding-left: 4px;
     	padding-right: 8px;
 	}
+	@include screen-xs {
+		display: none;
+	}
 
 }
 
@@ -32,28 +35,57 @@ main {
 	display: flex;
 	align-items: center;
     justify-content: flex-end;
+   
+    @include screen-xs {
+    	height: 485px;
+    }
+    @include screen-xxs {
+    	height: 585px;
+    }
 }
 
 
 .slim-jumbotron-callout {
-	background-image: url('../../img/hero-text-box.svg');
-	background-repeat: no-repeat;
-	background-position: center center;
-	background-size: cover;
-	margin-right: 65px;
-	width: 510px;
-	height: 332px;
-	//position: absolute;
-	//bottom: 25px;
-	//right: 40px;
-	padding: 20px 20px 20px 110px;
-	overflow: hidden;
+	position: absolute;
+	bottom: inherit;
+	right: 5%;
+	width: 40%;
+	height: auto; // 332px
+	padding: 40px;
+	background-color: rgba(241, 242, 242, 0.7);
+
 	p {
 		font-family: $lato;
 		font-size: 13px;
 		font-weight: 400;
 		line-height: 30px;
 	}
+
+  	&:after {
+	    width: 50px;
+	    height: 100%;
+	    position: absolute;
+	    right: 100%;
+	    content: "";
+	     bottom: 0;
+	    background: linear-gradient(to left bottom, rgba(241, 242, 242, 0.7) 50%, transparent 51%);
+	    -webkit-backface-visibility: hidden;
+  	}
+
+  	@include screen-sm {
+		width: 75%;
+	}
+
+	@include screen-md {
+		width: 55%;
+	}
+
+	@include screen-xs {
+		width: 80%;
+    	right: 0%;
+    	padding: 20px;
+	}
+
 }
 
 .sharing {

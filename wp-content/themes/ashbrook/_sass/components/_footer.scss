@@ -32,5 +32,9 @@ footer {
 		}
 	}
 
+	@include screen-ltmd {
+		height: auto;
+	}
+
 	
 }

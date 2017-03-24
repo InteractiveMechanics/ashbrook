@@ -19,7 +19,7 @@
 	position: absolute;
 	bottom: 25px;
 	height: 300px;
-	right: 575px;
+	right: 44%;
 	color: $white;
 	display: flex;
 	flex-direction: column;
@@ -63,56 +63,56 @@
 }
 
 .home-single-slide-callout {
-	background-image: url('../../img/hero-text-box.svg');
-	background-repeat: no-repeat;
-	background-position: center center;
-	background-size: cover;
-	width: 510px;
-	height: 332px;
-	position: absolute;
-	bottom: 25px;
-	right: 40px;
-	padding: 20px 20px 20px 110px;
+		position: absolute;
+		bottom: 50px;
+		right: 5%;
+		width: 33%;
+		height: auto; // 332px
+		padding: 40px;
+		background-color: rgba(241, 242, 242, 0.7);
+
 	p {
 		font-size: 18px;
 		line-height: 30px;
 		@include screen-xs {
-			position: absolute;
-    		bottom: 78px;
-    		font-size: 16px;
-    		line-height: 1.6;
-    		margin-right: 15px;
+			font-size: 16px;
+			line-height: 1.8;
 		}
-		@include screen-xxxs {
-			font-size: 14px;
-			bottom: 50px;
-		}
+		
 		@include landscape {
-			width: 52%;
+			width: 100%;
     		bottom: 150px;
     		right: 15px;
 		}
 	}
-	img {
-		@include screen-xs {
-			width: 90%;
-			position: absolute;
-			bottom: 30px;
-			right: 0px;
-		}
-		@include landscape {
-			width: 70%;
-		}
+
+	@include screen-sm {
+		width: 75%;
 	}
 	@include screen-xs {
-		background-image: none;
-		width: 100%;
-		height: 100%;
-		bottom: 0px;
-		right: 0px;
+		width: 80%;
+    	right: 0%;
+    	padding: 20px;
+    	bottom: 10px;
 	}
-}
+	
+	
 
+  	&:after {
+    width: 50px;
+    height: 100%;
+    position: absolute;
+    right: 100%;
+    content: "";
+     bottom: 0;
+    background: linear-gradient(to left bottom, rgba(241, 242, 242, 0.7) 50%, transparent 51%);
+    -webkit-backface-visibility: hidden;
+  }
+
+
+ 
+
+}
 
 
 .slick-dotted.slick-slider {
@@ -125,10 +125,11 @@
     right: 225px;
     @include screen-xxs {
     	right: 15px;
-    	bottom: 50px;
+    	bottom: 20px;
     }
     @include landscape {
     	right: 15px;
+    	bottom: 20px;
     }
 }
 
