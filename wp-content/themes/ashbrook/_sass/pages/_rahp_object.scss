@@ -36,6 +36,14 @@
 .rahp-object-subheading {
 	padding-left: 80px;
 	padding-right: 80px;
+	@include screen-sm {
+		padding-left: 5%;
+		padding-right: 5%;
+	}
+	@include screen-xs {
+		padding-left: 5%;
+		padding-right: 5%;
+	}
 }
 
 .rahp-object-body {
@@ -56,16 +64,33 @@
 		img {
 			width: 100%;
 		}
+		@include screen-xs {
+			float: none;
+			margin: 0 -20px 30px -20px;
+		}
+		figcaption {
+			@include screen-xs {
+				margin-left: 5%;
+				margin-right: 5%;
+			}
+		}
 	}
 	p {
 		max-width: 80%;
 		&:last-child {
 			padding-bottom: 40px;
 		}
+		@include screen-xs {
+			max-width: 100%;
+		}
+	}
+	@include screen-sm {
+		padding-left: 5%;
+		padding-right: 5%;
 	}
 	@include screen-xs {
-		padding-left: 20px;
-		padding-right: 20px;
+		padding-left: 5%;
+		padding-right: 5%;
 	}
 }
 
@@ -82,8 +107,33 @@
 			letter-spacing: 2px;
 			font-style: initial;
 		}
+		&:first-of-type {
+			@include screen-xs {
+				&:after {
+					content: '\\';
+					color: #ccc;
+					padding-left: 7px;
+				}
+			}
+		}
+		@include screen-xs {
+			margin: 7px auto;
+		}
+	}
+
+	@include screen-sm {
+		float: none;
+    	text-align: center;
 	}
 }
+
+.references-wrapper {
+	@include screen-ltmd {
+		display: flex;
+		flex-direction: column;
+	}
+}
+
 
 .object-callouts {
 	position: relative;
@@ -102,17 +152,23 @@
 		top: -7px;
 	}
 
-
-
 	.studyqs-headings-wrapper {
 		display: flex;
 		justify-content: space-between;
+		@include screen-xxxs {
+			display: initial;
+		}
 	}
 
 	.callout-studyqs, .callout-compare {
 		border-left: 2px solid $lightgray;
 		padding-left: 25px;
 		margin-bottom: 40px;
+		@include screen-ltmd {
+			border-left: none;
+			padding-left: 0px;
+
+		}
 	}
 	p {
 		font-family: $lato;
@@ -120,6 +176,16 @@
 		// TODO if/when callouts are removed from rahp-object-body can adjust padding
 		padding-bottom: 0px !important;
 		max-width: 100%;
+		@include screen-sm {
+			width: 80%;
+		}
+		@include screen-xs {
+			width: 100%;
+		}
+	}
+	@include screen-ltmd {
+		order: 5;
+		width: 100%
 	}
 }
 
@@ -129,5 +195,8 @@
 	}
 	p>a {
 		font-family: $lato;
+	}
+	@include screen-ltmd {
+		width: 100%;
 	}
 }

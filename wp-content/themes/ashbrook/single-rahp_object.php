@@ -39,8 +39,10 @@
 	    	<div class="container-fluid rahp-object-subheading">
 	    		<div class="core-docs-tag">
 	    		<h3>One of the <a href="">25 Core Documents</a></h3>
+	    		
+	    		<h3 class="visible-xs">Go to <a href="">Study Questions</a></h3>
 	    		</div>
-	    		<ul class="sharing">
+	    		<ul class="sharing hidden-xs">
 	    			<li><h1><a href="">Print</a></h1></li>
 	    			<li><h1><a href="">Share</a></h1></li>
 	    			<li><h1><a href="">Download</a></h1></li>
@@ -93,14 +95,11 @@
 
 				</div>
 
-				<div class="row">
-					<div class="object-references col-sm-7">
-						<h2>Notes</h2>
-						<p>[1] Micah 4:4 ('But they shall sit every man under his vine and under his fig tree; and none shall make them afraid: for the mouth of the LORD of hosts has spoken it.') was one of the more popular Biblical passages during the Revolution. The preceding verse (Micah 3:4) is now better known: 'And he shall judge between many peoples, and rebuke strong nations afar off; and they shall beat their swords into plowshares, and their spears into pruninghooks: nation shall not lift up a sword against nation, neither shall they learn war any more.'</p>
-					</div>
+				<div class="row references-wrapper">
 
 					<!-- THESE CALLOUTS ONLY FOR 25 CORE DOCS -->
 					<div class="object-callouts col-sm-5">
+							<h1 class="visible-xs share-mobile"><a href="">Share</a></h1>
 							<div class="callout-studyqs">
 								<div class="studyqs-headings-wrapper">
 									<h2>Study Questions...</h2>
@@ -114,6 +113,11 @@
 							</div>
 					</div>
 					<!-- END CALLOUT SECTION-->
+
+					<div class="object-references col-sm-7">
+						<h2>Notes</h2>
+						<p>[1] Micah 4:4 ('But they shall sit every man under his vine and under his fig tree; and none shall make them afraid: for the mouth of the LORD of hosts has spoken it.') was one of the more popular Biblical passages during the Revolution. The preceding verse (Micah 3:4) is now better known: 'And he shall judge between many peoples, and rebuke strong nations afar off; and they shall beat their swords into plowshares, and their spears into pruninghooks: nation shall not lift up a sword against nation, neither shall they learn war any more.'</p>
+					</div>
 
 					<div class="object-references col-sm-7">
 						<h2>Citation</h2>

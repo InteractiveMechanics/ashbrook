@@ -126,6 +126,20 @@ main {
 			display: inline;
 		}
 	}
+	@include screen-sm {
+		float: none;
+    	text-align: center;
+	}
+}
+
+.share-mobile {
+	text-align: center;
+	margin-bottom: 20px;
+	&:before {
+		content: url('../../img/icons/icon-share.svg');
+		margin-left: 5px;
+		margin-right: 10px;
+	}
 }
 
 .tags-wrapper {
@@ -137,6 +151,9 @@ main {
 	    padding-right: 30px;
 	    color: white;
 	    font-size: 1.5em;
+    }
+    @include screen-xs {
+    	display: initial;
     }
 }
 
@@ -170,6 +187,16 @@ main {
 				border-bottom: none;
 			}
 		}
+		@include screen-xs {
+			display: inline;
+			margin-left: 10px;
+			white-space: pre;
+		}
+	}
+	@include screen-xs {
+		margin-top: 20px;
+		margin-left: 10px;
+    	margin-right: 10px;
 	}
 }
 
