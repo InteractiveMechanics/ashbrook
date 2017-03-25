@@ -40,6 +40,9 @@
 	.open>.dropdown-toggle.btn-default {
 		color: $darkgold;
 	}
+	@include screen-xs {
+		overflow: auto;
+	}
 	
 }
 
@@ -50,6 +53,9 @@
 	&:focus, &:active, &:active:focus {
 		outline: none !important;
 		color: $black;
+	}
+	@include screen-xs {
+		width: 90%;
 	}
 }
 
@@ -83,6 +89,10 @@ button[type="reset"] {
     &:hover, &:active, &:focus, &:active:focus {
     	color: $darkgold;
     	border-color: $darkgold;
+    }
+    @include screen-xs {
+    	float: none;
+    	margin-bottom: 20px;
     }
 
 }

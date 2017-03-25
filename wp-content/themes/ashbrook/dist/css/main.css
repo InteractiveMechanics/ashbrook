@@ -1373,6 +1373,9 @@ footer {
   .search .btn-default:active,
   .search .open > .dropdown-toggle.btn-default {
     color: #8A721A; }
+  @media (max-width: 767px) {
+    .search {
+      overflow: auto; } }
 
 .search-input {
   border: none;
@@ -1381,6 +1384,9 @@ footer {
   .search-input:focus, .search-input:active, .search-input:active:focus {
     outline: none !important;
     color: #000000; }
+  @media (max-width: 767px) {
+    .search-input {
+      width: 90%; } }
 
 .bootstrap-select:not([class*=col-]):not([class*=form-control]):not(.input-group-btn) {
   width: auto;
@@ -1410,6 +1416,10 @@ button[type="reset"] {
   button[type="reset"]:hover, button[type="reset"]:active, button[type="reset"]:focus, button[type="reset"]:active:focus {
     color: #8A721A;
     border-color: #8A721A; }
+  @media (max-width: 767px) {
+    button[type="reset"] {
+      float: none;
+      margin-bottom: 20px; } }
 
 .bootstrap-select .dropdown-toggle:focus {
   outline: none !important; }
