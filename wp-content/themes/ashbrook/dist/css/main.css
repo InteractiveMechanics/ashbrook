@@ -1028,6 +1028,9 @@ footer {
     height: auto;
     top: -1px;
     display: inline-block; }
+  @media (max-width: 767px) {
+    .analysis-slider .slick-prev {
+      left: 5%; } }
 .analysis-slider .slick-next {
   right: 25%; }
   .analysis-slider .slick-next:before {
@@ -1039,6 +1042,9 @@ footer {
     height: auto;
     top: -1px;
     display: inline-block; }
+  @media (max-width: 767px) {
+    .analysis-slider .slick-next {
+      right: 5%; } }
 .analysis-slider .slick-dots {
   margin-right: 5000px; }
 
@@ -1047,8 +1053,15 @@ footer {
   margin-bottom: 40px; }
   .analysis-single-slide h2 {
     padding-bottom: 20px; }
+    @media (max-width: 767px) {
+      .analysis-single-slide h2 {
+        margin-left: 5%; } }
   .analysis-single-slide .col-sm-4 {
     padding-left: 0px; }
+    @media (max-width: 767px) {
+      .analysis-single-slide .col-sm-4 {
+        margin-right: 5%;
+        margin-left: 5%; } }
   .analysis-single-slide .lightgallery a img {
     width: 100%;
     height: auto;
@@ -1070,8 +1083,16 @@ footer {
     margin: 15px; }
     .analysis-single-slide .col-sm-8 figure img {
       width: auto; }
+    @media (max-width: 767px) {
+      .analysis-single-slide .col-sm-8 figure {
+        float: none;
+        margin: 15px auto; } }
   .analysis-single-slide .col-sm-8 p {
     padding-right: 100px; }
+    @media (max-width: 767px) {
+      .analysis-single-slide .col-sm-8 p {
+        padding-right: 0px;
+        margin-right: 5%; } }
 
 .lg-sub-html {
   background: #ffffff;
@@ -1296,6 +1317,30 @@ footer {
 #analysis-main-image img {
   width: auto;
   height: 90vh; }
+  @media (max-width: 480px) {
+    #analysis-main-image img {
+      width: calc(100% + 40px);
+      height: auto; } }
+  @media (max-width: 767px) {
+    #analysis-main-image img {
+      width: 100%;
+      height: auto; } }
+  @media (min-width: 768px) and (max-width: 991px) {
+    #analysis-main-image img {
+      width: auto;
+      height: 75vh; } }
+@media (max-width: 767px) {
+  #analysis-main-image {
+    float: none;
+    margin: 0 -20px; } }
+@media (min-width: 768px) and (max-width: 991px) {
+  #analysis-main-image {
+    float: none;
+    margin: 0 auto; } }
+@media (max-width: 767px) {
+  #analysis-main-image figcaption {
+    margin-left: 10%;
+    margin-right: 10%; } }
 
 #search-page .related-content {
   margin-top: 0px; }

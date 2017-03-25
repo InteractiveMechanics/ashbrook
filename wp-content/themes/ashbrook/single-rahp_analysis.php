@@ -35,7 +35,7 @@
 
 	    <div class="rahp-object-subheading">
 	    	<div class="container-fluid">
-	    		<ul class="sharing">
+	    		<ul class="sharing hidden-sm hidden-xs">
 	    			<li><h1><a href="">Print</a></h1></li>
 	    			<li><h1><a href="">Share</a></h1></li>
 	    			<li><h1><a href="">Download</a></h1></li>
@@ -45,7 +45,7 @@
 
 	    <div class="container-fluid rahp-object-body">
 	    		<div class="row">
-	    			<div class="col-sm-6 col-sm-offset-3">
+	    			<div class="col-md-6 col-md-offset-3 col-sm-12">
 	    				<figure id="analysis-main-image">
 	    					<img src="http://cdn.loc.gov/service/pnp/highsm/24900/24991v.jpg" alt="">
 	    					<figcaption><i>Religion</i> by Millard Owen Sheets. Mural at the Department of the Interior, Washington, D.C., Photograph in the Carol M. Highsmith Archive, Library of Congress. Prints and Photographs Division. LC-DIG-highsm-24731</figcaption>
