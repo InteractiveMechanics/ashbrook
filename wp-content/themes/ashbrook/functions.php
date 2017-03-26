@@ -1,5 +1,6 @@
 <?php 
 
+// GENERAL SETUP
 function printThemePath() {
    echo get_site_url() . '/wp-content/themes/' . get_template();
 }
@@ -8,6 +9,8 @@ add_theme_support( 'post-thumbnails' );
 add_theme_support( 'post-formats', array( 'image', 'gallery', 'aside' ) );  
 
 
+
+// CUSTOM POST TYPE STUFF
 function create_custom_post_types() {
 	 register_post_type( 'rahp_object',
         array(
@@ -49,6 +52,28 @@ function create_custom_post_types() {
         )
     );
 
+    register_post_type( 'rahp_subcategory',
+        array(
+            'labels' => array(
+                'name' => __( 'RAHP Subcategory' ),
+                'singular_name' => __( 'RAHP Subcategory' ),
+                'add_new' => __( 'Add New Subcategory' ),
+                'add_new_item' => __( 'Add New Subcategory' ),
+                'edit_item' => __( 'Edit Subcategory' ),
+                'new_item' => __( 'New Subcategory' ),
+                'view_item' => __( 'View Subcategory' ),
+                'all_items' => __( 'All RAHP Subcategory' ),
+                'not_found' => __( 'Subcategory not found.' )
+
+            ),
+            'public' => true,
+            'has_archive' => true,
+            'rewrite' => array( 'slug' => 'rahp_subcategories' ),
+        )
+    ); 
+    
+
+
      register_post_type( 'rahp_analysis',
         array(
             'labels' => array(
@@ -73,6 +98,32 @@ function create_custom_post_types() {
 }
 add_action( 'init', 'create_custom_post_types' );
 
+// ACF 
+
+if( function_exists('acf_add_options_page') ) {
+    
+    acf_add_options_page(array(
+        'page_title'    => 'Theme General Settings',
+        'menu_title'    => 'Theme Settings',
+        'menu_slug'     => 'theme-general-settings',
+        'capability'    => 'edit_posts',
+        'redirect'      => false
+    ));
+    
+    
+    acf_add_options_sub_page(array(
+        'page_title' => 'Theme Header Settings',
+        'menu_title' => 'Header',
+        'parent_slug' => 'theme-general-settings',
+    ));
+
+    acf_add_options_sub_page(array(
+        'page_title'    => 'Theme Footer Settings',
+        'menu_title'    => 'Footer',
+        'parent_slug'   => 'theme-general-settings',
+    ));
+    
+}
 
 
 ?>
