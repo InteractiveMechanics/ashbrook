@@ -28,6 +28,8 @@ function create_custom_post_types() {
             ),
             'public' => true,
             'has_archive' => true,
+            'taxonomies'  => array( 'category' ),
+            'supports' => array( 'title', 'editor', 'comments', 'author', 'custom-fields', 'thumbnail', 'custom-fields', 'post-templates'),
             'rewrite' => array( 'slug' => 'rahp_objects' ),
         )
     );
@@ -48,30 +50,11 @@ function create_custom_post_types() {
             ),
             'public' => true,
             'has_archive' => true,
+            'taxonomies'  => array( 'category' ),
+            'supports' => array( 'title', 'editor', 'comments', 'author', 'custom-fields', 'thumbnail', 'custom-fields', 'post-templates'),
             'rewrite' => array( 'slug' => 'rahp_collections' ),
         )
     );
-
-    register_post_type( 'rahp_subcategory',
-        array(
-            'labels' => array(
-                'name' => __( 'RAHP Subcategory' ),
-                'singular_name' => __( 'RAHP Subcategory' ),
-                'add_new' => __( 'Add New Subcategory' ),
-                'add_new_item' => __( 'Add New Subcategory' ),
-                'edit_item' => __( 'Edit Subcategory' ),
-                'new_item' => __( 'New Subcategory' ),
-                'view_item' => __( 'View Subcategory' ),
-                'all_items' => __( 'All RAHP Subcategory' ),
-                'not_found' => __( 'Subcategory not found.' )
-
-            ),
-            'public' => true,
-            'has_archive' => true,
-            'rewrite' => array( 'slug' => 'rahp_subcategories' ),
-        )
-    ); 
-    
 
 
      register_post_type( 'rahp_analysis',
@@ -90,6 +73,8 @@ function create_custom_post_types() {
             ),
             'public' => true,
             'has_archive' => true,
+            'taxonomies'  => array( 'category' ),
+            'supports' => array( 'title', 'editor', 'comments', 'author', 'custom-fields', 'thumbnail', 'custom-fields', 'post-templates'),
             'rewrite' => array( 'slug' => 'rahp_analyses' ),
         )
     );
@@ -124,6 +109,40 @@ if( function_exists('acf_add_options_page') ) {
     ));
     
 }
+
+// SUB CATEGORY TEMPLATE
+
+/**
+ *  Load different template for sub category
+ *  http://burnignorance.com/php-programming-tips/how-to-use-different-template-for-sub-categories-in-wordpress/ 
+ */
+function sub_category_template() { 
+    
+    // Get the category id from global query variables
+    $cat = get_query_var('cat');
+
+    if(!empty($cat)) {    
+        
+        // Get the detailed category object
+        $category = get_category($cat);
+
+        // Check if it is sub-category and having a parent, also check if the template file exists
+        if( ($category->parent != '0') && (file_exists(TEMPLATEPATH . '/sub-category.php')) ) { 
+            
+            // Include the template for sub-catgeory
+            include(TEMPLATEPATH . '/sub-category.php');
+            exit;
+        }
+        return;
+    }
+    return;
+
+}
+add_action('template_redirect', 'sub_category_template');
+
+
+
+
 
 
 ?>
