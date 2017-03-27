@@ -22,7 +22,7 @@
 			</ul>
 
 			<ul class="rahp-object-title">
-				<li><h2>Letter to the Hebrew Congregation at Newport</h2></li>
+				<li><h2><?php the_title(); ?></h2></li>
 				<li><h3>George Washington</h3></li>
 				<li><h3>August 21, 1790</h3></li>
 			</ul>
