@@ -66,7 +66,14 @@ $(document).ready(function(){
 
 
   // LIGHTGALLERY 
+
+  if ($('img').hasClass('[class^="wp-image"]')) {
+    $(this).addClass('lightgallery');
+  }
+
+
   $(".lightgallery").lightGallery();
+
 
   
   // HIDE SEARCH SUBMIT BUTTON, SUBMIT ON PRESSING ENTER

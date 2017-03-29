@@ -28,7 +28,7 @@ function create_custom_post_types() {
             ),
             'public' => true,
             'has_archive' => true,
-            'taxonomies'  => array( 'category' ),
+            'taxonomies'  => array( 'category', 'post_tag'),
             'supports' => array( 'title', 'editor', 'comments', 'author', 'custom-fields', 'thumbnail', 'custom-fields', 'post-templates'),
             'rewrite' => array( 'slug' => 'rahp_objects' ),
         )
@@ -50,7 +50,7 @@ function create_custom_post_types() {
             ),
             'public' => true,
             'has_archive' => true,
-            'taxonomies'  => array( 'category' ),
+            'taxonomies'  => array( 'category', 'post_tag'),
             'supports' => array( 'title', 'editor', 'comments', 'author', 'custom-fields', 'thumbnail', 'custom-fields', 'post-templates'),
             'rewrite' => array( 'slug' => 'rahp_collections' ),
         )
@@ -73,7 +73,7 @@ function create_custom_post_types() {
             ),
             'public' => true,
             'has_archive' => true,
-            'taxonomies'  => array( 'category' ),
+            'taxonomies'  => array( 'category', 'post_tag' ),
             'supports' => array( 'title', 'editor', 'comments', 'author', 'custom-fields', 'thumbnail', 'custom-fields', 'post-templates'),
             'rewrite' => array( 'slug' => 'rahp_analyses' ),
         )
@@ -110,10 +110,13 @@ if( function_exists('acf_add_options_page') ) {
     
 }
 
-// SUB CATEGORY TEMPLATE
+
+
+// SUB CATEGORY AND GRANDCHILD CATEGORY TEMPLATES
 
 /**
  *  Load different template for sub category
+ *  tweaked a bit to check child vs grandchild
  *  http://burnignorance.com/php-programming-tips/how-to-use-different-template-for-sub-categories-in-wordpress/ 
  */
 function sub_category_template() { 
@@ -121,18 +124,45 @@ function sub_category_template() {
     // Get the category id from global query variables
     $cat = get_query_var('cat');
 
+    function has_term_have_children( $term_id = '', $taxonomy = 'category' )
+    {
+        // Check if we have a term value, if not, return false
+        if ( !$term_id ) 
+            return false;
+
+        // Get term children
+        $term_children = get_term_children( filter_var( $term_id, FILTER_VALIDATE_INT ), filter_var( $taxonomy, FILTER_SANITIZE_STRING ) );
+
+        // Return false if we have an empty array or WP_Error object
+        if ( empty( $term_children ) || is_wp_error( $term_children ) )
+        return false;
+
+        return true;
+    }
+
     if(!empty($cat)) {    
         
         // Get the detailed category object
         $category = get_category($cat);
 
-        // Check if it is sub-category and having a parent, also check if the template file exists
-        if( ($category->parent != '0') && (file_exists(TEMPLATEPATH . '/sub-category.php')) ) { 
+        // Check if it is sub-category and having a parent and a child, also check if the template file exists
+        if( ($category->parent != '0') && ( has_term_have_children($cat) )&& (file_exists(TEMPLATEPATH . '/sub-category.php')) ) { 
             
             // Include the template for sub-catgeory
             include(TEMPLATEPATH . '/sub-category.php');
+            
+        }
+
+        if( ($category->parent != '0') && (!has_term_have_children($cat) ) && (file_exists(TEMPLATEPATH . '/grandchild-category.php')) ) { 
+            
+            // Include the template for grandchild-catgeory
+            include(TEMPLATEPATH . '/grandchild-category.php');
             exit;
         }
+
+
+        
+
         return;
     }
     return;

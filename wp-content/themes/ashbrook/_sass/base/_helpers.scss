@@ -93,3 +93,69 @@ ul {
     animation-fill-mode: both;
   }
 }
+
+
+/** WP WYSIWYG editor styles **/
+img.alignright { 
+  float: right; margin: 0 0 1em 1em; 
+  @include screen-xs {
+    margin-left: 0px;
+    width: 100%;
+    height: auto;
+  }
+}
+
+img.alignleft { 
+  float: left; margin: 0 1em 1em 0; 
+  @include screen-xs {
+    margin-right: 0px;
+    width: 100%;
+    height: auto;
+  }
+
+}
+
+img.aligncenter { 
+  display: block; margin-left: auto; margin-right: auto; 
+}
+
+.alignright { 
+  float: right; 
+}
+
+.alignleft { 
+  float: left; 
+}
+
+.aligncenter { 
+  display: block; margin-left: auto; margin-right: auto; 
+}
+
+.error-page {
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+.error-page-message {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+.wp-caption-text {
+  color: $lightgray;
+  font-size: 14px;
+  font-weight: 300;
+  margin-top: 7px;
+  line-height: 1.8;
+  max-width: 100% !important;
+  font-family: $lato;
+  padding-bottom: initial !important;
+}
+
+.alignleft.wp-caption { 
+  margin-right: 20px; 
+}
+
+.alignright.wp-caption { 
+  margin-left: 20px; 
+}
