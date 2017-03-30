@@ -72,9 +72,11 @@ div[class$="body"] {
 	ul, ol, li {
 		font-family: $vollkhorn;
 		font-size: 1.10em;
+
 	}
 	ul, ol {
 		padding-left: 20px;
+		overflow: auto;
 	}
 }
 

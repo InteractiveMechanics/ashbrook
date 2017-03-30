@@ -67,8 +67,9 @@ $(document).ready(function(){
 
   // LIGHTGALLERY 
 
-  if ($('img').hasClass('[class^="wp-image"]')) {
-    $(this).addClass('lightgallery');
+  if (!$('.wp-caption').hasClass('lightgallery')) {
+    $('.wp-caption').addClass('lightgallery');
+    console.log('your function is working');
   }
 
 
