@@ -3,9 +3,8 @@
 	    			<div class="col-sm-12">
 	    				<div class="columns-container">
 	    					<h2>Related Content</h2>
-		    				<div class="columns-wrapper" data-columns="4">
-		    					<div class="single-column">
-		    						
+		    				<div class="columns-wrapper">
+		    					
 		    						<div class="relcon-single">
 		    							<a href="">
 		    								<img src="https://placekitten.com/200/340">
@@ -35,13 +34,7 @@
 		    						</div>
 
 
-
-
-
-		    					</div>  <!-- end single-column -->
-
-
-		    					<div class="single-column">
+		    					
 		    						
 		    						<div class="relcon-single">
 		    							<a href="">
@@ -75,9 +68,7 @@
 
 
 
-		    					</div>  <!-- end single-column -->
-
-		    					<div class="single-column">
+		    					
 		    						
 		    						<div class="relcon-single">
 		    							<a href="">
@@ -111,10 +102,7 @@
 
 
 
-		    					</div>  <!-- end single-column -->
-
-
-		    					<div class="single-column">
+		    				
 		    						
 		    						<div class="relcon-single">
 		    							<a href="">
@@ -148,7 +136,7 @@
 
 
 
-		    					</div>  <!-- end single-column -->
+		    					
 
 		    					</div> <!-- /column-wrapper -->
 		    					

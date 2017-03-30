@@ -66,7 +66,15 @@ $(document).ready(function(){
 
 
   // LIGHTGALLERY 
+
+  if (!$('.wp-caption').hasClass('lightgallery')) {
+    $('.wp-caption').addClass('lightgallery');
+    console.log('your function is working');
+  }
+
+
   $(".lightgallery").lightGallery();
+
 
   
   // HIDE SEARCH SUBMIT BUTTON, SUBMIT ON PRESSING ENTER
@@ -85,11 +93,16 @@ $(document).ready(function(){
     $('.mobile-search-bar').hide();
 
     $('.search-btn').click(function() {
-        console.log('button clicked');
         $('.mobile-search-bar').toggle();
         
     });
 
+    // MOBILE MENU CLOSE
+    $('.mobile-menu-close').click(function() {
+      $('#bs-example-navbar-collapse-1').removeClass('in');
+    });
+
+    
 
 
 });

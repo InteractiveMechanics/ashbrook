@@ -1,4 +1,7 @@
 #search-page {
+	.related-content {
+		margin-top: 0px;
+	}
 	.related-content .columns-container {
 		background-color: transparent;
 	}
@@ -37,6 +40,9 @@
 	.open>.dropdown-toggle.btn-default {
 		color: $darkgold;
 	}
+	@include screen-xs {
+		overflow: auto;
+	}
 	
 }
 
@@ -47,6 +53,9 @@
 	&:focus, &:active, &:active:focus {
 		outline: none !important;
 		color: $black;
+	}
+	@include screen-xs {
+		width: 90%;
 	}
 }
 
@@ -61,6 +70,7 @@
 .bootstrap-select>.dropdown-toggle.bs-placeholder:hover {
 	color: $gold;
 	text-transform: uppercase;
+	background-color: transparent;
 } 
 
 button[type="reset"] {
@@ -74,10 +84,15 @@ button[type="reset"] {
     vertical-align: middle;
     padding: 6px 12px;
     font-size: 1.2em;
+    letter-spacing: 2px;
     transition: $transition;
     &:hover, &:active, &:focus, &:active:focus {
     	color: $darkgold;
     	border-color: $darkgold;
+    }
+    @include screen-xs {
+    	float: none;
+    	margin-bottom: 20px;
     }
 
 }

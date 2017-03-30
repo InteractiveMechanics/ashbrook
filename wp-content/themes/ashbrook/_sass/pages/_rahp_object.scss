@@ -28,11 +28,22 @@
 			margin-top: 0px;
 		}
 	}
+	@include screen-xs {
+		margin-left: 0px;
+	}
 }
 
 .rahp-object-subheading {
-	padding-left: 15px;
-	padding-right: 15px;
+	padding-left: 80px;
+	padding-right: 80px;
+	@include screen-sm {
+		padding-left: 5%;
+		padding-right: 5%;
+	}
+	@include screen-xs {
+		padding-left: 5%;
+		padding-right: 5%;
+	}
 }
 
 .rahp-object-body {
@@ -43,22 +54,43 @@
 	figure {
 		float: right;
 		padding-right: 0px;
-		margin-left: 10px;
+		margin-left: 40px;
     	margin-bottom: 10px;
     	padding-left: 0px;
-		div {
+		.lightgallery {
 			height: 400px;
 			overflow: hidden;
 		}
 		img {
 			width: 100%;
 		}
+		@include screen-xs {
+			float: none;
+			margin: 0 -20px 30px -20px;
+		}
+		figcaption {
+			@include screen-xs {
+				margin-left: 5%;
+				margin-right: 5%;
+			}
+		}
 	}
 	p {
-		padding-right: 100px;
+		max-width: 80%;
 		&:last-child {
 			padding-bottom: 40px;
 		}
+		@include screen-xs {
+			max-width: 100%;
+		}
+	}
+	@include screen-sm {
+		padding-left: 5%;
+		padding-right: 5%;
+	}
+	@include screen-xs {
+		padding-left: 5%;
+		padding-right: 5%;
 	}
 }
 
@@ -71,40 +103,100 @@
 			font-family: $lato;
 			color: $gold;
 			text-transform: uppercase;
+			font-weight: 300;
+			letter-spacing: 2px;
 			font-style: initial;
 		}
+		&:first-of-type {
+			@include screen-xs {
+				&:after {
+					content: '\\';
+					color: #ccc;
+					padding-left: 7px;
+				}
+			}
+		}
+		@include screen-xs {
+			margin: 7px auto;
+		}
+	}
+
+	@include screen-sm {
+		float: none;
+    	text-align: center;
 	}
 }
+
+.references-wrapper {
+	@include screen-ltmd {
+		display: flex;
+		flex-direction: column;
+	}
+}
+
 
 .object-callouts {
 	position: relative;
 	float: right;
 	color: $gray;
 	position: relative;
-	top: -80px;
-	h2 {
-		font-size: 1.5em;
+	//top: -80px;
+	h2, h1 {
+		//font-size: 1.5em;
+		margin: 0px;
+		line-height: initial;
 	}
-	h5 {
-		margin-top: 1.67em;
+
+	h1 {
+		position: relative;
+		top: -7px;
 	}
 
 	.studyqs-headings-wrapper {
 		display: flex;
 		justify-content: space-between;
+		@include screen-xxxs {
+			display: initial;
+		}
 	}
 
 	.callout-studyqs, .callout-compare {
 		border-left: 2px solid $lightgray;
-		padding-left: 10px;
+		padding-left: 25px;
+		margin-bottom: 40px;
+		@include screen-ltmd {
+			border-left: none;
+			padding-left: 0px;
+
+		}
 	}
 	p {
 		font-family: $lato;
+		line-height: 1.8;
+		// TODO if/when callouts are removed from rahp-object-body can adjust padding
+		padding-bottom: 0px !important;
+		max-width: 100%;
+		@include screen-sm {
+			width: 80%;
+		}
+		@include screen-xs {
+			width: 100%;
+		}
+	}
+	@include screen-ltmd {
+		order: 5;
+		width: 100%
 	}
 }
 
 .object-references {
+	h2 {
+		margin-top: 0px;
+	}
 	p>a {
 		font-family: $lato;
+	}
+	@include screen-ltmd {
+		width: 100%;
 	}
 }

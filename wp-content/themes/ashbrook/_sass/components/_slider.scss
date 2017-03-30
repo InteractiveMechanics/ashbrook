@@ -1,5 +1,8 @@
 .home-slider {
 	height: calc(100vh - 181px);
+	 @include landscape {
+	 	height: 600px;
+	 }
 }
 
 .home-single-slide {
@@ -7,13 +10,16 @@
 	background-size: cover;
 	height: calc(100vh - 181px); //header is 115px and footer is 66px
 	position: relative;
+	@include landscape {
+		height: 600px;
+	}
 }
 
 .home-single-slide-heading {
 	position: absolute;
 	bottom: 25px;
 	height: 300px;
-	right: 575px;
+	right: 44%;
 	color: $white;
 	display: flex;
 	flex-direction: column;
@@ -27,9 +33,21 @@
 		text-transform: uppercase;
 		font-size: 3.3em;
 		margin-top: 5px;
+		@include screen-xxs {
+			font-size: 25px;
+		}
+		@include landscape {
+			font-size: 2.2em;
+		}
 	}
 	h2 {
 		margin-bottom: 0px;
+		@include screen-xxs {
+			font-size: 20px;
+		}
+		@include landscape {
+			font-size: 1.6em;
+		}
 	}
 	@include screen-ltmd {
 		bottom: initial;
@@ -37,25 +55,64 @@
     	right: 50px;
     	width: 90%;
 	}
+	@include screen-xxs {
+		height: initial;
+		right: 30px;
+	}
+
 }
 
 .home-single-slide-callout {
-	background-image: url('../../img/hero-text-box.svg');
-	background-repeat: no-repeat;
-	background-position: center center;
-	background-size: cover;
-	width: 510px;
-	height: 332px;
-	position: absolute;
-	bottom: 25px;
-	right: 40px;
-	padding: 20px 20px 20px 110px;
+		position: absolute;
+		bottom: 50px;
+		right: 5%;
+		width: 33%;
+		height: auto; // 332px
+		padding: 40px;
+		background-color: rgba(241, 242, 242, 0.7);
+
 	p {
 		font-size: 18px;
 		line-height: 30px;
+		@include screen-xs {
+			font-size: 16px;
+			line-height: 1.8;
+		}
+		
+		@include landscape {
+			width: 100%;
+    		bottom: 150px;
+    		right: 15px;
+		}
 	}
-}
 
+	@include screen-sm {
+		width: 75%;
+	}
+	@include screen-xs {
+		width: 80%;
+    	right: 0%;
+    	padding: 20px;
+    	bottom: 10px;
+	}
+	
+	
+
+  	&:after {
+    width: 50px;
+    height: 100%;
+    position: absolute;
+    right: 100%;
+    content: "";
+     bottom: 0;
+    background: linear-gradient(to left bottom, rgba(241, 242, 242, 0.7) 50%, transparent 51%);
+    -webkit-backface-visibility: hidden;
+  }
+
+
+ 
+
+}
 
 
 .slick-dotted.slick-slider {
@@ -66,6 +123,14 @@
 	bottom: 60px;
 	text-align: right;
     right: 225px;
+    @include screen-xxs {
+    	right: 15px;
+    	bottom: 20px;
+    }
+    @include landscape {
+    	right: 15px;
+    	bottom: 20px;
+    }
 }
 
 .slick-dots li button:before {

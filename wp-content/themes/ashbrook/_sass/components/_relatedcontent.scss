@@ -13,30 +13,58 @@
 		padding-bottom: 30px;
 		position: relative;
 		h2 {
-			margin-left: 30px;
+			margin-left: 15px;
 			margin-bottom: 0px;
 			font-size: 1.5em;
 			color: $white;
 		}
+		@include screen-ltmd {
+			margin-left: 0px;
+			margin-right: 0px;
+		}
 	}
 	.columns-wrapper {
 		overflow: auto;
-		width: calc(100% + 60px);
+		width: calc(100% + 110px);
     	position: relative;
-    	left: -30px;
-    	
+    	left: -55px;
+    	-moz-column-count: 4;
+	    -webkit-column-count: 4;
+	    column-count: 4;
+	    // -moz-column-gap: 7px;
+	    // -webkit-column-gap: 7px;
+	    // column-gap: 7px;
+
+	    @include screen-sm {
+	    	-moz-column-count: 2;
+	    	-webkit-column-count: 2;
+	    	column-count: 2;
+	    }
+	    @include screen-xs {
+	    	-moz-column-count: 2;
+	    	-webkit-column-count: 2;
+	    	column-count: 2;
+	    }
+	    @include screen-xxs {
+	    	-moz-column-count: 1;
+	    	-webkit-column-count: 1;
+	    	column-count: 1;
+	    }
+	    @include screen-ltmd {
+	    	width: auto;
+		    left: 0px;
+		    margin-left: 10px;
+		    margin-right: 10px;
+	    }
 	}
 }
+
 
 .column {
 	float: left;
 }
 
-.single-column {
-	width: 25%;
-	margin-top: 30px;
-	float: left;
-}
+
 
 .relcon-single {
 	position: relative;
@@ -44,6 +72,12 @@
 	margin-bottom: 20px;
 	transition: $transition;
 	top: 0px;
+	-webkit-column-break-inside: avoid;
+  	/* Chrome, Safari, Opera */
+  	page-break-inside: avoid;
+  	/* Firefox */
+  	break-inside: avoid;
+  	/* IE 10+ */
 	img {
 		width: 100%;
 		margin-bottom: 8px;
@@ -60,6 +94,12 @@
 					color: $gold;
 				}
 			}
+		}
+	}
+	a {
+		&:focus {
+			outline: 5px auto $gold;
+    		outline-offset: -2px;
 		}
 	}
 }

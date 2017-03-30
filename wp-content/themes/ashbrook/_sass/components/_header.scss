@@ -10,6 +10,7 @@
 .navbar-default {
 	background-color: $white;
 	border: none;
+	z-index: 1;
 }
 
 .navbar-nav {
@@ -20,6 +21,7 @@
 .navbar-default .navbar-nav>li>a {
 	color: $black;
 	font-size: 1.4em;
+	letter-spacing: 2px;
     margin: 0px 15px;
     padding: 10px 0px;
 	transition: $transition;
@@ -34,6 +36,9 @@
 	    width: 0%;
 	    bottom: 0px;
 	    transition: width 0.5s ease, left 0.5s ease;
+	}
+	@include screen-xs {
+		color: $white;
 	}
 
 }
@@ -83,12 +88,42 @@
 	height: 90px;
     display: flex;
     align-items: flex-end;
+    @include screen-xs {
+    	display: block;
+    	height: auto;
+    	padding-bottom: 30px;
+    }
+}
+
+.dropdown {
+	@include screen-xs {
+		position: relative;
+	}
 }
 
 .navbar-right .dropdown-menu {
-	right: -200px;
+	right: -92px;
 	top: 50px;
+	@include screen-xs {
+		right: initial;
+		top: initial;
+	}
 }
+
+.dropdown-menu {
+	@include screen-xs {
+		display: block;
+		background-color: $black;
+        position: static;
+        background-color:transparent;
+        border:0 none;
+        box-shadow:none;
+        margin-top:0;
+        position:static;
+        width:100%;
+	}
+}
+
 
 
 .dropdown-menu.columns-2 {
@@ -105,6 +140,9 @@
     	&:nth-of-type(2) {
     		position: relative;
     		left: -25px;
+    		@include screen-xs {
+    			left: 0px;
+    		}
     	}
     	ul li {
     		&:nth-of-type(2) {
@@ -112,10 +150,17 @@
     		}
     	}
     }
+    @include screen-xs {
+    	min-width: auto;
+    }
 }
 
 .multi-column-dropdown-wrapper {
 	padding: 0px;
+	@include screen-xs {
+		padding-left: 40px;
+		padding-bottom: 10px;
+	}
 }
 
 .multi-column-dropdown-wrapper.skew {
@@ -124,9 +169,18 @@
     transform: skewX(20deg);
     background-color: $white;
     z-index: 1;
-    height: 161px;
+    height: auto;
     position: relative;
-    left: 30px;
+    left: 34px;
+    flex: 1;
+    @include screen-xs {
+    	-ms-transform: skewX(0deg); /* IE 9 */
+    	-webkit-transform: skewX(0deg); /* Safari */
+    	transform: skewX(0deg);
+    	background-color: $black;
+    	left: 0px;
+    	height: auto;
+    }
     .multi-column-dropdown {
     	-ms-transform: skewX(-20deg); /* IE 9 */
 	    -webkit-transform: skewX(-20deg); /* Safari */
@@ -134,20 +188,43 @@
 	    padding-left: 0px;
 	    position: relative;
 	    left: -25px;
+	 	@include screen-xs {
+	 		-ms-transform: skewX(0deg); /* IE 9 */
+	    	-webkit-transform: skewX(0deg); /* Safari */
+	    	transform: skewX(0deg);
+	    	padding-left: 0px;
+	    	position: relative;
+	    	left: 0px;
+	 	}
     }
 }
 
 
 .multi-column-dropdown {
 	list-style: none;
-	padding: 15px;
+	padding: 18px;
 	li {
 		position: relative;
 		display: table;
 		&:first-of-type {
 			font-size: 1.4em;
-			margin-bottom: 7px;
+			margin-bottom: 3px;
+			line-height: initial;
+    		top: -4px;
+			a {
+				@include screen-xs {
+					font-weight: 400;
+				}
+			}
+			@include screen-xs {
+				font-size: initial;
+				margin-bottom: initial;
+
+			}
 		}
+	}
+	@include screen-xs {
+		padding: 0px;
 	}
 	
 }
@@ -158,6 +235,7 @@
 	white-space: normal;
 	color: $black;
 	font-size: 0.90em;
+	letter-spacing: 2px;
 	padding-bottom: 0px;
 	margin-bottom: 10px;
 	transition: $transition;
@@ -184,13 +262,22 @@
 		}
 		
 	}
+	@include screen-xs {
+		color: $white;
+		font-size: 1.4em;
+		font-weight: 300;
+	}
 }
 
 .nav-dropdown-img {
 	background-image: url(https://placekitten.com/g/500/200);
 	background-size: cover;
-	height: 161px;
+	height: 100%;
 	width: auto;
+	@include screen-xs {
+		background-image: none;
+		height: 0px;
+	}
 }
 
 #subnav-wrapper {
@@ -220,6 +307,7 @@
     	color: $gray;
     	font-size: 0.95em;
     	transition: $transition;
+    	letter-spacing: 2px;
     	&:hover, &:active, &:focus, &:active:focus {
     		color: $gold;
     		text-decoration: none;
@@ -236,10 +324,17 @@
 			background-color: $gold;
 		}
 	}
+	&:focus {
+		background-color: transparent;
+		.icon-bar {
+			background-color: $gold;
+		}
+	}
 	@include screen-xs {
 		margin-top: 18px;
 	}
 }
+
 
 .navbar-default .navbar-toggle .icon-bar {
 	background-color: $gray;
@@ -260,9 +355,71 @@
 .mobile-search-bar {
 	background-color: $black;
 	position: absolute;
-	bottom: -47px;
+	bottom: -56px;
 	z-index: 3;
 	padding-top: 10px;
 	padding-bottom: 10px;
 	width: 100%;
+	form {
+		position: relative;
+	}
+	input[type="submit"] {
+		float: right;
+	    margin-right: 15px;
+	    color: $gold;
+	    background: transparent;
+	    border: 1px solid $white;
+	    text-transform: uppercase;
+	    padding: 6px 12px;
+	}
+}
+
+#mobile-search {
+	margin-left: 15px;
+	font-size: 16px;
+    text-transform: uppercase;
+    padding: 5px 10px;
+    color: $lightgray;
+}
+
+.navbar-default .navbar-collapse {
+	@include screen-xs {
+		background-color: $black;
+	}
+}
+
+.mobile-menu-close {
+	position: absolute;
+    top: 98px;
+    right: 20px;
+    border-top: 1px solid #ffffff;
+    border-right: 1px solid #ffffff;
+    border-bottom: 1px solid #ffffff;
+    border-left: none;
+    font-size: 1.8em;
+    color: white;
+    background: transparent;
+    width: 50px;
+    height: 50px;
+    font-weight: 300;
+    z-index: 2;
+}
+
+.close-skew {
+	height: 50px;
+    width: 50px;
+    position: absolute;
+    top: 98px;
+    right: 30px;
+    -ms-transform: skewX(20deg);
+    -webkit-transform: skewX(20deg);
+    transform: skewX(20deg);
+    border-top: 1px solid white;
+    border-left: 1px solid white;
+}
+
+ul.nav li.dropdown:hover > ul.dropdown-menu {
+    @include screen-gtxs {
+    	display: flex;
+    } 
 }

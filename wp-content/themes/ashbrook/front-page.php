@@ -15,26 +15,43 @@ get_header(); ?>
 	<div class="jumbotron home-jumbotron">
 
   			<div class="home-slider">
-				<div class="home-single-slide" style="background-image:  linear-gradient(rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 0) 100%), url('<?php printThemePath(); ?>/img/hero-homepage.jpg');">
-					<div class="home-single-slide-heading">
-						<h2>Theme of the Month</h2>
-						<h1>Women's Voices, Religion, &amp; The United States Government</h1>
-					</div>
-					<div class="home-single-slide-callout">
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse...<a href="" class="read-more">More</a></p>
-					</div>
-		
-				</div>
-				<div class="home-single-slide" style="background-image: url('http://s3.amazonaws.com/vosegalleries/photos/images/000/026/471/full/Demers-35549-web.jpg?1413049077');">
-					<div class="home-single-slide-heading">
-						<h2>25 Core Documents</h2>
-						<h1>Here is another Heading</h1>
-					</div>
-					<div class="home-single-slide-callout">
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur...<a href="" class="read-more">More</a></p>
-					</div>
 
-				</div>
+  				<!-- ACF REPEATER STARTS -->
+				<?php if ( have_rows('homepage_slider') ): ?>
+				<?php while ( have_rows('homepage_slider') ): the_row();
+					$image = get_sub_field('image');
+					$subtitle = get_sub_field('subtitle');
+					$title = get_sub_field('title');
+					$introduction = get_sub_field('introduction');
+					$short_introduction = get_sub_field('short_introduction');
+					$link = get_sub_field('link');
+
+				?>
+
+
+					<div class="home-single-slide" style="background-image:  linear-gradient(rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 0) 100%), url('<?php echo $image["url"]; ?>');">
+						
+						<div class="home-single-slide-heading">
+							<h2><?php echo $subtitle; ?></h2>
+							<h1><?php echo $title; ?></h1>
+						</div>
+
+						<div class="home-single-slide-callout">
+								
+									<p class="visible-xxxs"><?php echo $short_introduction; ?><a href="" class="read-more"> More</a></p>
+
+									<p class="hidden-xxxs"><?php echo $introduction; ?><a href="" class="read-more"> More</a></p>
+						
+						</div>
+						
+						
+					</div> <!-- /home-single-slide -->
+
+				<?php endwhile; ?>
+				<?php endif; ?>
+				<!-- ACF REPEATER ENDS -->
+
+				
 			</div>
 
     

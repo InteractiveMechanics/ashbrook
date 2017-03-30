@@ -44,7 +44,7 @@ get_header(); ?>
 	    			</div>
 	    		</div>
 
-	    		<div class="col-sm-8">
+	    		<div class="col-sm-10">
 	    			<div class="blog-excerpt">
 	    				
 		    				<h2>The State of American Theology in 2016: Proof that Church Attendance Matters"</h2>
@@ -64,7 +64,7 @@ get_header(); ?>
 	    			</div>
 	    		</div>
 
-	    		<div class="col-sm-8">
+	    		<div class="col-sm-10">
 	    			<div class="blog-excerpt">
 		    				<h2>Short Title</h2>
 		    				<h5>January 12,2017</h5>
@@ -83,7 +83,7 @@ get_header(); ?>
 	    			</div>
 	    		</div>
 
-	    		<div class="col-sm-8">
+	    		<div class="col-sm-10">
 	    			<div class="blog-excerpt">
 		    				<h2>I have no Author</h2>
 		    				<h5>January 12,2017</h5>
@@ -101,7 +101,7 @@ get_header(); ?>
 	    			</div>
 	    		</div>
 
-	    		<div class="col-sm-8">
+	    		<div class="col-sm-10">
 	    			<div class="blog-excerpt">
 	    				
 		    				<h2>The State of American Theology in 2016: Proof that Church Attendance Matters"</h2>
@@ -121,7 +121,7 @@ get_header(); ?>
 	    			</div>
 	    		</div>
 
-	    		<div class="col-sm-8">
+	    		<div class="col-sm-10">
 	    			<div class="blog-excerpt">
 		    				<h2>Short Title</h2>
 		    				<h5>January 12,2017</h5>
@@ -140,7 +140,7 @@ get_header(); ?>
 	    			</div>
 	    		</div>
 
-	    		<div class="col-sm-8">
+	    		<div class="col-sm-10">
 	    			<div class="blog-excerpt">
 		    				<h2>I have no Author</h2>
 		    				<h5>January 12,2017</h5>

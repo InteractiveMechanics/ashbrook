@@ -1,4 +1,5 @@
 .analysis-slider {
+
 	.slick-arrow {
 		background: transparent;
 	}
@@ -20,6 +21,10 @@
     		right: 10px;
    	 		height: auto;
     		top: -1px;
+    		display: inline-block;
+		}
+		@include screen-xs {
+			left: 5%;
 		}
 	}
 	.slick-next {
@@ -33,11 +38,16 @@
     		left: 10px;
    	 		height: auto;
     		top: -1px;
+    		display: inline-block;
+		}
+		@include screen-xs {
+			right: 5%;
 		}
 	}
 	.slick-dots {
 		margin-right: 5000px;
 	}
+
 }
 
 
@@ -47,9 +57,16 @@
 	margin-bottom: 40px;
 	h2 {
 		padding-bottom: 20px;
+		@include screen-xs {
+			margin-left: 5%;
+		}
 	}
 	.col-sm-4 {
 		padding-left: 0px;
+		@include screen-xs {
+			margin-right: 5%;
+			margin-left: 5%;
+		}
 	}
 	.lightgallery {
 		a {
@@ -84,9 +101,16 @@
 			img {
 				width: auto;
 			}
+			@include screen-xs {
+				float: none;
+				margin: 15px auto;
+			}
 		}
 		p {
-			padding-right: 100px;
+			@include screen-xs {
+				padding-right: 0px;
+    			margin-right: 5%;
+			}
 		}
 	}
 	
