@@ -8,20 +8,96 @@
 			</ul>
 
 			<ul class="rahp-object-title">
-				<li><h2>Blog</h2></li>
+				<li><h2><?php single_cat_title(); ?></h2></li>
 			</ul>
 
 		</div>
 
 		<div class="jumbotron slim-jumbotron" style="background-image:  linear-gradient(rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 0) 100%), url('<?php printThemePath(); ?>/img/header-img.jpg');">
-			<div class="slim-jumbotron-callout">
-				<p>Upon his election as President, many churches, congregations, and religious societies wrote to George Washington to congratulate him on his new office, and he replied to each of them with personalized messages of thanks for their well-wishes. In his reply to the Hebrew Congregation of Newport, Washington applauded the people of the United States for rejecting the European practice of religious "toleration," embracing instead the "large and liberal policy" that religious liberty is a natural right -- and not a gift of government -- which all citizens are equally free to exercise.</p>
-			</div>
+
+			
+				<?php 
+					$term = get_queried_object();
+				 	$term_id = $term->taxonomy . '_' . $term->term_id;
+				   	$category_introduction = get_field('category_introduction', $term_id);
+
+				   	if ( $term ):
+				   			if ($category_introduction):
+					   			echo '<div class="slim-jumbotron-callout">';
+								echo '<p>' . $category_introduction .'</p>';
+								echo '</div>';
+							endif; 
+						endif;
+				?>
+				
 	    </div>
+	    
+	    <?php 
+	    	$term = get_queried_object();
+
+			$children = get_terms( $term->taxonomy, array(
+
+			'parent'    => $term->term_id,
+			'hide_empty' => false
+
+			) );
+
+			if($children) {
+
+	    ?>
+
+
 
 	    <div class="container-fluid blog-page-body">
 	    	
-	    	<div class="col-sm-12 single-post">
+	    	<?php
+				$current_category = single_cat_title("", false);
+				$category_id = get_cat_ID($current_category);
+				$categories=get_categories(
+    				array( 'parent' => $category_id )
+				); 
+				foreach  ($categories as $category) {
+				    //Display the sub category information using $category values like $category->cat_name
+				    echo '<div class="col-sm-12 single-post">';
+				    echo '<div class="col-sm-2">';
+				    echo '<div class="blog-thumbnail">';
+
+				    $term = $category;
+				 	$term_id = $term->taxonomy . '_' . $term->term_id;
+				   	$category_image = get_field('category_image', $term_id);
+				   	$category_introduction = get_field('category_introduction', $term_id);
+
+
+				   	if ( $term ):
+							echo '<a href="'. esc_url(get_category_link($category->cat_ID)) . '">';
+							echo '<img src="' . $category_image .'">';
+							echo '</a>';
+					endif;
+
+					echo '</div>';
+					echo '</div>';
+					echo '<div class="col-sm-10">';
+					echo '<div class="blog-excerpt">';
+					echo '<h2>' . $category->name . '</h2>';
+					echo '<h5>' . $category->description . '</h2>';
+					echo '<h5>' . $category->count . ' objects</h2>';
+					echo '<p>' . $category_introduction . '</p>';
+					echo '</div>'; // .blog-excerpt
+					echo '</div>'; // .col-sm-10
+					echo '</div>'; // .single-post
+				}
+
+			echo '</div>' // .container-fluid blog-page-body
+
+			?>
+
+			<?php 
+				} else {
+					get_template_part('content-rahp_collection', get_post_format());
+			}
+			?>
+
+	    	<!-- <div class="col-sm-12 single-post">
 	    		
 	    		<div class="col-sm-2">
 	    			<div class="blog-thumbnail">
@@ -41,101 +117,7 @@
 
 	    	</div>
 
-	    	<div class="col-sm-12 single-post">
-	    		
-	    		<div class="col-sm-2">
-	    			<div class="blog-thumbnail">
-	    				<a href=""><img class="" src="https://placekitten.com/g/250/300"></a>
-	    			</div>
-	    		</div>
-
-	    		<div class="col-sm-10">
-	    			<div class="blog-excerpt">
-		    				<h2>Short Title</h2>
-		    				<h5>January 12,2017</h5>
-		    				<h5>Jane Doe</h5>
-	    					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud...<a href="" class="read-more"><span>More</span></a></p>
-	    			</div>
-	    		</div>
-
-	    	</div>
-
-	    	<div class="col-sm-12 single-post">
-	    		
-	    		<div class="col-sm-2">
-	    			<div class="blog-thumbnail">
-	    				<a href=""><img class="" src="https://placekitten.com/g/650/600"></a>
-	    			</div>
-	    		</div>
-
-	    		<div class="col-sm-10">
-	    			<div class="blog-excerpt">
-		    				<h2>I have no Author</h2>
-		    				<h5>January 12,2017</h5>
-	    					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud...<a href="" class="read-more"><span>More</span></a></p>
-	    			</div>
-	    		</div>
-
-	    	</div>
-
-	    		<div class="col-sm-12 single-post">
-	    		
-	    		<div class="col-sm-2">
-	    			<div class="blog-thumbnail">
-	    				<a href=""><img class="" src="https://placekitten.com/g/300/350"></a>
-	    			</div>
-	    		</div>
-
-	    		<div class="col-sm-10">
-	    			<div class="blog-excerpt">
-	    				
-		    				<h2>The State of American Theology in 2016: Proof that Church Attendance Matters"</h2>
-		    				<h5>January 12,2017</h5>
-		    				<h5>Jane Doe</h5>
-	    					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud...<a href="" class="read-more"><span>More</span></a></p>
-	    			</div>
-	    		</div>
-
-	    	</div>
-
-	    	<div class="col-sm-12 single-post">
-	    		
-	    		<div class="col-sm-2">
-	    			<div class="blog-thumbnail">
-	    				<a href=""><img class="" src="https://placekitten.com/g/250/300"></a>
-	    			</div>
-	    		</div>
-
-	    		<div class="col-sm-10">
-	    			<div class="blog-excerpt">
-		    				<h2>Short Title</h2>
-		    				<h5>January 12,2017</h5>
-		    				<h5>Jane Doe</h5>
-	    					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud...<a href="" class="read-more"><span>More</span></a></p>
-	    			</div>
-	    		</div>
-
-	    	</div>
-
-	    	<div class="col-sm-12 single-post">
-	    		
-	    		<div class="col-sm-2">
-	    			<div class="blog-thumbnail">
-	    				<a href=""><img class="" src="https://placekitten.com/g/650/600"></a>
-	    			</div>
-	    		</div>
-
-	    		<div class="col-sm-10">
-	    			<div class="blog-excerpt">
-		    				<h2>I have no Author</h2>
-		    				<h5>January 12,2017</h5>
-	    					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud...<a href="" class="read-more"><span>More</span></a></p>
-	    			</div>
-	    		</div>
-
-	    	</div>
-
-
+	    	-->
 	    	<div class="container-fluid pagination">
 						<div>
 							<button type="button" class="prev">Previous</button>
@@ -155,7 +137,7 @@
 
 
 
-	    </div>
+	  
 	</main>
 
 

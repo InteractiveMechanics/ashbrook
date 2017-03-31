@@ -221,7 +221,8 @@ div[class$="body"] ul, div[class$="body"] ol, div[class$="body"] li {
   font-family: "Vollkorn", Garamond, Georgia, serif;
   font-size: 1.10em; }
 div[class$="body"] ul, div[class$="body"] ol {
-  padding-left: 20px; }
+  padding-left: 20px;
+  overflow: auto; }
 
 .tiny-text {
   font-size: 0.5em; }
@@ -1496,7 +1497,10 @@ button[type="reset"] {
       padding-right: 2.5%; } }
 
 .single-post {
-  margin-bottom: 60px; }
+  margin-bottom: 60px;
+  display: flex; }
+  .single-post .col-sm-10 {
+    flex: 1; }
 
 .blog-thumbnail {
   height: 160px;
@@ -1515,7 +1519,7 @@ button[type="reset"] {
       margin-bottom: 10px; } }
 
 .blog-excerpt {
-  height: 160px; }
+  height: auto; }
   .blog-excerpt h2 {
     margin-top: 0px;
     margin-bottom: 0px;

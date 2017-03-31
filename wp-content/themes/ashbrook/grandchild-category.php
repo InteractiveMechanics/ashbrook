@@ -8,7 +8,18 @@
 			</ul>
 
 			<ul class="rahp-object-title">
-				<li><h2>George Washington</h2></li>
+
+				<?php 
+					$term = get_queried_object();
+				 	$term_id = $term->taxonomy . '_' . $term->term_id;
+				   	$category_introduction = get_field('category_introduction', $term_id);
+
+				   	echo '<li><h2>'. $term->name .'</h2></li>';
+				   	
+				?>
+
+				<!-- <li><h2><?php single_cat_title(); ?></h2></li> -->				
+
 				<li><h3>1st U.S. President</h3></li>
 				<li><h3>February 22, 1732 &#8212; December 14, 1799</h3></li>
 			</ul>

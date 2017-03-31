@@ -15,6 +15,10 @@
 
 .single-post {
 	margin-bottom: 60px;
+	display: flex;
+	.col-sm-10 {
+		flex: 1;
+	}
 }
 
 .blog-thumbnail {
@@ -42,7 +46,8 @@
 }
 
 .blog-excerpt {
-    height: 160px;
+    //height: 160px;
+    height: auto;
 		h2 {
 			margin-top: 0px;
 			margin-bottom: 0px;

@@ -31,10 +31,18 @@
 				    		array('parent' => $subcategory_id)
 				    );
 				    foreach ($subcategories as $subcategory) {
+				    	 $term = $subcategory;
+				    	 $term_id = $term->taxonomy . '_' . $term->term_id;
+				    	 $category_image = get_field('category_image', $term_id);
 				    	
 				         echo '<div class="col-sm-3 library-single-slide">';
 				         echo '<div class="img-wrapper">';
-				         echo '<img src="https://placekitten.com/g/400/500">';
+
+						if ( $term ):
+							echo '<img src="' . $category_image .'">';
+						endif;
+
+				         //echo '<img src="https://placekitten.com/g/400/500">';
 				         echo '</div>';
 				         echo '<div class="trapezoid">';
 				         echo '<div class="trap-sq">';
