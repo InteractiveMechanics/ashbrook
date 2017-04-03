@@ -4,6 +4,7 @@
 
 	<?php while ( have_posts() ) : the_post(); 
 		$introduction = get_field('introduction');
+		$author = get_field('author');
 	?>
 	
 		<div class="container-fluid">
@@ -13,7 +14,7 @@
 
 			<ul class="rahp-object-title">
 				<li><h2><?php the_title(); ?></h2></li>
-				<li><h3>By <?php the_author(); ?></h3></li>
+				<li><h3>By <?php echo $author; ?></h3></li>
 				<li><h3><?php the_date(); ?></h3></li>
 			</ul>
 

@@ -29,7 +29,7 @@
 
 <?php while ( have_posts() ) : the_post();?>
 
-	<main class="single-rahp-object">
+	<main class="single-rahp-object" id="post-<?php the_ID(); ?>">
 		<div class="container-fluid">
 			<ul class="breadcrumb">
 				<li><h5>Sources</h5></li>
@@ -159,6 +159,7 @@
 
 	    	</div>
 
+	    </div>
 	    	
 	    <?php get_template_part('content-rahp_relatedcontent', get_post_format()); ?>
 

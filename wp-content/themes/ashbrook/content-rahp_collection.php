@@ -2,156 +2,143 @@
 	    		<div class="row">
 	    			<div class="col-sm-12">
 	    				<div class="columns-container">
-		    				<div class="columns-wrapper" data-columns="4">
-		    					<div class="single-column">
-		    						
-		    						<div class="relcon-single">
-		    							<a href="">
-		    								<img src="https://placekitten.com/200/340">
-		    								<div class="trapezoid">
-												<div class="trap-sq">
-													<h3>Source Object Title</h3>
-													<small>Source Author Name</small>
-													<small>Source Date</small>
+	    					
+		    				<div class="columns-wrapper">
+							
+		    				<?php 
+
+		    				if (is_category()) {
+
+		    				$term = get_queried_object();
+				 			$term_id = $term->taxonomy . '_' . $term->term_id;
+							$cat = $term_id; 
+
+							$posts = get_posts(array(
+								'posts_per_page'	=> -1,
+								'post_type'			=> array('rahp_object', 'rahp_analysis', 'post'),
+								'cat'				=> $cat
+							));
+
+							if( $posts ): ?>
+								
+								<ul>
+									
+								<?php foreach( $posts as $post ): 
+									
+									setup_postdata( $post );
+									
+									?>
+
+									<?php // put relcon-single in a partial ?>
+									<div class="relcon-single">
+			    							<a href="<?php the_permalink(); ?>">
+			    								<img src="<?php the_post_thumbnail_url( 'full' );  ?>">
+			    								<div class="trapezoid">
+													<div class="trap-sq">
+														<?php
+															$object_date = get_field('object_date', get_the_id());
+															$author = get_field('author', get_the_id());
+														?>
+
+					
+														<h3><?php the_title(); ?></h3>
+														<small><?php echo $author; ?></small>
+														<small>
+														<?php if ($object_date) {
+															echo $object_date;
+														} else {
+															the_date();
+														}
+
+														?>
+														</small>
+														
+													</div>
+													<!-- <div class="trap-tri"></div> -->
 												</div>
-												<div class="trap-tri"></div>
-											</div>
-		    							</a>
-		    						</div>
+			    							</a>
+		    							</div> 
+									
+								
+								<?php endforeach; ?>
+								
+								</ul>
+								
+								<?php wp_reset_postdata(); ?>
 
-		    						<div class="relcon-single">
-		    							<a href="">
-		    								<img src="https://placekitten.com/500/300">
-		    								<div class="trapezoid">
-												<div class="trap-sq">
-													<h3>Source Object Title</h3>
-													<small>Source Author Name</small>
-													<small>Source Date</small>
+							<?php endif; 
+
+							} ?>
+
+
+							<?php if (is_single()) {
+
+								$posts = get_field('collection_objects');
+
+								if( $posts ):
+
+								foreach( $posts as $post): // variable must be called $post (IMPORTANT)
+
+								setup_postdata($post);
+
+							?>
+
+							<div class="relcon-single">
+			    							<a href="<?php the_permalink(); ?>">
+			    								<img src="<?php the_post_thumbnail_url( 'full' );  ?>">
+			    								<div class="trapezoid">
+													<div class="trap-sq">
+														<?php
+															$object_date = get_field('object_date', get_the_id());
+															$author = get_field('author', get_the_id());
+														?>
+
+					
+														<h3><?php the_title(); ?></h3>
+														<small><?php echo $author; ?></small>
+														<small>
+															<?php if ($object_date) {
+																echo $object_date; // object or analysis
+															} else {
+																the_date();  // blog post
+															}
+															?>
+														</small>
+														
+													</div>
+													<!-- <div class="trap-tri"></div> -->
 												</div>
-												<div class="trap-tri"></div>
-											</div>
-		    							</a>
-		    						</div>
+			    							</a>
+		    							</div> 
+
+
+							<?php 
+
+								endforeach;
+
+								wp_reset_postdata(); // IMPORTANT - reset the $post object so the rest of the page works correctly
+
+								endif;
+
+								} // end is_single && is_post_type('rahp_collection')
+
+							?>
+
+
+							</div>
 
 
 
-
-
-		    					</div>  <!-- end single-column -->
-
-
-		    					<div class="single-column">
-		    						
-		    						<div class="relcon-single">
-		    							<a href="">
-		    								<img src="https://placekitten.com/g/300/500">
-		    								<div class="trapezoid">
-												<div class="trap-sq">
-													<h3>Source Object Title</h3>
-													<small>Source Author Name</small>
-													<small>Source Date</small>
-												</div>
-												<div class="trap-tri"></div>
-											</div>
-		    							</a>
-		    						</div>
-
-		    						<div class="relcon-single">
-		    							<a href="">
-		    								<img src="http://static.wixstatic.com/media/7b38ef_890ba25689344d53813b5611fb29d94a.jpg/v1/fill/w_500,h_500,al_c,q_90/file.jpg">
-		    								<div class="trapezoid">
-												<div class="trap-sq">
-													<h3>Source Object Title</h3>
-													<small>Source Author Name</small>
-													<small>Source Date</small>
-												</div>
-												<div class="trap-tri"></div>
-											</div>
-		    							</a>
-		    						</div>
+						
+		    				
 
 
 
-
-
-		    					</div>  <!-- end single-column -->
-
-		    					<div class="single-column">
-		    						
-		    						<div class="relcon-single">
-		    							<a href="">
-		    								<img src="https://st.hzcdn.com/fimgs/b9c1f74f046bc47f_4606-w500-h400-b1-p0--contemporary-paintings.jpg">
-		    								<div class="trapezoid">
-												<div class="trap-sq">
-													<h3>Source Object Title</h3>
-													<small>Source Author Name</small>
-													<small>Source Date</small>
-												</div>
-												<div class="trap-tri"></div>
-											</div>
-		    							</a>
-		    						</div>
-
-		    						<div class="relcon-single">
-		    							<a href="">
-		    								<img src="http://img11.deviantart.net/1021/i/2008/153/4/4/watercolor_landscape_by_onj_joli.jpg">
-		    								<div class="trapezoid">
-												<div class="trap-sq">
-													<h3>Source Object Title</h3>
-													<small>Source Author Name</small>
-													<small>Source Date</small>
-												</div>
-												<div class="trap-tri"></div>
-											</div>
-		    							</a>
-		    						</div>
-
-
-
-
-
-		    					</div>  <!-- end single-column -->
-
-
-		    					<div class="single-column">
-		    						
-		    						<div class="relcon-single">
-		    							<a href="">
-		    								<img src="https://placekitten.com/g/500/400">
-		    								<div class="trapezoid">
-												<div class="trap-sq">
-													<h3>Source Object Title</h3>
-													<small>Source Author Name</small>
-													<small>Source Date</small>
-												</div>
-												<div class="trap-tri"></div>
-											</div>
-		    							</a>
-		    						</div>
-
-		    						<div class="relcon-single">
-		    							<a href="">
-		    								<img src="http://www.revelstokecurrent.com/wp-content/uploads/2009/11/online-chloe-begbie.jpg">
-		    								<div class="trapezoid">
-												<div class="trap-sq">
-													<h3>Source Object Title</h3>
-													<small>Source Author Name</small>
-													<small>Source Date</small>
-												</div>
-												<div class="trap-tri"></div>
-											</div>
-		    							</a>
-		    						</div>
-
-
-
-
-
-		    					</div>  <!-- end single-column -->
+		    					
 
 		    					</div> <!-- /column-wrapper -->
 		    					
-		    					
+		    				
 	    				</div> <!-- /columns-container -->
 
 	    			</div> <!-- /col-sm-12 -->
