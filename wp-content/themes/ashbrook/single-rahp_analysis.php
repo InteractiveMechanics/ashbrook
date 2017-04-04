@@ -24,10 +24,7 @@
 
 	<main class="single-rahp-object">
 		<div class="container-fluid">
-			<ul class="breadcrumb">
-				<li><h5>Analysis</h5></li>
-				<li><h5>Art</h5></li>
-			</ul>
+			<?php custom_breadcrumbs(); ?>
 
 			<ul class="rahp-object-title">
 				<li><h2><span class="analysis-title"><?php the_title(); ?></span>: <span class="analysis-artist"><?php echo $artist ?></span>, <span class="analysis-title"><?php echo $artwork_title; ?></span><span class="analysis-year">(<?php echo $artwork_year; ?>)</span></h2></li>

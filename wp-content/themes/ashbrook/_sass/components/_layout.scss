@@ -17,6 +17,9 @@ main {
 			display: inline;
 		}
 	}
+	h5 {
+		display: inline;
+	}
 	>li+li:before {
 		content: "\\";
 		padding-left: 4px;

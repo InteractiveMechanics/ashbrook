@@ -18,9 +18,8 @@ get_header(); ?>
 
 <main>
 	<div class="container-fluid">
-			<ul class="breadcrumb">
-				<li><h5>About</h5></li>
-			</ul>
+			<?php // breadcrumb makes no sense here ?>
+			<?php custom_breadcrumbs(); ?>
 
 			<ul class="rahp-object-title">
 				<li><h2><?php the_title(); ?></h2></li>

@@ -245,6 +245,8 @@ main {
       color: #C49F21; }
     .breadcrumb li h5 {
       display: inline; }
+  .breadcrumb h5 {
+    display: inline; }
   .breadcrumb > li + li:before {
     content: "\\";
     padding-left: 4px;
@@ -752,7 +754,8 @@ main {
   z-index: 3;
   padding-top: 10px;
   padding-bottom: 10px;
-  width: 100%; }
+  width: 100%;
+  display: none; }
   .mobile-search-bar form {
     position: relative; }
   .mobile-search-bar input[type="submit"] {

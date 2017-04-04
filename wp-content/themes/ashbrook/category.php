@@ -3,9 +3,7 @@
 	<main id="library-template">
 		<div class="container-fluid">
 
-			<ul class="breadcrumb">
-				<li><h5><?php single_cat_title(); ?></h5></li>
-			</ul>
+			<?php custom_breadcrumbs(); ?>
 
 			<div class="black-divider"></div>
 

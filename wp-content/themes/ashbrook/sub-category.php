@@ -3,9 +3,7 @@
 
 	<main role="main" class="blog-page">
 		<div class="container-fluid">
-			<ul class="breadcrumb">
-				<li><h5>Blog</h5></li>
-			</ul>
+			<?php custom_breadcrumbs(); ?>
 
 			<ul class="rahp-object-title">
 				<li><h2><?php single_cat_title(); ?></h2></li>
