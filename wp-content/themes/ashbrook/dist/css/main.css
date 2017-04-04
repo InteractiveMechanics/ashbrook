@@ -221,7 +221,8 @@ div[class$="body"] ul, div[class$="body"] ol, div[class$="body"] li {
   font-family: "Vollkorn", Garamond, Georgia, serif;
   font-size: 1.10em; }
 div[class$="body"] ul, div[class$="body"] ol {
-  padding-left: 20px; }
+  padding-left: 20px;
+  overflow: auto; }
 
 .tiny-text {
   font-size: 0.5em; }
@@ -362,7 +363,7 @@ main {
       position: relative;
       top: 5px; }
     .tags li h5 {
-      display: inline; }
+      display: inline-flex; }
     .tags li h5 > a {
       background-color: #455466;
       color: #ffffff;
@@ -388,9 +389,17 @@ main {
   bottom: 0px;
   right: 5%;
   width: 80%;
-  height: 85px;
+  height: auto;
   padding: 10px;
   background-color: rgba(69, 84, 102, 0.75); }
+  .trapezoid .trap-sq:after {
+    width: 24px;
+    height: 100%;
+    position: absolute;
+    right: 100%;
+    content: "";
+    bottom: 0;
+    background: linear-gradient(to left bottom, rgba(69, 84, 102, 0.75) 50%, transparent 51%); }
   .trapezoid .trap-sq h3 {
     color: #ffffff;
     margin-top: 0px;
@@ -400,15 +409,6 @@ main {
     font-weight: 300;
     opacity: 0.75;
     display: block; }
-.trapezoid .trap-tri {
-  width: 0;
-  height: 0;
-  border-style: solid;
-  border-width: 0 25px 85px 0;
-  border-color: transparent rgba(69, 84, 102, 0.75) transparent transparent;
-  position: absolute;
-  bottom: 0px;
-  right: 85%; }
 
 .parallelogram {
   width: 25px;
@@ -1001,7 +1001,7 @@ footer {
     position: relative; }
     .related-content .columns-container h2 {
       margin-left: 15px;
-      margin-bottom: 0px;
+      margin-bottom: 15px;
       font-size: 1.5em;
       color: #ffffff; }
     @media (max-width: 991px) {
@@ -1043,7 +1043,7 @@ footer {
 
 .relcon-single {
   position: relative;
-  padding: 8px 8px 40px 8px;
+  padding: 15px 8px 40px 8px;
   margin-bottom: 20px;
   transition: all 0.5s;
   top: 0px;
@@ -1496,7 +1496,10 @@ button[type="reset"] {
       padding-right: 2.5%; } }
 
 .single-post {
-  margin-bottom: 60px; }
+  margin-bottom: 60px;
+  display: flex; }
+  .single-post .col-sm-10 {
+    flex: 1; }
 
 .blog-thumbnail {
   height: 160px;
@@ -1515,7 +1518,7 @@ button[type="reset"] {
       margin-bottom: 10px; } }
 
 .blog-excerpt {
-  height: 160px; }
+  height: auto; }
   .blog-excerpt h2 {
     margin-top: 0px;
     margin-bottom: 0px;

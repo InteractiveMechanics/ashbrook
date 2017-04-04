@@ -29,7 +29,7 @@ function create_custom_post_types() {
             'public' => true,
             'has_archive' => true,
             'taxonomies'  => array( 'category', 'post_tag'),
-            'supports' => array( 'title', 'editor', 'comments', 'author', 'custom-fields', 'thumbnail', 'custom-fields', 'post-templates'),
+            'supports' => array( 'title', 'editor', 'comments', 'author', 'custom-fields', 'thumbnail', 'post-thumbnails', 'custom-fields', 'post-templates'),
             'rewrite' => array( 'slug' => 'rahp_objects' ),
         )
     );
@@ -169,6 +169,12 @@ function sub_category_template() {
 
 }
 add_action('template_redirect', 'sub_category_template');
+
+// REMOVES ELLIPSES FROM EXCERPT
+function trim_excerpt($text) {
+    return rtrim($text,'[&hellip;]');
+}
+add_filter('get_the_excerpt', 'trim_excerpt');
 
 
 

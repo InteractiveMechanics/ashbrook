@@ -174,7 +174,7 @@ main {
 			}
 		}
 		h5 {
-			display: inline;
+			display: inline-flex;
 		}
 		h5 > a {
 			background-color: $blue;
@@ -203,13 +203,29 @@ main {
 .trapezoid {
 
 	.trap-sq {
+		// position: absolute;
+		// bottom: 0px;
+		// right: 5%;
+		// width: 80%;
+		// height: 85px;
+		// padding: 10px;
+		// background-color: $bluealpha;
 		position: absolute;
-		bottom: 0px;
-		right: 5%;
-		width: 80%;
-		height: 85px;
-		padding: 10px;
-		background-color: $bluealpha;
+	    bottom: 0px;
+	    right: 5%;
+	    width: 80%;
+	    height: auto;
+	    padding: 10px;
+	    background-color: $bluealpha;
+	    &:after {
+	    	width: 24px;
+		    height: 100%;
+		    position: absolute;
+		    right: 100%;
+		    content: "";
+		    bottom: 0;
+		    background: linear-gradient(to left bottom, $bluealpha 50%, transparent 51%);
+	    }
 		h3 {
 			color: $white;
 			margin-top: 0px;
@@ -223,14 +239,14 @@ main {
 		}
 	}
 	.trap-tri {
-		width: 0;
-		height: 0;
-		border-style: solid;
-		border-width: 0 25px 85px 0;
-		border-color: transparent $bluealpha transparent transparent;
-		position: absolute;
-    	bottom: 0px;
-    	right: 85%;
+		// width: 0;
+		// height: 0;
+		// border-style: solid;
+		// border-width: 0 25px 85px 0;
+		// border-color: transparent $bluealpha transparent transparent;
+		// position: absolute;
+  //   	bottom: 0px;
+  //   	right: 85%;
 	}
 }
 
