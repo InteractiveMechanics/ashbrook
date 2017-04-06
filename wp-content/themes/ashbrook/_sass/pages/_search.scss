@@ -29,6 +29,10 @@
 		border: none;
 	}
 
+	.dropdown-menu>li>a {
+		padding: 5px;
+	}
+
 	.dropdown-menu>li>a:focus, 
 	.dropdown-menu>li>a:hover {
 		color: $gold;

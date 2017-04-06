@@ -103,6 +103,19 @@ $(document).ready(function(){
     });
 
     
+    // MENU 
+    // 1st column, Sources
+    $('#menu-item-150').addClass('col-sm-3 multi-column-dropdown-wrapper');
+
+    // 2nd column, Collections
+    $('#menu-item-148').addClass('col-sm-3 multi-column-dropdown-wrapper');
+
+    // 3rd column, Analysis
+    $('#menu-item-157').addClass('col-sm-2 multi-column-dropdown-wrapper skew');
+    $('#menu-item-157').after('<li class="col-sm-4 multi-column-dropdown-wrapper"><div class="nav-dropdown-img"></div></li>');
+
+    $('.dropdown').children('.dropdown-menu').addClass('multi-column columns-3 animated fadeIn');
+
     
 
 

@@ -9,6 +9,15 @@ add_theme_support( 'post-thumbnails' );
 add_theme_support( 'post-formats', array( 'image', 'gallery', 'aside' ) );  
 
 
+// TRYING MENU SHIT AGAIN KILL ME NOW
+
+require_once('wp-bootstrap-navwalker.php');
+
+register_nav_menus( array(
+        'primary' => __( 'Primary Menu', 'Ashbrook_RAHP' ),
+) );
+
+
 
 // CUSTOM POST TYPE STUFF
 function create_custom_post_types() {
@@ -150,7 +159,7 @@ function sub_category_template() {
             
             // Include the template for sub-catgeory
             include(TEMPLATEPATH . '/sub-category.php');
-            
+            exit;
         }
 
         if( ($category->parent != '0') && (!has_term_have_children($cat) ) && (file_exists(TEMPLATEPATH . '/grandchild-category.php')) ) { 
@@ -223,14 +232,14 @@ function custom_breadcrumbs() {
  
     } elseif ( is_single() && !is_attachment() ) {
       if ( get_post_type() != 'post' ) {
-        // $post_type = get_post_type_object(get_post_type());
-        // $slug = $post_type->rewrite;
-        // echo '<a href="' . $homeLink . '/' . $slug['slug'] . '/">' . $post_type->labels->singular_name . '</a>';
+        //$post_type = get_post_type_object(get_post_type());
+        //$slug = $post_type->rewrite;
+        //echo '<a href="' . $homeLink . '/' . $slug['slug'] . '/">' . $post_type->labels->singular_name . '</a>';
         if ($showCurrent == 1) echo ' ' . $delimiter . ' ' . $before . get_the_title() . $after;
         $cat = get_the_category(); $cat = $cat[0];
         $cats = get_category_parents($cat, TRUE, '</h5></li><li><h5>' . $delimiter . ' ');
         if ($showCurrent == 0) ;
-        echo  '<li><h5>' . $cats . '';
+        echo  '<li><h5>' . $cats . '</li></h5>';
         //echo  '<li><h5>' . esc_html($cat->name) . '</h5></li>';
         
         if ($showCurrent == 1) echo $before . esc_html($cat->name) . $after;
@@ -298,6 +307,25 @@ function custom_breadcrumbs() {
 
   }
 
+  // ADD CPT TO SEARCH
+
+  add_filter( 'pre_get_posts', 'tgm_io_cpt_search' );
+  /**
+   * This function modifies the main WordPress query to include an array of 
+   * post types instead of the default 'post' post type.
+   *
+   * @param object $query  The original query.
+   * @return object $query The amended query.
+   */
+  function tgm_io_cpt_search( $query ) {
+  
+    if ( $query->is_search ) {
+      $query->set( 'post_type', array('page', 'post', 'rahp_object', 'rahp_analysis', 'rahp_collection' ) );
+    }
+    
+    return $query;
+
+    }
 
 
 

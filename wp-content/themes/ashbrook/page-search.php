@@ -13,7 +13,7 @@ get_header(); ?>
 		
 	<?php get_template_part('searchform', get_post_format()); ?>
 	
-	<?php get_template_part('content-rahp_collection', get_post_format()); ?>	
+	<?php get_template_part('content-rahp_search_default', get_post_format()); ?>	
 
 	<div class="container-fluid pagination">
 		<div>
