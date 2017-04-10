@@ -9,23 +9,19 @@
 
 		    				<?php 
 
-		    			
+			    			
+								$args = array(
+									'post_type' => array('rahp_object', 'rahp_art', 'post', 'rahp_collection'),
+									'orderby'	=> 'rand',
+									'posts_per_page' => 12 
+									);
 
-							$posts = get_posts(array(
-								'posts_per_page'	=> 12,
-								'post_type'			=> array('rahp_object', 'rahp_analysis', 'post'),
-								'orderby'			=> 'rand'
-							));
+								$the_query = new WP_Query( $args );
 
-							if( $posts ): ?>
 								
-								
-									
-								<?php foreach( $posts as $post ): 
-									
-									setup_postdata( $post );
-									
-									?>
+								if ( $the_query->have_posts()): while ( $the_query->have_posts() ):$the_query->the_post(); 
+							?>
+						
 
 									<?php // put relcon-single in a partial ?>
 									<div class="relcon-single">
@@ -71,29 +67,16 @@
 			    							</a>
 		    							</div> 
 									
-								
-								<?php endforeach; ?>
+								<?php 
+									wp_reset_postdata(); 
+									endwhile; 
+									endif; 
+
+								?>
 								
 								</ul>
 								
-								<?php wp_reset_postdata(); ?>
-
-							<?php endif; 
-
-							?>
-
-
-
-							</div>
-
-
-
-						
-		    				
-
-
-
-		    					
+    					
 
 		    					</div> <!-- /column-wrapper -->
 		    					

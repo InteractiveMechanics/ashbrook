@@ -129,8 +129,13 @@
 					</div>
 
 					<div class="object-references col-sm-7">
+						<?php if ($citation) {
+						?>
 						<h2>Citation</h2>
 						<p><?php echo $citation; ?></p>
+						<?php 
+						}
+						?>
 					</div>
 
 					

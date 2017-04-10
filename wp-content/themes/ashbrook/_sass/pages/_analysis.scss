@@ -4,8 +4,8 @@
 
 #analysis-main-image {
 	img {
-		width: auto;
-		height: 90vh;
+		width: 100%;
+		height: auto;
 		@include screen-xxs {
 			width: calc(100% + 40px);
     		height: auto;

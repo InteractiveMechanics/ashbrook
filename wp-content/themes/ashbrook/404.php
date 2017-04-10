@@ -1,24 +1,28 @@
 <?php get_header(); ?>
 
-	<main role="main">
-		<!-- section -->
-		<section>
+	<main role="main" class="single-rahp-object" id="page-404">
+		
+		<div class="container-fluid">
+			
 
-			<!-- article -->
-			<article id="post-404">
+			<ul class="rahp-object-title">
+				<li><h2>Page Not Found</h2></li>
+				<li><h3><a href="<?php echo home_url(); ?>"><?php _e( 'Return home', 'html5blank' ); ?></a> or Explore the Objects Below</h3></li>
+			</ul>
 
-				<h1><?php _e( 'Page not found', 'html5blank' ); ?></h1>
-				<h2>
-					<a href="<?php echo home_url(); ?>"><?php _e( 'Return home?', 'html5blank' ); ?></a>
-				</h2>
+		</div>
 
-			</article>
-			<!-- /article -->
 
-		</section>
-		<!-- /section -->
+		<div class="jumbotron slim-jumbotron" style="background-image:  linear-gradient(rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 0) 100%), url('<?php printThemePath(); ?>/img/header-img.jpg');">
+			
+			
+	    </div>
+
+	    <?php get_template_part('content-rahp_search_default', get_post_format()); ?>	
+
+
+		
 	</main>
 
-<?php get_sidebar(); ?>
 
 <?php get_footer(); ?>

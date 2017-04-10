@@ -50,19 +50,26 @@ $(document).ready(function(){
   });
 
   // ANALYSIS SLIDER
-  $('.analysis-slider').slick({
-      arrows: true,
-      dots: true,
-  });
-
   var $status = $('.paging-info');
   var $slickElement = $('.analysis-slider');
+  var $detailcount = $('.detail-count');
+
+
 
   $slickElement.on('init reInit afterChange', function(event, slick, currentSlide, nextSlide){
     //currentSlide is undefined on init -- set it to 0 in this case (currentSlide is 0 based)
     var i = (currentSlide ? currentSlide : 0) + 1;
     $status.text(i + ' of ' + slick.slideCount);
+    $detailcount.text(i);
   });
+
+
+  $('.analysis-slider').slick({
+      arrows: true,
+      dots: true,
+  });
+
+
 
 
   // LIGHTGALLERY 
@@ -73,7 +80,12 @@ $(document).ready(function(){
   }
 
 
-  $(".lightgallery").lightGallery();
+
+  $(".lightgallery").lightGallery({
+     subHtmlSelectorRelative: true
+  }); 
+
+  
 
 
   
@@ -116,6 +128,7 @@ $(document).ready(function(){
 
     $('.dropdown').children('.dropdown-menu').addClass('multi-column columns-3 animated fadeIn');
 
+   
     
 
 

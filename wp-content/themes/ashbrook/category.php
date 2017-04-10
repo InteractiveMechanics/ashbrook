@@ -1,13 +1,54 @@
 <?php get_header(); ?>
 
-	<main id="library-template">
-		<div class="container-fluid">
 
+	<main role="main" class="blog-page">
+		<div class="container-fluid">
 			<?php custom_breadcrumbs(); ?>
 
-			<div class="black-divider"></div>
+			<ul class="rahp-object-title">
+				<li><h2><?php single_cat_title(); ?></h2></li>
+			</ul>
 
-			<?php
+		</div>
+
+		<div class="jumbotron slim-jumbotron" style="background-image:  linear-gradient(rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 0) 100%), url('<?php printThemePath(); ?>/img/header-img.jpg');">
+
+			
+				<?php 
+					$term = get_queried_object();
+				 	$term_id = $term->taxonomy . '_' . $term->term_id;
+				   	$category_introduction = get_field('category_introduction', $term_id);
+
+				   	if ( $term ):
+				   			if ($category_introduction):
+					   			echo '<div class="slim-jumbotron-callout">';
+								echo '<p>' . $category_introduction .'</p>';
+								echo '</div>';
+							endif; 
+						endif;
+				?>
+				
+	    </div>
+	    
+	    <?php 
+	    	$term = get_queried_object();
+
+			$children = get_terms( $term->taxonomy, array(
+
+			'parent'    => $term->term_id,
+			'hide_empty' => false
+
+			) );
+
+			// if($children) {
+
+	    ?>
+
+
+
+	    <div class="container-fluid blog-page-body">
+	    	
+	    	<?php
 				$current_category = single_cat_title("", false);
 				$category_id = get_cat_ID($current_category);
 				$categories=get_categories(
@@ -15,289 +56,94 @@
 				); 
 				foreach  ($categories as $category) {
 				    //Display the sub category information using $category values like $category->cat_name
-				    echo '<div class="col-sm-12">';
-				    echo '<ul class="library-heading">';
-				    echo '<li><h2>'.$category->name.'</h2></li>';
-				    echo '<li><h1><a href="'. esc_url(get_category_link($category->cat_ID)) . '">';
-				    echo 'View All</a></h1></li>'; 
-				    echo '</ul>';
-				    echo '<div class="library-slider">';
+				    echo '<div class="col-sm-12 single-post">';
+				    echo '<div class="col-sm-2">';
+				    echo '<div class="blog-thumbnail">';
 
-				    
-				    $subcategory_id = get_cat_ID($category->name);
-				    $subcategories = get_categories(
-				    		array('parent' => $subcategory_id)
-				    );
-				    foreach ($subcategories as $subcategory) {
-				    	 $term = $subcategory;
-				    	 $term_id = $term->taxonomy . '_' . $term->term_id;
-				    	 $category_image = get_field('category_image', $term_id);
-				    	
-				         echo '<div class="col-sm-3 library-single-slide">';
-				         echo '<div class="img-wrapper">';
+				    $term = $category;
+				 	$term_id = $term->taxonomy . '_' . $term->term_id;
+				   	$category_image = get_field('category_image', $term_id);
+				   	$category_introduction = get_field('category_introduction', $term_id);
 
-						if ( $term ):
+
+				   	if ( $term ):
+							echo '<a href="'. esc_url(get_category_link($category->cat_ID)) . '">';
 							echo '<img src="' . $category_image .'">';
-						endif;
+							echo '</a>';
+					endif;
 
-				         //echo '<img src="https://placekitten.com/g/400/500">';
-				         echo '</div>';
-				         echo '<div class="trapezoid">';
-				         echo '<div class="trap-sq">';
-				         echo '<h3><a href="'. esc_url(get_category_link($subcategory->cat_ID)) . '">' . $subcategory->name .'</a></h3>';
-				         echo '<small>Authors A to Z</small>'; // the category desciption?
-				         echo '</div>';
-				         echo '<div class="trap-tri"></div>';
-				         echo '</div>'; // .trapezoid
-				         echo '</div>'; // .library-single-slide
-
-
-				    }  
-				    echo '</div>'; // .library-slider
+					echo '</div>';
+					echo '</div>';
+					echo '<div class="col-sm-10">';
+					echo '<div class="blog-excerpt">';
+					echo '<h2>' . $category->name . '</h2>';
+					echo '<h5>' . $category->description . '</h2>';
+					echo '<h5>' . $category->count . ' objects</h2>';
+					echo '<p>' . $category_introduction . '</p>';
+					echo '</div>'; // .blog-excerpt
+					echo '</div>'; // .col-sm-10
+					echo '</div>'; // .single-post
 				}
+
+			echo '</div>' // .container-fluid blog-page-body
 
 			?>
 
+			<?php 
+			// 	} else {
+			// 		get_template_part('content-rahp_collection', get_post_format());
+			// }
+			?>
 
-			<!-- <div class="col-sm-12">
-				<ul class="library-heading">
-					<li><h2>Types</h2></li>
-					<li><h1><a href="">View All</a></h1></li>
-				</ul>
+	    	<!-- <div class="col-sm-12 single-post">
+	    		
+	    		<div class="col-sm-2">
+	    			<div class="blog-thumbnail">
+	    				<a href=""><img class="" src="https://placekitten.com/g/300/350"></a>
+	    			</div>
+	    		</div>
 
-				<div class="library-slider">
-					<div class="col-sm-3 library-single-slide">
-						<div class="img-wrapper">
-							<img src="https://placekitten.com/g/400/500" alt="">
+	    		<div class="col-sm-10">
+	    			<div class="blog-excerpt">
+	    				
+		    				<h2>The State of American Theology in 2016: Proof that Church Attendance Matters"</h2>
+		    				<h5>January 12,2017</h5>
+		    				<h5>Jane Doe</h5>
+	    					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud...<a href="" class="read-more"><span>More</span></a></p>
+	    			</div>
+	    		</div>
+
+	    	</div>
+
+	    	-->
+
+	    
+
+	    	<div class="container-fluid pagination">
+
+	    				<?php get_template_part('pagination', get_post_format()); ?>
+
+
+
+						<!-- <div>
+							<button type="button" class="prev">Previous</button>
 						</div>
-
-						<div class="trapezoid">
-							<div class="trap-sq">
-								<h3>Poems</h3>
-								<small>Authors A to Z</small>
-							</div>
-							<div class="trap-tri"></div>
-						</div>
-					</div>
-
-
-					<div class="col-sm-3 library-single-slide">
-						<div class="img-wrapper">
-							<img src="https://placekitten.com/g/400/500" alt="">
-						</div>
-
-						<div class="trapezoid">
-							<div class="trap-sq">
-								<h3>Essays</h3>
-								<small>Authors A to Z</small>
-							</div>
-							<div class="trap-tri"></div>
-						</div>
-					</div>
-
-					<div class="col-sm-3 library-single-slide">
-						<div class="img-wrapper">
-							<img src="https://placekitten.com/g/400/500" alt="">
-						</div>
-
-						<div class="trapezoid">
-							<div class="trap-sq">
-							</div>
-							<div class="trap-tri"></div>
-						</div>
-					</div>
-
-					<div class="col-sm-3 library-single-slide">
-						<div class="img-wrapper">
-							<img src="https://placekitten.com/g/400/500" alt="">
-						</div>
-
-						<div class="trapezoid">
-							<div class="trap-sq"></div>
-							<div class="trap-tri"></div>
-						</div>
-					</div>
-
-					<div class="col-sm-3 library-single-slide">
-						<div class="img-wrapper">
-							<img src="https://placekitten.com/g/400/500" alt="">
-						</div>
-
-						<div class="trapezoid">
-							<div class="trap-sq"></div>
-							<div class="trap-tri"></div>
-						</div>
-					</div>
-
-					
-				</div>
 						
-					
-			</div>
-
-
-
-			<div class="col-sm-12">
-				<ul class="library-heading">
-					<li><h2>Time Periods</h2></li>
-					<li><h1><a href="">View All</a></h1></li>
-				</ul>
-
-				<div class="library-slider">
-					<div class="col-sm-3 library-single-slide">
-						<div class="img-wrapper">
-							<img src="https://placekitten.com/g/400/500" alt="">
+						<div class="paging-info">
+							<h2>1 of 12</h2>
 						</div>
-
-						<div class="trapezoid">
-							<div class="trap-sq">
-								<h3>Poems</h3>
-								<small>Authors A to Z</small>
-							</div>
-							<div class="trap-tri"></div>
-						</div>
-					</div>
-
-
-					<div class="col-sm-3 library-single-slide">
-						<div class="img-wrapper">
-							<img src="https://placekitten.com/g/400/500" alt="">
-						</div>
-
-						<div class="trapezoid">
-							<div class="trap-sq">
-								<h3>Essays</h3>
-								<small>Authors A to Z</small>
-							</div>
-							<div class="trap-tri"></div>
-						</div>
-					</div>
-
-					<div class="col-sm-3 library-single-slide">
-						<div class="img-wrapper">
-							<img src="https://placekitten.com/g/400/500" alt="">
-						</div>
-
-						<div class="trapezoid">
-							<div class="trap-sq">
-								<h3>Essays</h3>
-								<small>Authors A to Z</small>
-							</div>
-							<div class="trap-tri">
-								
-							</div>
-						</div>
-					</div>
-
-					<div class="col-sm-3 library-single-slide">
-						<div class="img-wrapper">
-							<img src="https://placekitten.com/g/400/500" alt="">
-						</div>
-
-						<div class="trapezoid">
-							<div class="trap-sq"></div>
-							<div class="trap-tri"></div>
-						</div>
-					</div>
-
-					<div class="col-sm-3 library-single-slide">
-						<div class="img-wrapper">
-							<img src="https://placekitten.com/g/400/500" alt="">
-						</div>
-
-						<div class="trapezoid">
-							<div class="trap-sq"></div>
-							<div class="trap-tri"></div>
-						</div>
-					</div>
-
-					
-				</div>
 						
-					
+						<div>
+							<button type="button" class="next">Next</button>
+						</div> -->
+
 			</div>
 
 
 
 
-			<div class="col-sm-12">
-				<ul class="library-heading">
-					<li><h2>Authors</h2></li>
-					<li><h1><a href="">View All</a></h1></li>
-				</ul>
 
-				<div class="library-slider">
-					<div class="col-sm-3 library-single-slide">
-						<div class="img-wrapper">
-							<img src="https://placekitten.com/g/400/500" alt="">
-						</div>
-
-						<div class="trapezoid">
-							<div class="trap-sq">
-								<h3>Jane Adams</h3>
-								<small>Date Range</small>
-							</div>
-							<div class="trap-tri"></div>
-						</div>
-					</div>
-
-
-					<div class="col-sm-3 library-single-slide">
-						<div class="img-wrapper">
-							<img src="https://placekitten.com/g/400/500" alt="">
-						</div>
-
-						<div class="trapezoid">
-							<div class="trap-sq">
-								<h3>John Quincy Adams</h3>
-								<small>Date Range</small>
-							</div>
-							<div class="trap-tri"></div>
-						</div>
-					</div>
-
-					<div class="col-sm-3 library-single-slide">
-						<div class="img-wrapper">
-							<img src="https://placekitten.com/g/400/500" alt="">
-						</div>
-
-						<div class="trapezoid">
-							<div class="trap-sq">
-							</div>
-							<div class="trap-tri"></div>
-						</div>
-					</div>
-
-					<div class="col-sm-3 library-single-slide">
-						<div class="img-wrapper">
-							<img src="https://placekitten.com/g/400/500" alt="">
-						</div>
-
-						<div class="trapezoid">
-							<div class="trap-sq"></div>
-							<div class="trap-tri"></div>
-						</div>
-					</div>
-
-					<div class="col-sm-3 library-single-slide">
-						<div class="img-wrapper">
-							<img src="https://placekitten.com/g/400/500" alt="">
-						</div>
-
-						<div class="trapezoid">
-							<div class="trap-sq"></div>
-							<div class="trap-tri"></div>
-						</div>
-					</div>
-
-					
-				</div>
-						
-					
-			</div> -->
-
-		</div> <!-- /container-fluid -->
-
+	  
 	</main>
 
 

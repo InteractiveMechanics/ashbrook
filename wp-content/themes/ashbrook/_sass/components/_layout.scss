@@ -282,6 +282,7 @@ main {
 
 .lightgallery {
 	a {
+		transition: $transition;
 		&:hover, &:active, &:focus {
 			img {
 				opacity: 0.75;

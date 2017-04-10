@@ -13,10 +13,13 @@ get_header(); ?>
 		
 	<?php get_template_part('searchform', get_post_format()); ?>
 	
-	<?php get_template_part('content-rahp_search_default', get_post_format()); ?>	
+	<?php get_template_part('content-rahp_search_default', get_post_format()); ?>
+
+
 
 	<div class="container-fluid pagination">
-		<div>
+		<?php wp_pagenavi(); ?>
+		<!-- <div>
 			<button type="button" class="prev">Previous</button>
 		</div>
 		<div class="paging-info">
@@ -24,7 +27,7 @@ get_header(); ?>
 		</div>
 		<div>
 			<button type="button" class="next">Next</button>
-		</div>
+		</div> -->
 
 	</div>
 

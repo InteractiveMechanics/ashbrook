@@ -1,6 +1,12 @@
 .pagination {
 	display: flex;
 	justify-content: space-around;
+	.pages {
+		margin: 4px 0px 0px;
+		font-size: 2.15em;
+		font-family: $vollkhorn;
+		font-style: italic;
+	}
 	.next, .prev {
 		top: 100%;
 		font-size: 1.4em;

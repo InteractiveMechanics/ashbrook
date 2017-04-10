@@ -51,7 +51,8 @@ get_header(); ?>
 	    	
 
 	    	<div class="container-fluid pagination">
-						<div>
+	    				<?php wp_pagenavi(); ?>
+						<!-- <div>
 							<button type="button" class="prev">Previous</button>
 						</div>
 						
@@ -61,7 +62,7 @@ get_header(); ?>
 						
 						<div>
 							<button type="button" class="next">Next</button>
-						</div>
+						</div> -->
 
 					</div>
 

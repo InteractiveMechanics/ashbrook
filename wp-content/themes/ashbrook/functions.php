@@ -65,26 +65,47 @@ function create_custom_post_types() {
         )
     );
 
-
-     register_post_type( 'rahp_analysis',
+     register_post_type( 'rahp_art',
         array(
             'labels' => array(
-                'name' => __( 'RAHP Analysis' ),
-                'singular_name' => __( 'RAHP Analysis' ),
-                'add_new' => __( 'Add New Analysis' ),
-                'add_new_item' => __( 'Add New Analysis' ),
-                'edit_item' => __( 'Edit Analysis' ),
-                'new_item' => __( 'New Analysis' ),
-                'view_item' => __( 'View Analysis' ),
-                'all_items' => __( 'All RAHP Analyses' ),
-                'not_found' => __( 'Analysis not found.' )
+                'name' => __( 'RAHP Art' ),
+                'singular_name' => __( 'RAHP Art' ),
+                'add_new' => __( 'Add New Art' ),
+                'add_new_item' => __( 'Add New Art' ),
+                'edit_item' => __( 'Edit Art' ),
+                'new_item' => __( 'New Art' ),
+                'view_item' => __( 'View Art' ),
+                'all_items' => __( 'All RAHP Art' ),
+                'not_found' => __( 'Art not found.' )
 
             ),
             'public' => true,
             'has_archive' => true,
             'taxonomies'  => array( 'category', 'post_tag' ),
             'supports' => array( 'title', 'editor', 'comments', 'author', 'custom-fields', 'thumbnail', 'custom-fields', 'post-templates'),
-            'rewrite' => array( 'slug' => 'rahp_analyses' ),
+            'rewrite' => array( 'slug' => 'rahp_art' ),
+        )
+    );
+
+     register_post_type( 'totm',
+        array(
+            'labels' => array(
+                'name' => __( 'Theme of the Month' ),
+                'singular_name' => __( 'Theme of the Month' ),
+                'add_new' => __( 'Add New TOTM' ),
+                'add_new_item' => __( 'Add New TOTM' ),
+                'edit_item' => __( 'Edit TOTM' ),
+                'new_item' => __( 'New TOTM' ),
+                'view_item' => __( 'View TOTM' ),
+                'all_items' => __( 'All Themes of the Month' ),
+                'not_found' => __( 'Theme of the Month not found.' )
+
+            ),
+            'public' => true,
+            'has_archive' => true,
+            'taxonomies'  => array( 'category', 'post_tag'),
+            'supports' => array( 'title', 'editor', 'comments', 'author', 'custom-fields', 'thumbnail', 'custom-fields', 'post-templates'),
+            'rewrite' => array( 'slug' => 'totm' ),
         )
     );
 
@@ -104,6 +125,12 @@ if( function_exists('acf_add_options_page') ) {
         'redirect'      => false
     ));
     
+    acf_add_options_sub_page(array(
+        'page_title' => 'Theme of the Month Archive Settings',
+        'menu_title' => 'Theme of the Month Archive',
+        'parent_slug' => 'theme-general-settings',
+    ));
+
     
     acf_add_options_sub_page(array(
         'page_title' => 'Theme Header Settings',
@@ -149,10 +176,12 @@ function sub_category_template() {
         return true;
     }
 
+
     if(!empty($cat)) {    
         
         // Get the detailed category object
         $category = get_category($cat);
+
 
         // Check if it is sub-category and having a parent and a child, also check if the template file exists
         if( ($category->parent != '0') && ( has_term_have_children($cat) )&& (file_exists(TEMPLATEPATH . '/sub-category.php')) ) { 
@@ -170,6 +199,12 @@ function sub_category_template() {
         }
 
 
+
+
+
+        
+
+       
         
 
         return;
@@ -320,7 +355,7 @@ function custom_breadcrumbs() {
   function tgm_io_cpt_search( $query ) {
   
     if ( $query->is_search ) {
-      $query->set( 'post_type', array('page', 'post', 'rahp_object', 'rahp_analysis', 'rahp_collection' ) );
+      $query->set( 'post_type', array('page', 'post', 'rahp_object', 'rahp_art', 'rahp_collection' ) );
     }
     
     return $query;

@@ -162,6 +162,8 @@ a {
 
 figure {
   display: table; }
+  figure a {
+    display: table; }
 
 figcaption {
   color: #A5AEB6;
@@ -438,8 +440,10 @@ main {
   top: 0px;
   left: 181px; }
 
-.lightgallery a:hover img, .lightgallery a:active img, .lightgallery a:focus img {
-  opacity: 0.75; }
+.lightgallery a {
+  transition: all 0.5s; }
+  .lightgallery a:hover img, .lightgallery a:active img, .lightgallery a:focus img {
+    opacity: 0.75; }
 
 .navbar {
   border-radius: 0px;
@@ -1274,6 +1278,11 @@ footer {
 .pagination {
   display: flex;
   justify-content: space-around; }
+  .pagination .pages {
+    margin: 4px 0px 0px;
+    font-size: 2.15em;
+    font-family: "Vollkorn", Garamond, Georgia, serif;
+    font-style: italic; }
   .pagination .next, .pagination .prev {
     top: 100%;
     font-size: 1.4em;
@@ -1476,8 +1485,8 @@ footer {
   font-style: initial; }
 
 #analysis-main-image img {
-  width: auto;
-  height: 90vh; }
+  width: 100%;
+  height: auto; }
   @media (max-width: 480px) {
     #analysis-main-image img {
       width: calc(100% + 40px);

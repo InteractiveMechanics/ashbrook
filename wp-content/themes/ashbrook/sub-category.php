@@ -40,7 +40,7 @@
 
 			) );
 
-			if($children) {
+			// if($children) {
 
 	    ?>
 
@@ -90,9 +90,9 @@
 			?>
 
 			<?php 
-				} else {
-					get_template_part('content-rahp_collection', get_post_format());
-			}
+			// 	} else {
+			// 		get_template_part('content-rahp_collection', get_post_format());
+			// }
 			?>
 
 	    	<!-- <div class="col-sm-12 single-post">
@@ -116,8 +116,16 @@
 	    	</div>
 
 	    	-->
+
+	    
+
 	    	<div class="container-fluid pagination">
-						<div>
+
+	    				<?php get_template_part('pagination', get_post_format()); ?>
+
+
+
+						<!-- <div>
 							<button type="button" class="prev">Previous</button>
 						</div>
 						
@@ -127,9 +135,9 @@
 						
 						<div>
 							<button type="button" class="next">Next</button>
-						</div>
+						</div> -->
 
-					</div>
+			</div>
 
 
 

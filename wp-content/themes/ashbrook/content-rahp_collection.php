@@ -93,11 +93,19 @@
 														<?php
 															$object_date = get_field('object_date', get_the_id());
 															$author = get_field('author', get_the_id());
+															$artist = get_field('artist', get_the_id());
 														?>
 
 					
 														<h3><?php the_title(); ?></h3>
-														<small><?php echo $author; ?></small>
+														<small>
+															<?php if ($author) {
+																echo $author;
+															} else {
+																echo $artist;
+															}
+															?>
+														</small>
 														<small>
 															<?php if ($object_date) {
 																echo $object_date; // object or analysis
