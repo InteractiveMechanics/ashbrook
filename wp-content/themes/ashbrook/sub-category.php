@@ -3,9 +3,7 @@
 
 	<main role="main" class="blog-page">
 		<div class="container-fluid">
-			<ul class="breadcrumb">
-				<li><h5>Blog</h5></li>
-			</ul>
+			<?php custom_breadcrumbs(); ?>
 
 			<ul class="rahp-object-title">
 				<li><h2><?php single_cat_title(); ?></h2></li>
@@ -42,7 +40,7 @@
 
 			) );
 
-			if($children) {
+			// if($children) {
 
 	    ?>
 
@@ -92,9 +90,9 @@
 			?>
 
 			<?php 
-				} else {
-					get_template_part('content-rahp_collection', get_post_format());
-			}
+			// 	} else {
+			// 		get_template_part('content-rahp_collection', get_post_format());
+			// }
 			?>
 
 	    	<!-- <div class="col-sm-12 single-post">
@@ -118,8 +116,16 @@
 	    	</div>
 
 	    	-->
+
+	    
+
 	    	<div class="container-fluid pagination">
-						<div>
+
+	    				<?php get_template_part('pagination', get_post_format()); ?>
+
+
+
+						<!-- <div>
 							<button type="button" class="prev">Previous</button>
 						</div>
 						
@@ -129,9 +135,9 @@
 						
 						<div>
 							<button type="button" class="next">Next</button>
-						</div>
+						</div> -->
 
-					</div>
+			</div>
 
 
 

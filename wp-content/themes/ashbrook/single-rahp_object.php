@@ -16,6 +16,7 @@
 		$date = get_field('date');
 		$introduction = get_field('introduction');
 		$body = get_field('body');
+		$footnotes = get_field('footnotes');
 		$citation = get_field('citation');
 		$study_questions = get_field('study_questions');
 		$study_questions_excerpt = get_field('study_questions_excerpt');
@@ -31,11 +32,7 @@
 
 	<main class="single-rahp-object" id="post-<?php the_ID(); ?>">
 		<div class="container-fluid">
-			<ul class="breadcrumb">
-				<li><h5>Sources</h5></li>
-				<li><h5>Author</h5></li>
-				<li><h5>George Washington</h5></li>
-			</ul>
+			<?php custom_breadcrumbs(); ?>
 
 			<ul class="rahp-object-title">
 				<li><h2><?php the_title(); ?></h2></li>
@@ -120,13 +117,25 @@
 					<?php endif; ?>
 
 					<div class="object-references col-sm-7">
+						<?php if ($footnotes) {
+						?>
+						
 						<h2>Notes</h2>
-						<p>[1] Micah 4:4 ('But they shall sit every man under his vine and under his fig tree; and none shall make them afraid: for the mouth of the LORD of hosts has spoken it.') was one of the more popular Biblical passages during the Revolution. The preceding verse (Micah 3:4) is now better known: 'And he shall judge between many peoples, and rebuke strong nations afar off; and they shall beat their swords into plowshares, and their spears into pruninghooks: nation shall not lift up a sword against nation, neither shall they learn war any more.'</p>
+						<?php echo $footnotes; ?>
+						
+						<?php 
+						}
+						?>
 					</div>
 
 					<div class="object-references col-sm-7">
+						<?php if ($citation) {
+						?>
 						<h2>Citation</h2>
 						<p><?php echo $citation; ?></p>
+						<?php 
+						}
+						?>
 					</div>
 
 					

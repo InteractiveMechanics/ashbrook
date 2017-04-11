@@ -17,10 +17,7 @@
 
 	<main class="single-rahp-object">
 		<div class="container-fluid">
-			<ul class="breadcrumb">
-				<li><h5>Sources</h5></li>
-				<li><h5>Author</h5></li>
-			</ul>
+			<?php custom_breadcrumbs(); ?>
 
 			<ul class="rahp-object-title">
 				<li><h2><?php the_title(); ?></h2></li>

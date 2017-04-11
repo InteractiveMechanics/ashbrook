@@ -91,8 +91,11 @@
 				      	<a class="navbar-brand" href="#"><img src="<?php printTHemePath(); ?>/img/header-logo.svg" alt="logo"></a>
 				    </div>
 
+				   
+
+
 				    <!-- Collect the nav links, forms, and other content for toggling -->
-				 	<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+				 <!-- 	<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 				 	  <div class="close-skew visible-xs"></div>
 				 	  <button class="mobile-menu-close visible-xs" type="button">X</button>
 				      <ul class="nav navbar-nav navbar-right">
@@ -114,11 +117,11 @@
 
 					            	</ul>
 
-					          	</li>
+					          	</li> -->
 				         
 
 				          	
-
+<!-- 
 					          	<li class="col-sm-3 multi-column-dropdown-wrapper">
 
 					          		<ul class="multi-column-dropdown">
@@ -151,18 +154,32 @@
 					        	</li>
 
 				          	</ul>
-
-				        </li>
+ -->
+				       <!--  </li> -->
 
 				        <!-- <li><a href="#" class="tiny-text-parent">Places <span class="tiny-text">of</span> Faith Map</a></li> -->
-				        <li class="hidden-xs"><a href="#">Search</a></li>
+				       <!--  <li class="hidden-xs"><a href="#">Search</a></li>
 				        <li class="visible-xs"><a href="#">About</a></li>
 				        <li class="visible-xs"><a href="#">Blog</a></li>
 				    
-				    </ul>
+				    </ul> -->
+
+				    <?php
+			            wp_nav_menu( array(
+			                'menu'              => 'primary',
+			                'theme_location'    => 'primary',
+			                'depth'             => 3,
+			                'container'         => 'div',
+			                'container_class'   => 'collapse navbar-collapse',
+			                'container_id'      => 'bs-example-navbar-collapse-1',
+			                'menu_class'        => 'nav navbar-nav navbar-right',
+			                'fallback_cb'       => 'WP_Bootstrap_Navwalker::fallback',
+			                'walker'            => new WP_Bootstrap_Navwalker())
+			            );
+        			?>
 
 
-				    </div><!-- /.navbar-collapse -->
+				  <!--   </div> --><!-- /.navbar-collapse -->
 
 				    <div class="nav navbar-nav navbar-right" id="subnav-wrapper">
 				    	<ul class="subnav visible-md visible-lg">
@@ -172,7 +189,7 @@
 				    		</li>
 
 				    		<li class="subnav-item">
-				    			<a href="">About</a>
+				    			<a href="#">About</a>
 				    		</li>
 
 				    	</ul>

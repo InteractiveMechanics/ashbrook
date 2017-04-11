@@ -50,19 +50,26 @@ $(document).ready(function(){
   });
 
   // ANALYSIS SLIDER
-  $('.analysis-slider').slick({
-      arrows: true,
-      dots: true,
-  });
-
   var $status = $('.paging-info');
   var $slickElement = $('.analysis-slider');
+  var $detailcount = $('.detail-count');
+
+
 
   $slickElement.on('init reInit afterChange', function(event, slick, currentSlide, nextSlide){
     //currentSlide is undefined on init -- set it to 0 in this case (currentSlide is 0 based)
     var i = (currentSlide ? currentSlide : 0) + 1;
     $status.text(i + ' of ' + slick.slideCount);
+    $detailcount.text(i);
   });
+
+
+  $('.analysis-slider').slick({
+      arrows: true,
+      dots: true,
+  });
+
+
 
 
   // LIGHTGALLERY 
@@ -73,7 +80,12 @@ $(document).ready(function(){
   }
 
 
-  $(".lightgallery").lightGallery();
+
+  $(".lightgallery").lightGallery({
+     subHtmlSelectorRelative: true
+  }); 
+
+  
 
 
   
@@ -102,6 +114,21 @@ $(document).ready(function(){
       $('#bs-example-navbar-collapse-1').removeClass('in');
     });
 
+    
+    // MENU 
+    // 1st column, Sources
+    $('#menu-item-150').addClass('col-sm-3 multi-column-dropdown-wrapper');
+
+    // 2nd column, Collections
+    $('#menu-item-148').addClass('col-sm-3 multi-column-dropdown-wrapper');
+
+    // 3rd column, Analysis
+    $('#menu-item-157').addClass('col-sm-2 multi-column-dropdown-wrapper skew');
+    $('#menu-item-157').after('<li class="col-sm-4 multi-column-dropdown-wrapper"><div class="nav-dropdown-img"></div></li>');
+
+    $('.dropdown').children('.dropdown-menu').addClass('multi-column columns-3 animated fadeIn');
+
+   
     
 
 
