@@ -6,6 +6,7 @@
 		font-size: 2.15em;
 		font-family: $vollkhorn;
 		font-style: italic;
+
 	}
 	.next, .prev {
 		top: 100%;
@@ -26,7 +27,7 @@
     		right: 10px;
    	 		height: auto;
     		top: -1px;
-    		display: inherit;
+    		display: inline;
 		}
 	}
 
@@ -37,7 +38,7 @@
     		left: 10px;
    	 		height: auto;
     		top: -1px;
-    		display: inherit;
+    		display: inline;
 		}
 	}
 	.paging-info {
@@ -45,5 +46,31 @@
 		h2 {
 			margin: 4px 0px 0px;
 		}
+	}
+}
+
+.wp-pagenavi {
+	width: 50%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    .pages {
+    	order: 2;
+    }
+}
+
+.previouspostslink {
+	@extend .prev;
+	order: 1;
+	&:before {
+		display: inline !important;
+	}
+}
+
+.nextpostslink {
+	@extend .next;
+	order: 3;
+	&:after {
+		display: inline !important;
 	}
 }

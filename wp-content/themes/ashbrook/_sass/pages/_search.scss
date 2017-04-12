@@ -101,6 +101,10 @@ button[type="reset"] {
 
 }
 
+.bootstrap-select>.dropdown-toggle {
+	z-index: 0;
+}
+
 .bootstrap-select .dropdown-toggle:focus {
 	outline: none !important;
 }

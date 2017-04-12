@@ -18,7 +18,7 @@ get_header(); ?>
 
 
 	<div class="container-fluid pagination">
-		<?php wp_pagenavi(); ?>
+		 <?php wp_pagenavi(); ?>
 		<!-- <div>
 			<button type="button" class="prev">Previous</button>
 		</div>

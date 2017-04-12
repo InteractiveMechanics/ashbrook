@@ -9,11 +9,14 @@
 
 		    				<?php 
 
-			    			
+			    				$paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : '1';
 								$args = array(
-									'post_type' => array('rahp_object', 'rahp_art', 'post', 'rahp_collection'),
+									'post_type' => array('rahp_object', 'rahp_art', 'post', 'totm', 'rahp_collection'),
+									'nopaging'  => false,
 									'orderby'	=> 'rand',
-									'posts_per_page' => 12 
+									'posts_per_page' => 12,
+									'paged' => $paged
+									
 									);
 
 								$the_query = new WP_Query( $args );
@@ -66,6 +69,8 @@
 												</div>
 			    							</a>
 		    							</div> 
+
+
 									
 								<?php 
 									wp_reset_postdata(); 
@@ -86,3 +91,5 @@
 	    			</div> <!-- /col-sm-12 -->
 	    		</div>
 	    	</div>
+
+

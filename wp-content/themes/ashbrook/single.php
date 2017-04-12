@@ -57,7 +57,13 @@
 	  		  		</div>
 
 	  		  		<div class="container-fluid pagination">
-						<div>
+
+	  		  			<?php previous_post_link('%link', 'Previous'); ?> 
+
+
+
+	  		  			
+						<!-- <div>
 							<button type="button" class="prev">Previous</button>
 						</div>
 						
@@ -67,7 +73,8 @@
 						
 						<div>
 							<button type="button" class="next">Next</button>
-						</div>
+						</div> -->
+						<?php next_post_link( '%link', 'Next'); ?>
 
 					</div>
 

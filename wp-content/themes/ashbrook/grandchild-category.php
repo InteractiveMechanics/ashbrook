@@ -13,8 +13,13 @@
 				   	$category_dates = get_field('category_dates', $term_id);
 
 				   	echo '<li><h2>'. $term->name .'</h2></li>';
-				   	echo '<li><h3>' . $term->description . '</h3></li>';
-				   	echo '<li><h3>' . $category_dates . '</h3></li>'
+				   	if ($term->description) {
+				   		echo '<li><h3>' . $term->description . '</h3></li>';
+				   	}
+
+				   	if ($category_dates) {
+				   	echo '<li><h3>' . $category_dates . '</h3></li>';
+				   	}
 
 				   	
 				?>
