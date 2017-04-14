@@ -1,5 +1,12 @@
 <?php get_header(); ?>
 
+<?php
+	$cover_image = get_field('totm_cover_image', 'option');
+	$default_cover_image = get_field('default_cover_image', 'option');
+	$title = get_field('totm_archive_title', 'option');
+	$introduction = get_field('totm_introduction', 'option');
+
+?>
 	
 	<main class="blog-page">
 
@@ -9,16 +16,26 @@
 
 			<ul class="rahp-object-title">
 
-				<?php $title = get_field('totm_archive_title', 'option'); ?>
+				
 				
 				<li><h2><?php echo $title; ?></h2></li>
 			</ul>
 
 		</div>
 
-		<div class="jumbotron slim-jumbotron" style="background-image:  linear-gradient(rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 0) 100%), url('<?php printThemePath(); ?>/img/header-img.jpg');">
+		<?php if ($cover_image) { 
+			?>
+				<div class="jumbotron slim-jumbotron" style="background-image:  linear-gradient(rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 0) 100%), url('<?php echo $cover_image; ?>');">
+				<?php 
+				} else {
+				?>
+				<div class="jumbotron slim-jumbotron" style="background-image:  linear-gradient(rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 0) 100%), url('<?php echo $default_cover_image; ?>');">
+			<?php }
+			?>
+
+
+
 			<?php
-				$introduction = get_field('totm_introduction', 'option');
 
 				if ($introduction):
 			?>
@@ -36,7 +53,7 @@
 
 				<div class="container-fluid pagination">
 
-					<?php get_template_part('pagination'); ?>
+					<?php wp_pagenavi(); ?>
 
 				</div>
 

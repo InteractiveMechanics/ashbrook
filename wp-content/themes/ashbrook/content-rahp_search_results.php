@@ -1,4 +1,4 @@
-<div class="container-fluid related-content">
+<!-- <div class="container-fluid related-content">
 	    		<div class="row">
 	    			<div class="col-sm-12">
 	    				<div class="columns-container">
@@ -83,9 +83,10 @@
 	    <?php else: ?>
 
 	<!-- article -->
-	<article>
+	<!-- <article>
 		<h2><?php _e( 'Sorry, nothing to display.', 'Ashbrook_RAHP' ); ?></h2>
-	</article>
+	</article> -->
 	<!-- /article -->
 
 <?php endif; ?>
+ -->

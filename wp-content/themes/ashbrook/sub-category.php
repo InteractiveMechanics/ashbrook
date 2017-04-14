@@ -11,15 +11,32 @@
 
 		</div>
 
-		<div class="jumbotron slim-jumbotron" style="background-image:  linear-gradient(rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 0) 100%), url('<?php printThemePath(); ?>/img/header-img.jpg');">
+		<!-- <div class="jumbotron slim-jumbotron" style="background-image:  linear-gradient(rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 0) 100%), url('<?php printThemePath(); ?>/img/header-img.jpg');"> -->
 
 			
 				<?php 
 					$term = get_queried_object();
 				 	$term_id = $term->taxonomy . '_' . $term->term_id;
 				   	$category_introduction = get_field('category_introduction', $term_id);
+				   	$cover_image = get_field('category_cover_image', $term_id);
+				   	$default_cover_image = get_field('default_cover_image', 'option');
 
 				   	if ( $term ):
+				   	?>	
+				   		<?php if ($cover_image) { 
+						?>
+						<div class="jumbotron slim-jumbotron" style="background-image:  linear-gradient(rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 0) 100%), url('<?php echo $cover_image; ?>');">
+						<?php 
+						} else {
+						?>
+						<div class="jumbotron slim-jumbotron" style="background-image:  linear-gradient(rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 0) 100%), url('<?php echo $default_cover_image; ?>');">
+						<?php }
+						?>
+
+				   	<?php
+
+				   			
+
 				   			if ($category_introduction):
 					   			echo '<div class="slim-jumbotron-callout">';
 								echo '<p>' . $category_introduction .'</p>';
@@ -64,11 +81,17 @@
 				 	$term_id = $term->taxonomy . '_' . $term->term_id;
 				   	$category_image = get_field('category_image', $term_id);
 				   	$category_introduction = get_field('category_introduction', $term_id);
+				   	$default_category_image = get_field('default_category_image', 'option');
 
 
 				   	if ( $term ):
 							echo '<a href="'. esc_url(get_category_link($category->cat_ID)) . '">';
-							echo '<img src="' . $category_image .'">';
+
+							if ($category_image) {
+								echo '<img src="' . $category_image .'">';
+							} else {
+								echo '<img src="' . $default_category_image .'">';
+							} 
 							echo '</a>';
 					endif;
 
@@ -77,8 +100,12 @@
 					echo '<div class="col-sm-10">';
 					echo '<div class="blog-excerpt">';
 					echo '<h2>' . $category->name . '</h2>';
+
+					if ($category->description): 
 					echo '<h5>' . $category->description . '</h2>';
-					echo '<h5>' . $category->count . ' objects</h2>';
+					endif;
+
+					echo '<h5> objects in the collection: ' . $category->count .'</h2>';
 					echo '<p>' . $category_introduction . '</p>';
 					echo '</div>'; // .blog-excerpt
 					echo '</div>'; // .col-sm-10

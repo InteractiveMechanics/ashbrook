@@ -11,6 +11,8 @@ get_header(); ?>
 
 <?php while ( have_posts() ) : the_post();
 	$introduction = get_field('introduction');
+	$cover_image = get_field('cover_image');
+	$default_cover_image = get_field('default_cover_image', 'option');
 
 ?>
 
@@ -27,10 +29,22 @@ get_header(); ?>
 
 		</div>
 
-		<div class="jumbotron slim-jumbotron" style="background-image:  linear-gradient(rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 0) 100%), url('<?php printThemePath(); ?>/img/header-img.jpg');">
+		<?php if ($cover_image) { 
+			?>
+				<div class="jumbotron slim-jumbotron" style="background-image:  linear-gradient(rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 0) 100%), url('<?php echo $cover_image; ?>');">
+				<?php 
+				} else {
+				?>
+				<div class="jumbotron slim-jumbotron" style="background-image:  linear-gradient(rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 0) 100%), url('<?php echo $default_cover_image; ?>');">
+			<?php }
+		?>
+			
+		<?php if ($introduction): ?>
 			<div class="slim-jumbotron-callout">
 				<p><?php echo $introduction; ?></p>
 			</div>
+		<?php endif; ?>
+
 	    </div>
 
 	    	<div class="container-fluid rahp-object-body">

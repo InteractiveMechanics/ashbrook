@@ -12,6 +12,8 @@
 <?php get_header(); ?>
 
 <?php while ( have_posts() ) : the_post();
+	$cover_image = get_field('cover_image');
+	$default_cover_image = get_field('default_cover_image', 'option');
 	$artist = get_field('artist');
 	$artwork_title = get_field('artwork_title');
 	$artwork_year = get_field('artwork_year');
@@ -33,17 +35,33 @@
 
 		</div>
 
-		<div class="jumbotron slim-jumbotron" style="background-image:  linear-gradient(rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 0) 100%), url('<?php printThemePath(); ?>/img/header-img.jpg');">
+		
+
+		<?php if ($cover_image) { 
+		?>
+		<div class="jumbotron slim-jumbotron" style="background-image:  linear-gradient(rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 0) 100%), url('<?php echo $cover_image; ?>');">
+		<?php 
+		} else {
+		?>
+		<div class="jumbotron slim-jumbotron" style="background-image:  linear-gradient(rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 0) 100%), url('<?php echo $default_cover_image; ?>');">
+		<?php }
+		?>
+
+			<?php if ($introduction) {
+			?>
 			<div class="slim-jumbotron-callout">
 				<p><?php echo $introduction; ?></p>
 			</div>
-	    </div>
+			<?php }
+			?>
+
+	    </div> 
 
 	    <div class="rahp-object-subheading">
 	    	<div class="container-fluid">
 	    		<ul class="sharing hidden-sm hidden-xs">
 	    			<li><h1><a href="">Print</a></h1></li>
-	    			<li><h1><a href="">Share</a></h1></li>
+	    			<li><h1><?php if ( function_exists( 'ADDTOANY_SHARE_SAVE_KIT' ) ) { ADDTOANY_SHARE_SAVE_KIT(); } ?></h1></li>
 	    			<li><h1><a href="" download>Download</a></h1></li>
 	    		</ul>
 	    	</div>

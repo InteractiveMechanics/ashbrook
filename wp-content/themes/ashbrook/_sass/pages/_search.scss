@@ -101,6 +101,23 @@ button[type="reset"] {
 
 }
 
+button[type="submit"] {
+	@extend button[type="reset"];
+	margin-right: 20px;
+}
+
+.bootstrap-select>.dropdown-toggle {
+	z-index: 0;
+}
+
 .bootstrap-select .dropdown-toggle:focus {
 	outline: none !important;
+}
+
+.search-results {
+	margin-left: 30px;
+}
+
+.search-result-filter {
+	font-style: initial;
 }

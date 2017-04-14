@@ -12,6 +12,8 @@
 <?php get_header(); ?>
 
  <?php 
+ 		$cover_image = get_field('cover_image');
+ 		$default_cover_image = get_field('default_cover_image', 'option');
 		$author = get_field('author');
 		$date = get_field('date');
 		$introduction = get_field('introduction');
@@ -36,19 +38,44 @@
 
 			<ul class="rahp-object-title">
 				<li><h2><?php the_title(); ?></h2></li>
-				<li><h3><?php echo $author; ?></h3></li>
+
+				<?php if ($author) {
+				?>
+					<li><h3><?php echo $author; ?></h3></li>
+				<?php 
+				}
+				?>
+
+				<?php if ($date) {
+				?>
 				<li><h3><?php echo $date; ?></h3></li>
+				<?php }
+				?>
 			</ul>
 
 		</div>
 
+		<?php if ($cover_image) { 
+		?>
+		<div class="jumbotron slim-jumbotron" style="background-image:  linear-gradient(rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 0) 100%), url('<?php echo $cover_image; ?>');">
+		<?php 
+		} else {
+		?>
+		<div class="jumbotron slim-jumbotron" style="background-image:  linear-gradient(rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 0) 100%), url('<?php echo $default_cover_image; ?>');">
+		<?php }
+		?>
 
-		<div class="jumbotron slim-jumbotron" style="background-image:  linear-gradient(rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 0) 100%), url('<?php printThemePath(); ?>/img/header-img.jpg');">
-			
+
+			<?php if ($introduction) {
+			?>
 			<div class="slim-jumbotron-callout">
+
 				<p><?php echo $introduction; ?></p>
-			
+				
 			</div>
+			<?php 
+				}
+			?>
 	    </div>
 
 
@@ -58,7 +85,7 @@
 	    		<?php if( get_field('25_core_document') ): ?>
 						
 						<div class="core-docs-tag">
-	    					<h3>One of the <a href="">25 Core Documents</a></h3>
+	    					<h3>One of the <a href="<?php get_field('25_core_docs_link', 'option'); ?>">25 Core Documents</a></h3>
 	    		
 	    					<h3 class="visible-xs">Go to <a href="">Study Questions</a></h3>
 	    				</div>
@@ -68,7 +95,7 @@
 
 	    		<ul class="sharing hidden-xs">
 	    			<li><h1><a href="">Print</a></h1></li>
-	    			<li><h1><a href="">Share</a></h1></li>
+	    			<li><h1><?php if ( function_exists( 'ADDTOANY_SHARE_SAVE_KIT' ) ) { ADDTOANY_SHARE_SAVE_KIT(); } ?></h1></li>
 	    			<li><h1><a href="">Download</a></h1></li>
 	    		</ul>
 	    	</div>

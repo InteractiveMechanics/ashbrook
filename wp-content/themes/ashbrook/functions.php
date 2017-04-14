@@ -15,6 +15,7 @@ require_once('wp-bootstrap-navwalker.php');
 
 register_nav_menus( array(
         'primary' => __( 'Primary Menu', 'Ashbrook_RAHP' ),
+        'secondary' => __('Secondary Menu', 'Ashbrook_RAHP')
 ) );
 
 
@@ -355,12 +356,44 @@ function custom_breadcrumbs() {
   function tgm_io_cpt_search( $query ) {
   
     if ( $query->is_search ) {
-      $query->set( 'post_type', array('page', 'post', 'rahp_object', 'rahp_art', 'rahp_collection' ) );
+      $query->set( 'post_type', array('page', 'post', 'rahp_object', 'rahp_art', 'rahp_collection', 'totm' ) );
     }
     
     return $query;
 
     }
+
+
+    // PAGINATION CLASSES
+
+  add_filter('next_post_link', 'next_posts_link_attributes');
+  add_filter('previous_post_link', 'prev_posts_link_attributes');
+
+  function next_posts_link_attributes($output) {
+     $code = 'class="next"';
+     return str_replace('<a href=', '<a '.$code.' href=', $output);
+  }
+
+   function prev_posts_link_attributes($output) {
+    $code = 'class="prev"';
+    return str_replace('<a href=', '<a '.$code.' href=', $output);
+  }
+
+
+  // ADD DEFAULT IMAGE IN ACF
+  
+  add_action('acf/render_field_settings/type=image', 'add_default_value_to_image_field', 20);
+  function add_default_value_to_image_field($field) {
+    acf_render_field_setting( $field, array(
+      'label'     => __('Default Image','acf'),
+      'instructions'  => __('Appears when creating a new post','acf'),
+      'type'      => 'image',
+      'name'      => 'default_value',
+    ));
+}
+
+
+
 
 
 

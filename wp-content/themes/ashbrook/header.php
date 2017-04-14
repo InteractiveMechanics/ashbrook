@@ -51,6 +51,34 @@
 </head>
 
 <body> 
+
+
+		<!-- BACKGROUND IMG IN NAV  -->
+		<?php 
+
+		$rows = get_field('nav_background_images', 'option');
+		            if($rows) $i=0; {
+			            shuffle( $rows );
+
+			         foreach($rows as $row) {
+				            $i++; if ($i==2) break;
+				            $nav_img = $row['nav_img']; 
+				            ?>
+				       
+				           <style>
+				           		.nav-dropdown-img {
+									background-image: url('<?php echo $nav_img; ?>');
+								}
+				           </style>
+
+						<?php 
+										        
+			            }
+			     
+			     }    
+		?>
+
+
 		
 		<header>
 			<nav class="navbar navbar-default">
@@ -88,7 +116,7 @@
 								</g>
 							</svg>
 				    	</button>
-				      	<a class="navbar-brand" href="#"><img src="<?php printTHemePath(); ?>/img/header-logo.svg" alt="logo"></a>
+				      	<a class="navbar-brand" href="<?php echo home_url(); ?>"><img src="<?php printTHemePath(); ?>/img/header-logo.svg" alt="logo"></a>
 				    </div>
 
 				   
@@ -179,9 +207,26 @@
         			?>
 
 
+
+
+        			<?php
+			            wp_nav_menu( array(
+			                'menu'              => 'secondary',
+			                'theme_location'    => 'secondary',
+			                'depth'             =>  2,
+			                'container'         => 'div',
+			                'container_class'   => 'nav navbar-nav navbar-right',
+							'container_id'      => '',
+			                'menu_class'        => 'subnav visible-md visible-lg',
+			                'fallback_cb'       => 'wp_bootstrap_navwalker::fallback',
+			                'walker'            => new wp_bootstrap_navwalker())
+			            );
+			        ?>
+
+
 				  <!--   </div> --><!-- /.navbar-collapse -->
 
-				    <div class="nav navbar-nav navbar-right" id="subnav-wrapper">
+				  <!--   <div class="nav navbar-nav navbar-right" id="subnav-wrapper">
 				    	<ul class="subnav visible-md visible-lg">
 
 				    		<li class="subnav-item">
@@ -193,7 +238,7 @@
 				    		</li>
 
 				    	</ul>
-				    </div>
+				    </div> -->
 
 				  </div><!-- /.container-fluid -->
 				</nav>

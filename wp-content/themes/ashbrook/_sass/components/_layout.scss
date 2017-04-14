@@ -56,12 +56,15 @@ main {
 	height: auto; // 332px
 	padding: 40px;
 	background-color: rgba(241, 242, 242, 0.7);
+	max-height: 350px;
 
 	p {
 		font-family: $lato;
 		font-size: 13px;
 		font-weight: 400;
 		line-height: 30px;
+		max-height: 250px;
+		overflow-y: auto;
 	}
 
   	&:after {
