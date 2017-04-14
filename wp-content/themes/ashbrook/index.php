@@ -15,6 +15,15 @@
   */
 get_header(); ?>
 
+<?php
+	$our_title = get_the_title( get_option('page_for_posts', true) );
+	$introduction = get_field('introduction', get_option('page_for_posts'));
+	$cover_image = get_field('cover_image', get_option('page_for_posts'));
+	$default_cover_image = get_field('default_cover_image', 'option');
+
+
+?>
+
 
 	<main role="main" class="blog-page">
 		<div class="container-fluid">
@@ -32,11 +41,7 @@ get_header(); ?>
 		</div>
 
 		<div class="jumbotron slim-jumbotron" style="background-image:  linear-gradient(rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 0) 100%), url('<?php printThemePath(); ?>/img/header-img.jpg');">
-			<?php
-				$introduction = get_field('introduction', get_option('page_for_posts'));
-
-				if ($introduction):
-			?>
+			<?php if ($introduction): ?>
 				<div class="slim-jumbotron-callout">
 					<p><?php echo $introduction; ?></p>
 				</div>

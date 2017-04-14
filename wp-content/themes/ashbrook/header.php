@@ -51,6 +51,34 @@
 </head>
 
 <body> 
+
+
+		<!-- BACKGROUND IMG IN NAV  -->
+		<?php 
+
+		$rows = get_field('nav_background_images', 'option');
+		            if($rows) $i=0; {
+			            shuffle( $rows );
+
+			         foreach($rows as $row) {
+				            $i++; if ($i==2) break;
+				            $nav_img = $row['nav_img']; 
+				            ?>
+				       
+				           <style>
+				           		.nav-dropdown-img {
+									background-image: url('<?php echo $nav_img; ?>');
+								}
+				           </style>
+
+						<?php 
+										        
+			            }
+			     
+			     }    
+		?>
+
+
 		
 		<header>
 			<nav class="navbar navbar-default">
@@ -88,7 +116,7 @@
 								</g>
 							</svg>
 				    	</button>
-				      	<a class="navbar-brand" href="#"><img src="<?php printTHemePath(); ?>/img/header-logo.svg" alt="logo"></a>
+				      	<a class="navbar-brand" href="<?php echo home_url(); ?>"><img src="<?php printTHemePath(); ?>/img/header-logo.svg" alt="logo"></a>
 				    </div>
 
 				   
@@ -177,6 +205,9 @@
 			                'walker'            => new WP_Bootstrap_Navwalker())
 			            );
         			?>
+
+
+
 
         			<?php
 			            wp_nav_menu( array(

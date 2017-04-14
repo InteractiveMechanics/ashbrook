@@ -18,6 +18,12 @@
 	text-transform: uppercase;
 }
 
+.navbar-default {
+	.container-fluid {
+		height: 100px;
+	}
+}
+
 .navbar-default .navbar-nav>li>a {
 	color: $black;
 	font-size: 1.4em;
@@ -162,6 +168,7 @@
 
 .multi-column-dropdown-wrapper {
 	padding: 0px;
+	height: 200px;
 	@include screen-xs {
 		padding-left: 40px;
 		padding-bottom: 10px;
@@ -176,7 +183,7 @@
     transform: skewX(20deg);
     background-color: $white;
     z-index: 1;
-    height: auto;
+    height: 200px;
     position: relative;
     left: 42px;
     flex: 1;
@@ -286,7 +293,7 @@
 }
 
 .nav-dropdown-img {
-	background-image: url(https://placekitten.com/g/500/200);
+	//background-image: url(../img/);
 	background-size: cover;
 	height: 100%;
 	width: auto;
@@ -446,6 +453,12 @@ ul.nav li.dropdown:hover > ul.dropdown-menu {
 	padding: 18px 0px 0px 18px;
 }
 
+.dropdown>.dropdown-toggle {
+	.caret {
+		display: none;
+	}
+}
+
 
 ////////////////////////////////
 // for multilevel nav-walker //
@@ -538,24 +551,7 @@ ul.nav li.dropdown:hover > ul.dropdown-menu {
 	}
 }
 
-// .dropdown-submenu:active>.dropdown-menu, 
-// .dropdown-submenu:hover>.dropdown-menu {
-// 	display: block;
-// }
 
-// .dropdown-submenu>a:after {
-// 	display:block;
-// 	content:" ";
-// 	float:right;
-// 	width:0;
-// 	height:0;
-// 	border-color:transparent;
-// 	border-style:solid;
-// 	border-width:5px 0 5px 5px;
-// 	border-left-color:#cccccc;
-// 	margin-top:5px;
-// 	margin-right:-10px;
-// }
 
 .dropdown-submenu:active>a:after {
 	border-left-color:#ffffff;
@@ -579,6 +575,7 @@ ul.nav li.dropdown:hover > ul.dropdown-menu {
 .dropdown-menu>li>a:hover {
 	background-color: transparent;
 }
+
 
 
 

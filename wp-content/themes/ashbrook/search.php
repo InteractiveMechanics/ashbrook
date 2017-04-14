@@ -1,18 +1,16 @@
 <?php get_header(); ?>
 
-	<main role="main search-page">
-		<!-- section -->
-		<section>
+	<main role="main search-results-page">
+		
+		
 
-			<h1><?php echo sprintf( __( '%s Search Results for ', 'Ashbrook_RAHP' ), $wp_query->found_posts ); echo get_search_query(); ?></h1>
-
-			<?php get_template_part('content-rahp_search_results', 'Ashbrook_RAHP'); ?>
-
+			<?php get_template_part('searchform', get_post_format()); ?>
 			
-		<?php  //get_template_part('pagination'); ?>
 
-		</section>
-		<!-- /section -->
+			<?php get_template_part('content-rahp_search_default', 'Ashbrook_RAHP'); ?>
+	
+
+		
 	</main>
 
 

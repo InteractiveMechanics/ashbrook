@@ -38,9 +38,9 @@ get_header(); ?>
 
 						<div class="home-single-slide-callout">
 								
-									<p class="visible-xxxs"><?php echo $short_introduction; ?><a href="" class="read-more"> More</a></p>
+									<p class="visible-xxxs"><?php echo $short_introduction; ?><a href="<?php echo $link; ?>" class="read-more"> More</a></p>
 
-									<p class="hidden-xxxs"><?php echo $introduction; ?><a href="" class="read-more"> More</a></p>
+									<p class="hidden-xxxs"><?php echo $introduction; ?><a href="<?php echo $link; ?>" class="read-more"> More</a></p>
 						
 						</div>
 						

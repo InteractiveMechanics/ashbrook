@@ -66,6 +66,10 @@ p>a {
 	@include gold-anchor;
 }
 
+a[id^="foot-"] {
+	border-bottom: none;
+}
+
 h6>a {
 	@include gray-anchor;
 	white-space: pre;

@@ -62,7 +62,7 @@
 								</div>
 								
 								<div class="tags-wrapper">
-									<h2>Tags</h2>
+									<h2>Themes</h2>
 									<?php the_tags( '<ul class="tags"><li><h5> ', '<h5></li><li><h5>', '</h5></li></ul>' ); ?>
 								</div>
 

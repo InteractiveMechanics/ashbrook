@@ -98,8 +98,55 @@ $(document).ready(function(){
             }
         });
 
-        $(this).find('button[type=submit]').hide();
+        //$(this).find('button[type=submit]').hide();
     });
+
+  $('.search-reset').click(function(){
+      $(".selectpicker[name='post_tag']").selectpicker("val", "" );
+      $(".selectpicker[name='post_era']").selectpicker("val", "" );
+      $(".selectpicker[name='post_category']").selectpicker("val", "" );
+  });
+
+
+  // SEARCH STUFF
+
+  $('.search-pagination').on('click', function(){
+    var value = $(this).attr('value');
+    $('#form-pagination').attr('value', value);
+    document.getElementById("search-form").submit();
+  });
+
+  function getParameterByName(name, url) {
+    if (!url) {
+      url = window.location.href;
+    }
+    name = name.replace(/[\[\]]/g, "\\$&");
+    var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+        results = regex.exec(url);
+    if (!results) return null;
+    if (!results[2]) return '';
+    return decodeURIComponent(results[2].replace(/\+/g, " "));
+  }
+
+  if (getParameterByName("post_tag")) {
+      $(".selectpicker[name='post_tag']").selectpicker("val", getParameterByName("post_tag") );
+  }
+
+  if (getParameterByName("post_category")) {
+      $(".selectpicker[name='post_category']").selectpicker("val", getParameterByName("post_category"));
+  }
+
+  if (getParameterByName("post_era")) {
+      $(".selectpicker[name='post_category']").selectpicker("val", getParameterByName("post_era"));
+  }
+
+
+  
+
+
+
+
+
 
     //MOBILE SEARCH BAR
     $('.mobile-search-bar').hide();
@@ -124,7 +171,7 @@ $(document).ready(function(){
 
     // 3rd column, Analysis
     $('#menu-item-157').addClass('col-sm-2 multi-column-dropdown-wrapper skew');
-    $('#menu-item-157').after('<li class="col-sm-4 multi-column-dropdown-wrapper"><div class="nav-dropdown-img"></div></li>');
+     $('#menu-item-157').after('<li class="col-sm-4 multi-column-dropdown-wrapper nav-dropdown-image-wrapper"><div class="nav-dropdown-img"></div></li>');
 
     $('.dropdown').children('.dropdown-menu').addClass('multi-column columns-3 animated fadeIn');
 
