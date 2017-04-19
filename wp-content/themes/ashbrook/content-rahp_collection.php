@@ -15,7 +15,7 @@
 
 							$posts = get_posts(array(
 								'posts_per_page'	=> -1,
-								'post_type'			=> array('rahp_object', 'rahp_analysis', 'post'),
+								'post_type'			=> array('rahp_object', 'rahp_art', 'post'),
 								'cat'				=> $cat
 							));
 

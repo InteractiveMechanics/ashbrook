@@ -190,23 +190,20 @@
 	    			</div> <!-- /col-sm-12 -->
 
 	    			<div class="container-fluid pagination">
-						<?php //wp_pagenavi(array( 'query' => $the_query) ); ?>
 
-						<?php if ($args['paged'] > 1): ?>
-						<div>
-							<button type="button" class="search-pagination prev" value="<?php echo $args['paged'] - 1; ?>">Previous</button>
-						</div>
-						<?php endif; ?>
-						
-						<div class="paging-info">
-							<h2><?php echo $args['paged']; ?> of <?php echo $the_query->max_num_pages; ?></h2>
-						</div>
-						
-						<?php if ($args['paged'] < $the_query->max_num_pages): ?>
-						<div>
-							<button type="button" class="search-pagination next" value="<?php echo $args['paged'] + 1; ?>">Next</button>
-						</div>
-						<?php endif; ?>
+                        <div class="wp-pagenavi">
+                            <span class="pages">
+    							<?php echo $args['paged']; ?> of <?php echo $the_query->max_num_pages; ?>
+    						</span>
+
+    						<?php if ($args['paged'] > 1): ?>
+    						<a class="previouspostslink" rel="prev" value="<?php echo $args['paged'] - 1; ?>">Previous</a>
+    						<?php endif; ?>
+    						    						
+    						<?php if ($args['paged'] < $the_query->max_num_pages): ?>
+                            <a class="nextpostslink" rel="next" value="<?php echo $args['paged'] + 1; ?>">Next</a>
+    						<?php endif; ?>
+
 					</div>
 	    		</div>
 	    	</div>
