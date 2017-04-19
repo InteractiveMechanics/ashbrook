@@ -166,7 +166,7 @@ figure {
     display: table; }
 
 figcaption {
-  color: #A5AEB6;
+  color: #7b8894;
   font-weight: 300;
   margin-top: 7px;
   line-height: 1.8;
@@ -284,7 +284,7 @@ main {
   max-height: 350px; }
   .slim-jumbotron-callout p {
     font-family: "Lato", "Helvetica-Neue", Helvetica, Ariel, sans-serif;
-    font-size: 13px;
+    font-size: 14px;
     font-weight: 400;
     line-height: 30px;
     max-height: 250px;
@@ -1229,7 +1229,8 @@ footer {
 
 .analysis-single-slide {
   padding-bottom: 20px;
-  margin-bottom: 40px; }
+  margin-bottom: 40px;
+  outline: none; }
   .analysis-single-slide h2 {
     padding-bottom: 20px; }
     @media (max-width: 767px) {
@@ -1302,7 +1303,8 @@ footer {
     line-height: 1.8;
     color: #C49F21;
     text-transform: uppercase;
-    width: auto;
+    width: 33%;
+    display: block;
     height: auto;
     letter-spacing: 2px;
     background: transparent;
@@ -1329,10 +1331,14 @@ footer {
 .wp-pagenavi {
   width: 50%;
   display: flex;
-  justify-content: space-around;
   align-items: center; }
   .wp-pagenavi .pages {
-    order: 2; }
+    order: 2;
+    width: 33%;
+    margin-left: 33%;
+    text-align: center; }
+    .wp-pagenavi .pages.no-margin {
+      margin-left: 0 !important; }
 
 .previouspostslink {
   order: 1; }
@@ -1340,7 +1346,8 @@ footer {
     display: inline !important; }
 
 .nextpostslink {
-  order: 3; }
+  order: 3;
+  text-align: right; }
   .nextpostslink:after {
     display: inline !important; }
 

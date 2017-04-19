@@ -107,10 +107,12 @@ $(document).ready(function(){
       $(".selectpicker[name='post_category']").selectpicker("val", "" );
   });
 
+  $('.wp-pagenavi .previouspostslink').prev('.pages').addClass('no-margin');
+
 
   // SEARCH STUFF
 
-  $('.search-pagination').on('click', function(){
+  $('.wp-pagenavi > a').on('click', function(){
     var value = $(this).attr('value');
     $('#form-pagination').attr('value', value);
     document.getElementById("search-form").submit();

@@ -55,6 +55,8 @@
 .analysis-single-slide {
 	padding-bottom: 20px;
 	margin-bottom: 40px;
+    outline: none;
+
 	h2 {
 		padding-bottom: 20px;
 		@include screen-xs {

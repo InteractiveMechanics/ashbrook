@@ -15,7 +15,7 @@
  		$cover_image = get_field('cover_image');
  		$default_cover_image = get_field('default_cover_image', 'option');
 		$author = get_field('author');
-		$date = get_field('date');
+		$date = get_field('object_date');
 		$introduction = get_field('introduction');
 		$body = get_field('body');
 		$footnotes = get_field('footnotes');
@@ -117,7 +117,7 @@
 		    			</figure> -->
 
 		    			
-
+	    			</div>
 				</div> <!-- /col-sm-12 -->
 
 				<div class="row references-wrapper">

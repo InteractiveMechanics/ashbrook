@@ -63,7 +63,17 @@
 								
 								<div class="tags-wrapper">
 									<h2>Themes</h2>
-									<?php the_tags( '<ul class="tags"><li><h5> ', '<h5></li><li><h5>', '</h5></li></ul>' ); ?>
+                                    <ul class="tags">
+                                    <?php
+                                        $posttags = get_the_tags($post->ID);
+                                        if ($posttags) {
+                                            foreach($posttags as $tag) {
+                                                echo '<li><h5><a href="' . home_url() . '/search/?keyword=&post_category=&post_era=&post_tag=' . $tag->name . '&pg=1">' . $tag->name . '</a></h5></li>'; 
+                                            }
+                                        }
+                                    ?>
+                                    </ul>
+									<?php //the_tags( '<ul class="tags"><li><h5> ', '<h5></li><li><h5>', '</h5></li></ul>' ); ?>
 								</div>
 
 								</div> <!-- columns-container -->
