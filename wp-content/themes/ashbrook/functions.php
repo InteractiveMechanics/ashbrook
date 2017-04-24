@@ -392,6 +392,28 @@ function custom_breadcrumbs() {
     ));
 }
 
+  // TRYING TO ADD WORD COUNT TO WSYIWYG
+
+  add_filter('acf/validate_value/name=introduction', 'my_acf_validate_value', 10, 4);
+
+    function my_acf_validate_value( $valid, $value, $field, $input ){
+    
+    // bail early if value is already invalid
+    if( !$valid ) {
+        
+        return $valid;
+        
+    }
+    
+    if( strlen($value) > 567 ) {
+        
+        $valid = 'You have exceed the maximum character count of 567 (around 94 words)';
+        
+    }
+    
+    // return
+    return $valid;
+    }
 
 
 
