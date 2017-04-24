@@ -1433,7 +1433,9 @@ footer {
         margin-left: 5%;
         margin-right: 5%; } }
   .rahp-object-body p {
-    max-width: 80%; }
+    max-width: 80%;
+    overflow-wrap: break-word;
+    word-wrap: break-word; }
     .rahp-object-body p:last-child {
       padding-bottom: 40px; }
     @media (max-width: 767px) {
