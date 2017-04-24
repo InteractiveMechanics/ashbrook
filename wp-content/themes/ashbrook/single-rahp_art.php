@@ -29,8 +29,20 @@
 			<?php custom_breadcrumbs(); ?>
 
 			<ul class="rahp-object-title">
-				<li><h2><span class="analysis-title"><?php the_title(); ?></span>: <span class="analysis-artist"><?php echo $artist ?></span>, <span class="analysis-title"><?php echo $artwork_title; ?></span><span class="analysis-year"> (<?php echo $artwork_year; ?>) </span></h2></li>
-				<li><h3><?php the_date(); ?></h3></li>
+                <li><h2><?php the_title(); ?></h2></li>
+
+				<?php if ($artist) {
+				?>
+					<li><h3><?php echo $artist; ?></h3></li>
+				<?php 
+				}
+				?>
+
+				<?php if ($artwork_year) {
+				?>
+				<li><h3><?php echo $artwork_year; ?></h3></li>
+				<?php }
+				?>
 			</ul>
 
 		</div>

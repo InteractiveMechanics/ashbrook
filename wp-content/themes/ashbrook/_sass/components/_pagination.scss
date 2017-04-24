@@ -15,7 +15,8 @@
 		line-height: 1.8;
 		color: $gold;
 		text-transform: uppercase;
-		width: auto;
+        width: 33%;
+        display: block;
 		height: auto;
 		letter-spacing: 2px;
 		background: transparent;
@@ -53,16 +54,24 @@
 .wp-pagenavi {
 	width: 50%;
     display: flex;
-    justify-content: space-around;
     align-items: center;
+
     .pages {
     	order: 2;
+        width: 33%;
+        margin-left: 33%;
+        text-align: center;
+
+        &.no-margin {
+            margin-left: 0 !important;
+        }
     }
 }
 
 .previouspostslink {
 	@extend .prev;
 	order: 1;
+
 	&:before {
 		display: inline !important;
 	}
@@ -71,6 +80,8 @@
 .nextpostslink {
 	@extend .next;
 	order: 3;
+    text-align: right;
+
 	&:after {
 		display: inline !important;
 	}

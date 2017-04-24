@@ -41,7 +41,7 @@ figure {
 }
 
 figcaption {
-	color: $lightgray;
+	color: darken($lightgray, 15%);
 	font-weight: 300;
 	margin-top: 7px;
     line-height: 1.8;
