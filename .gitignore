@@ -31,3 +31,5 @@ wp-content/plugins/hello.php
 /wp-signup.php
 /wp-trackback.php
 /xmlrpc.php
+
+.sass-cache

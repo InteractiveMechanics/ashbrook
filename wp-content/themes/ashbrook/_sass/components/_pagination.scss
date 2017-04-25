@@ -1,0 +1,88 @@
+.pagination {
+	display: flex;
+	justify-content: space-around;
+	width: 100%;
+	.pages {
+		margin: 4px 0px 0px;
+		font-size: 2.15em;
+		font-family: $vollkhorn;
+		font-style: italic;
+
+	}
+	.next, .prev {
+		top: 100%;
+		font-size: 1.4em;
+		line-height: 1.8;
+		color: $gold;
+		text-transform: uppercase;
+        width: 33%;
+        display: block;
+		height: auto;
+		letter-spacing: 2px;
+		background: transparent;
+		border: none;
+	}
+	.prev {
+		&:before {
+			content: url('../../img/icons/icon-arrow-left-sm.svg');
+			position: relative;
+    		right: 10px;
+   	 		height: auto;
+    		top: -1px;
+    		display: inline;
+		}
+	}
+
+	.next {
+		&:after {
+			content: url('../../img/icons/icon-arrow-right-sm.svg');
+			position: relative;
+    		left: 10px;
+   	 		height: auto;
+    		top: -1px;
+    		display: inline;
+		}
+	}
+	.paging-info {
+		position: initial;
+		h2 {
+			margin: 4px 0px 0px;
+		}
+	}
+}
+
+.wp-pagenavi {
+	width: 50%;
+    display: flex;
+    align-items: center;
+
+    .pages {
+    	order: 2;
+        width: 33%;
+        margin-left: 33%;
+        text-align: center;
+
+        &.no-margin {
+            margin-left: 0 !important;
+        }
+    }
+}
+
+.previouspostslink {
+	@extend .prev;
+	order: 1;
+
+	&:before {
+		display: inline !important;
+	}
+}
+
+.nextpostslink {
+	@extend .next;
+	order: 3;
+    text-align: right;
+
+	&:after {
+		display: inline !important;
+	}
+}

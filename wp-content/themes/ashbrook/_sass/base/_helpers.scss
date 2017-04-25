@@ -1,0 +1,161 @@
+@-webkit-keyframes fadeIn {
+  0%    { opacity: 0; }
+  100%  { opacity: 1; } 
+}
+
+@-moz-keyframes fadeIn {
+  0%    { opacity: 0; }
+  100%  { opacity: 1; } 
+}
+
+@-ms-keyframes fadeIn {
+  0%    { opacity: 0; }
+  100%  { opacity: 1; } 
+}
+
+@keyframes fadeIn {
+  0%    { opacity: 0; }
+  100%  { opacity: 1; } 
+}
+
+.fade-in {
+    -webkit-animation: fadeIn 1s 1 forwards;                // A sample helper that fades something in, nice for page animations onLoad
+    -moz-animation: fadeIn 1s 1 forwards;
+    -o-animation: fadeIn 1s 1 forwards;
+    animation: fadeIn 1s 1 forwards; 
+}
+
+ul {
+  -webkit-padding-start: 0px;
+}
+
+.read-more {
+  color: $gold;
+  display: inline-block;
+  margin-left: 5px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-family: $lato;
+  font-weight: 400;
+  border-bottom: none;
+}
+
+.float-right {
+  float: right;
+}
+
+.visible-xxxs {
+  @include screen-xxxs {
+    display: block;
+  }
+  @include screen-gtxxxs {
+    display: none;
+  }
+} 
+
+.hidden-xxxs {
+  @include screen-xxxs {
+    display: none;
+  }
+  @include screen-gtxxxs {
+    display: block;
+  }
+}
+.lightgallery {
+  a {
+    &:focus {
+      outline: none;
+    }
+  }
+}
+
+.black-divider {
+  border-bottom: 1px solid $black;
+  margin-left: -15px;
+  margin-right: -15px;
+}
+
+.fadeIn {
+  @include screen-xs {
+    animation-name: none;
+    -webkit-animation-name: none;
+  }
+}
+
+// No Animated CSS animation on mobile
+.animated {
+   -webkit-animation-duration: 0.5s;
+  animation-duration: 0.5s;
+  @include screen-xs {
+    -webkit-animation-duration: 0s;
+    animation-duration: 0s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+  }
+}
+
+
+/** WP WYSIWYG editor styles **/
+img.alignright { 
+  float: right; margin: 0 0 1em 1em; 
+  @include screen-xs {
+    margin-left: 0px;
+    width: 100%;
+    height: auto;
+  }
+}
+
+img.alignleft { 
+  float: left; margin: 0 1em 1em 0; 
+  @include screen-xs {
+    margin-right: 0px;
+    width: 100%;
+    height: auto;
+  }
+
+}
+
+img.aligncenter { 
+  display: block; margin-left: auto; margin-right: auto; 
+}
+
+.alignright { 
+  float: right; 
+}
+
+.alignleft { 
+  float: left; 
+}
+
+.aligncenter { 
+  display: block; margin-left: auto; margin-right: auto; 
+}
+
+.error-page {
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+.error-page-message {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+.wp-caption-text {
+  color: $lightgray;
+  font-size: 14px;
+  font-weight: 300;
+  margin-top: 7px;
+  line-height: 1.8;
+  max-width: 100% !important;
+  font-family: $lato;
+  padding-bottom: initial !important;
+}
+
+.alignleft.wp-caption { 
+  margin-right: 20px; 
+}
+
+.alignright.wp-caption { 
+  margin-left: 20px; 
+}

@@ -1,0 +1,98 @@
+
+h1, h3, h4, h5, h5, small, figcaption, input, button {
+	font-family: $lato;
+}
+
+ 
+
+h2, h6, p {
+	font-family: $vollkhorn;
+}
+
+
+h3 {
+	font-size: 1.4em;
+}
+
+h5 {
+	text-transform: uppercase;
+	letter-spacing: 2px;
+}
+
+h2, h6 {
+	font-style: italic;
+}
+
+
+p {
+	font-size: 1.25em;
+	line-height: 1.8;
+}
+
+a {
+	transition: $transition;
+}
+
+figure {
+	display: table;
+	a {
+		display: table;
+	}
+}
+
+figcaption {
+	color: darken($lightgray, 15%);
+	font-weight: 300;
+	margin-top: 7px;
+    line-height: 1.8;
+    display: table-caption;
+    caption-side: bottom;
+}
+
+input, button {
+	font-weight: 300;
+}
+
+h1>a {
+	@include gold-black-anchor;
+	font-size: 22px;
+}
+
+h5>a {
+	@include gold-black-anchor;
+}
+
+p>a {
+	@include gold-anchor;
+}
+
+a[id^="foot-"] {
+	border-bottom: none;
+}
+
+h6>a {
+	@include gray-anchor;
+	white-space: pre;
+}
+
+div[class$="body"] {
+	ul, ol, li {
+		font-family: $vollkhorn;
+		font-size: 1.10em;
+
+	}
+	ul, ol {
+		padding-left: 20px;
+		overflow: auto;
+	}
+}
+
+.tiny-text {
+	font-size: 0.5em;
+}
+
+// corrects positioning
+.tiny-text-parent {
+	position: relative;
+	top: 2px;
+}
