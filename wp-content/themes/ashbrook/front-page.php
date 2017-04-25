@@ -20,6 +20,7 @@ get_header(); ?>
 				<?php if ( have_rows('homepage_slider') ): ?>
 				<?php while ( have_rows('homepage_slider') ): the_row();
 					$image = get_sub_field('image');
+					$default_cover_image = get_field('default_cover_image', 'option');
 					$subtitle = get_sub_field('subtitle');
 					$title = get_sub_field('title');
 					$introduction = get_sub_field('introduction');
@@ -29,7 +30,20 @@ get_header(); ?>
 				?>
 
 
-					<div class="home-single-slide" style="background-image:  linear-gradient(rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 0) 100%), url('<?php echo $image["url"]; ?>');">
+					<?php if ($image) 
+					{ 
+					?>
+					<div class="home-single-slide" style="background-image:  linear-gradient(rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 0) 100%), url('<?php echo $image; ?>');">
+					<?php 
+					} else { 
+					?>
+					<div class="home-single-slide" style="background-image:  linear-gradient(rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 0) 100%), url('<?php echo $default_cover_image; ?>');">
+					<?php 
+					}
+					?>
+
+
+
 						
 						<div class="home-single-slide-heading">
 							<h2><?php echo $subtitle; ?></h2>

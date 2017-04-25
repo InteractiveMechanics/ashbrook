@@ -25,6 +25,7 @@
 		}
 
 	}
+
 }
 
 .library-single-slide {
@@ -34,6 +35,10 @@
 	.img-wrapper {
 		height: 375px;
 		overflow: hidden;
+		img {
+			height: 100%;
+			width: auto;
+		}
 	}
 }
 

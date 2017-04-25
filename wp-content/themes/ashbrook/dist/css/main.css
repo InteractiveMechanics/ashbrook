@@ -1105,6 +1105,9 @@ footer {
   .library-single-slide .img-wrapper {
     height: 375px;
     overflow: hidden; }
+    .library-single-slide .img-wrapper img {
+      height: 100%;
+      width: auto; }
 
 .related-content {
   margin-top: 60px;

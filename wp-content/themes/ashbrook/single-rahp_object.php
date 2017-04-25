@@ -23,6 +23,7 @@
 		$study_questions = get_field('study_questions');
 		$study_questions_excerpt = get_field('study_questions_excerpt');
 		$compare = get_field('compare');
+		$core_docs_link = get_field('25_core_docs_link', 'option');
 
 
 ?>
@@ -85,9 +86,9 @@
 	    		<?php if( get_field('25_core_document') ): ?>
 						
 						<div class="core-docs-tag">
-	    					<h3>One of the <a href="<?php get_field('25_core_docs_link', 'option'); ?>">25 Core Documents</a></h3>
+	    					<h3>One of the <a href="<?php echo $core_docs_link; ?>">25 Core Documents</a></h3>
 	    		
-	    					<h3 class="visible-xs">Go to <a href="">Study Questions</a></h3>
+	    					<h3 class="visible-xs">Go to <a href="<?php echo $studyquestions; ?>">Study Questions</a></h3>
 	    				</div>
 
 	    		<?php endif; ?>
@@ -127,7 +128,7 @@
 					<?php if( get_field('25_core_document') ): ?>
 
 						<div class="object-callouts col-sm-5">
-								<h1 class="visible-xs share-mobile"><a href="">Share</a></h1>
+								<h1 class="visible-xs share-mobile"><?php if ( function_exists( 'ADDTOANY_SHARE_SAVE_KIT' ) ) { ADDTOANY_SHARE_SAVE_KIT(); } ?></h1>
 								<div class="callout-studyqs">
 									<div class="studyqs-headings-wrapper">
 										<h2>Study Questions...</h2>
