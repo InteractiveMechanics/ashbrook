@@ -395,6 +395,8 @@ function custom_breadcrumbs() {
   // TRYING TO ADD WORD COUNT TO WSYIWYG
 
   add_filter('acf/validate_value/name=introduction', 'my_acf_validate_value', 10, 4);
+  add_filter('acf/validate_value/name=category_introduction', 'my_acf_validate_value', 10, 4);
+
 
     function my_acf_validate_value( $valid, $value, $field, $input ){
     
@@ -414,6 +416,8 @@ function custom_breadcrumbs() {
     // return
     return $valid;
     }
+
+
 
 
 
