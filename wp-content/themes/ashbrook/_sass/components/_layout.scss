@@ -43,7 +43,7 @@ main {
     	height: 485px;
     }
     @include screen-xxs {
-    	height: 585px;
+    	height: 400px;
     }
 }
 
@@ -87,9 +87,22 @@ main {
 	}
 
 	@include screen-xs {
-		width: 80%;
-    	right: 0%;
+		width: 90%;
+    	right: -10%;
     	padding: 20px;
+    	-webkit-transform: skew(20deg);
+  		-moz-transform: skew(20deg);
+  		-o-transform: skew(20deg);
+  		p {
+  			-webkit-transform: skew(-20deg);
+  			-moz-transform: skew(-20deg);
+  			-o-transform: skew(-20deg);
+  			padding-left: 20px;
+  			padding-right: 20px;
+  		}
+  		&:after {
+  			display: none;
+  		}
 	}
 
 }
@@ -196,7 +209,7 @@ main {
 		@include screen-xs {
 			display: inline;
 			margin-left: 10px;
-			white-space: pre;
+			white-space: pre-wrap;
 		}
 	}
 	@include screen-xs {

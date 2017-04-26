@@ -66,6 +66,9 @@
 .bootstrap-select:not([class*=col-]):not([class*=form-control]):not(.input-group-btn) {
 	width: auto;
 	max-width: 300px;
+	@include screen-ltmd {
+		display: none;
+	}
 }
 
 .bootstrap-select>.dropdown-toggle.bs-placeholder, 
@@ -95,8 +98,7 @@ button[type="reset"] {
     	border-color: $darkgold;
     }
     @include screen-xs {
-    	float: none;
-    	margin-bottom: 20px;
+    	display: none;
     }
 
 }
@@ -104,6 +106,11 @@ button[type="reset"] {
 button[type="submit"] {
 	@extend button[type="reset"];
 	margin-right: 20px;
+	@include screen-xs {
+		display: initial;
+		float: none;
+		margin-bottom: 20px;
+	}
 }
 
 .bootstrap-select>.dropdown-toggle {
