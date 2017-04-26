@@ -105,15 +105,53 @@ img.alignright {
   }
 }
 
+.alignright.wp-caption {
+  @include screen-xs {
+    max-width: 100%;
+  }
+  img {
+    @include screen-xs {
+      max-width: 100%;
+      margin-left: 0px !important;
+    }
+  }
+}
+
+.alignright {
+  @include screen-xs {
+    float: none !important;
+  }
+}
+
 img.alignleft { 
   float: left; margin: 0 1em 1em 0; 
   @include screen-xs {
-    margin-right: 0px;
+    margin-left: 0px !important;
     width: 100%;
     height: auto;
   }
 
 }
+
+.alignleft.wp-caption {
+  @include screen-xs {
+    max-width: 100%;
+  }
+  img {
+    @include screen-xs {
+      max-width: 100%;
+      margin-left: 0px !important;
+    }
+  }
+}
+
+.alignleft {
+  @include screen-xs {
+    float: none !important;
+  }
+}
+
+
 
 img.aligncenter { 
   display: block; margin-left: auto; margin-right: auto; 
@@ -154,8 +192,14 @@ img.aligncenter {
 
 .alignleft.wp-caption { 
   margin-right: 20px; 
+  @include screen-xs {
+    margin-right: 0px;
+  }
 }
 
 .alignright.wp-caption { 
   margin-left: 20px; 
+  @include screen-xs {
+    margin-left: 0px;
+  }
 }

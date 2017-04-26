@@ -56,10 +56,13 @@
 				); 
 				foreach  ($categories as $category) {
 				    //Display the sub category information using $category values like $category->cat_name
+
+				    
 				    echo '<div class="col-sm-12 single-post">';
 				    echo '<div class="col-sm-2">';
 				    echo '<div class="blog-thumbnail">';
 
+				    if ($category->cat_ID !== 6) {
 				    $term = $category;
 				 	$term_id = $term->taxonomy . '_' . $term->term_id;
 				   	$category_image = get_field('category_image', $term_id);
@@ -77,9 +80,33 @@
 					echo '<div class="col-sm-10">';
 					echo '<div class="blog-excerpt">';
 					echo '<h2>' . $category->name . '</h2>';
+					
+					if ($category->description):
 					echo '<h5>' . $category->description . '</h2>';
+					endif;
+
 					echo '<h5>' . $category->count . ' objects</h2>';
 					echo '<p>' . $category_introduction . '</p>';
+
+				} else {
+
+					 if ( $term ):
+							echo '<a href="'. esc_url(get_post_type_archive_link( 'totm')) . '">';
+							echo '<img src="' . get_field('totm_archive_featured_image', 'option') . '">';
+							echo '</a>';
+					endif;
+
+					echo '</div>';
+					echo '</div>';
+					echo '<div class="col-sm-10">';
+					echo '<div class="blog-excerpt">';
+					echo '<h2>'  . get_field('totm_archive_title', 'option')  . '</h2>';
+					echo '<h5>' . $category->count . ' Themes of the Month</h2>';
+					echo '<p>' . get_field('totm_short_description', 'option') . '</p>';
+
+				}
+
+
 					echo '</div>'; // .blog-excerpt
 					echo '</div>'; // .col-sm-10
 					echo '</div>'; // .single-post

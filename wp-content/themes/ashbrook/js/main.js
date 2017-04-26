@@ -90,16 +90,16 @@ $(document).ready(function(){
 
   
   // HIDE SEARCH SUBMIT BUTTON, SUBMIT ON PRESSING ENTER
-  $('.search').each(function() {
-        $(this).find('input').keypress(function(e) {
-            // Enter pressed?
-            if(e.which == 10 || e.which == 13) {
-                this.form.submit();
-            }
-        });
+  // $('.search').each(function() {
+  //       $(this).find('input').keypress(function(e) {
+  //           // Enter pressed?
+  //           if(e.which == 10 || e.which == 13) {
+  //               this.form.submit();
+  //           }
+  //       });
 
         //$(this).find('button[type=submit]').hide();
-    });
+    // });
 
   $('.search-reset').click(function(){
       $(".selectpicker[name='post_tag']").selectpicker("val", "" );
@@ -155,7 +155,6 @@ $(document).ready(function(){
 
     $('.search-btn').click(function() {
         $('.mobile-search-bar').toggle();
-        
     });
 
     // MOBILE MENU CLOSE

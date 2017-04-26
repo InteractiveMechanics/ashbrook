@@ -94,7 +94,7 @@
 					    </button>
 					    <div class="mobile-search-bar animated fadeIn">
 					    	<form>
-					    	<input type="text" name="mobile-search" id="mobile-search" value="search...">
+					    	<input type="text" name="mobile-search" id="mobile-search" placeholder="search...">
 					  		<span class="sm-parallelogram"></span>
 					    	<input type="submit" value="search">
 					    	</form>
