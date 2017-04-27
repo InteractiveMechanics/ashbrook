@@ -64,16 +64,7 @@
 
 		  				<?php the_content(); ?>
 
-		  				<!-- <figure class="col-sm-4">
-		    				<div class="lightgallery">
-		    					<a href="https://s-media-cache-ak0.pinimg.com/originals/ab/46/0a/ab460a143c68998d5e90056d786fa65d.jpg" data-sub-html="#caption1">
-		    						<img src="https://s-media-cache-ak0.pinimg.com/originals/ab/46/0a/ab460a143c68998d5e90056d786fa65d.jpg">
-		    						<div class="lightgallery-caption" id="caption1">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </div>
-		    					</a>
-		    				</div>
-		    				<figcaption>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </figcaption>
-		    			</figure> -->
-
+		  				
 
 					
 	  		  		</div>
@@ -85,17 +76,7 @@
 
 
 	  		  			
-						<!-- <div>
-							<button type="button" class="prev">Previous</button>
-						</div>
-						
-						<div class="paging-info">
-							<h2>1 of 12</h2>
-						</div>
-						
-						<div>
-							<button type="button" class="next">Next</button>
-						</div> -->
+					
 						<?php next_post_link( '%link', 'Next'); ?>
 
 					</div>

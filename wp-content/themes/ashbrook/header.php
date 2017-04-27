@@ -123,75 +123,6 @@
 				   
 
 
-				    <!-- Collect the nav links, forms, and other content for toggling -->
-				 <!-- 	<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-				 	  <div class="close-skew visible-xs"></div>
-				 	  <button class="mobile-menu-close visible-xs" type="button">X</button>
-				      <ul class="nav navbar-nav navbar-right">
-
-				        <li class="dropdown">
-				          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Library</a>
-				          	
-				         
-				          	<ul class="dropdown-menu multi-column columns-3 animated fadeIn">
-
-					          	<li class="col-sm-3 multi-column-dropdown-wrapper">
-
-					          		<ul class="multi-column-dropdown">
-
-						            	<li><a href="#">Sources</a></li>
-						            	<li><a href="#">Type</a></li>
-						            	<li><a href="#">Time Period</a></li>
-						            	<li><a href="#">Author</a></li>
-
-					            	</ul>
-
-					          	</li> -->
-				         
-
-				          	
-<!-- 
-					          	<li class="col-sm-3 multi-column-dropdown-wrapper">
-
-					          		<ul class="multi-column-dropdown">
-
-						            	<li><a href="#">Collections</a></li>
-						            	<li><a href="#">25 Core Documents</a></li>
-						            	<li><a href="#">Theme of the Month</a></li>
-						            	<li><a href="#">View All</a></li>
-
-					            	</ul>
-
-					          	</li>
-				          	
-
-				          	
-					          	<li class="col-sm-2 multi-column-dropdown-wrapper skew">
-
-					          		<ul class="multi-column-dropdown">
-
-						            	<li><a href="#">Analysis</a></li>
-						            	<li><a href="#">Art</a></li>
-						            	<li><a href="#">Essays</a></li>
-						            
-					            	</ul>
-
-					          	</li>
-
-					          	<li class="col-sm-4 multi-column-dropdown-wrapper">
-					          		<div class="nav-dropdown-img"></div>
-					        	</li>
-
-				          	</ul>
- -->
-				       <!--  </li> -->
-
-				        <!-- <li><a href="#" class="tiny-text-parent">Places <span class="tiny-text">of</span> Faith Map</a></li> -->
-				       <!--  <li class="hidden-xs"><a href="#">Search</a></li>
-				        <li class="visible-xs"><a href="#">About</a></li>
-				        <li class="visible-xs"><a href="#">Blog</a></li>
-				    
-				    </ul> -->
 
 				    <?php
 			            wp_nav_menu( array(
@@ -225,21 +156,6 @@
 			        ?>
 
 
-				  <!--   </div> --><!-- /.navbar-collapse -->
-
-				  <!--   <div class="nav navbar-nav navbar-right" id="subnav-wrapper">
-				    	<ul class="subnav visible-md visible-lg">
-
-				    		<li class="subnav-item">
-				    			<a href="">Blog</a>
-				    		</li>
-
-				    		<li class="subnav-item">
-				    			<a href="#">About</a>
-				    		</li>
-
-				    	</ul>
-				    </div> -->
 
 				  </div><!-- /.container-fluid -->
 				</nav>
