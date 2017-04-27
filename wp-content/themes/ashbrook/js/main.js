@@ -155,7 +155,16 @@ $(document).ready(function(){
 
     $('.search-btn').click(function() {
         $('.mobile-search-bar').toggle();
+         if ($('#search-btn-svg').hasClass('clicked')) {
+            $('#search-btn-svg').removeClass('clicked').addClass('not-clicked');
+         } else {
+            $('#search-btn-svg').removeClass('not-clicked').addClass('clicked');
+         }
     });
+
+    
+
+
 
     // MOBILE MENU CLOSE
     $('.mobile-menu-close').click(function() {

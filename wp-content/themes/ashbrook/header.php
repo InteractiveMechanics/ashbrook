@@ -68,7 +68,7 @@
 		
 </head>
 
-<body> 
+<body ontouchstart=""> 
 
 
 		<!-- BACKGROUND IMG IN NAV  -->
@@ -118,7 +118,7 @@
 					    	</form>
 					    </div>
 					    <button type="button" class="collapsed visible-xs-inline-block search-btn" data-toggle="collapse" aria-expanded="false">
-				    		<svg version="1.1"
+				    		<svg id="search-btn-svg" class="not-clicked" version="1.1"
 							 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/"
 	 						x="0px" y="0px" width="35.7px" height="34.6px" viewBox="0 0 35.7 34.6" style="enable-background:new 0 0 35.7 34.6;"
 	 						xml:space="preserve">

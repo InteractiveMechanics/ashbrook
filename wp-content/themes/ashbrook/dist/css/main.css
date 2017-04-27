@@ -620,7 +620,7 @@ main {
 
 .navbar-right .dropdown-menu {
   right: -92px;
-  top: 10px; }
+  top: 40px; }
   @media (max-width: 767px) {
     .navbar-right .dropdown-menu {
       right: initial;
@@ -853,10 +853,13 @@ main {
   border: none;
   background: none; }
   .search-btn svg {
-    width: 30px;
-    fill: #6D6E70; }
-  .search-btn:active svg, .search-btn:focus svg {
-    fill: #C49F21; }
+    width: 30px; }
+
+.not-clicked {
+  fill: #6D6E70; }
+
+.clicked {
+  fill: #C49F21; }
 
 .mobile-search-bar {
   background-color: #000000;

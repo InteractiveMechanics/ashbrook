@@ -109,7 +109,7 @@
 
 .navbar-right .dropdown-menu {
 	right: -92px;
-	top: 10px;
+	top: 40px;
 	@include screen-xs {
 		right: initial;
 		top: initial;
@@ -378,14 +378,22 @@
 	border: none;
 	background: none;
 	svg {
-		width: 30px;
-		fill: #6D6E70;
+	 	width: 30px;
+	// 	fill: #6D6E70;
 	}
-	&:active, &:focus {
-		svg {
-			fill: $gold;
-		}
-	}
+	// &:active, &:focus {
+	// 	svg {
+	// 		fill: $gold;
+	// 	}
+	// }
+}
+
+.not-clicked {
+	fill: #6D6E70;
+}
+
+.clicked {
+	fill: $gold;
 }
 
 .mobile-search-bar {
