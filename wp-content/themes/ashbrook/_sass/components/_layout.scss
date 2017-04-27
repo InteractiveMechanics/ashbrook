@@ -116,7 +116,7 @@ main {
 	li {
 		&:first-child {
 			&:before {
-				content: url('../../img/icons/icon-print.svg');
+				content: url('../../img/icons/icon-share.svg'); // switch this back to print.svg  
 				margin-right: 10px;
 			}
 		}
@@ -137,7 +137,7 @@ main {
 		}
 		&:nth-of-type(-n+2) {
 			&:after {
-				content: '\\';
+				content: ''; 
 				color: $verylightgray;
 				font-size: 22px;
 				margin-left: 10px;

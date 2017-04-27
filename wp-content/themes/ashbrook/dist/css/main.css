@@ -364,7 +364,7 @@ main {
   .sharing li {
     display: inline-block; }
     .sharing li:first-child:before {
-      content: url("../../img/icons/icon-print.svg");
+      content: url("../../img/icons/icon-share.svg");
       margin-right: 10px; }
     .sharing li:nth-of-type(2):before {
       content: url("../../img/icons/icon-share.svg");
@@ -376,7 +376,7 @@ main {
       margin-right: 10px;
       display: inherit; }
     .sharing li:nth-of-type(-n+2):after {
-      content: '\\';
+      content: '';
       color: #CCCCCC;
       font-size: 22px;
       margin-left: 10px;
