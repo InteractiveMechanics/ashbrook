@@ -135,6 +135,7 @@
 }
 
 .references-wrapper {
+	margin-top: 60px;
 	@include screen-ltmd {
 		display: flex;
 		flex-direction: column;

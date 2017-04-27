@@ -65,18 +65,7 @@ get_header(); ?>
 
 	    	<div class="container-fluid pagination">
 	    				<?php wp_pagenavi(); ?>
-						<!-- <div>
-							<button type="button" class="prev">Previous</button>
-						</div>
 						
-						<div class="paging-info">
-							<h2>1 of 12</h2>
-						</div>
-						
-						<div>
-							<button type="button" class="next">Next</button>
-						</div> -->
-
 					</div>
 
 

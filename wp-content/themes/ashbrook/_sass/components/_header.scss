@@ -109,7 +109,7 @@
 
 .navbar-right .dropdown-menu {
 	right: -92px;
-	top: 50px;
+	top: 10px;
 	@include screen-xs {
 		right: initial;
 		top: initial;
@@ -375,6 +375,8 @@
 .search-btn {
 	float: right;
 	margin-top: 18px;
+	border: none;
+	background: none;
 	svg {
 		width: 30px;
 		fill: #6D6E70;
@@ -415,6 +417,7 @@
     text-transform: uppercase;
     padding: 5px 10px;
     color: $lightgray;
+    width: 45%;
 }
 
 .navbar-default .navbar-collapse {

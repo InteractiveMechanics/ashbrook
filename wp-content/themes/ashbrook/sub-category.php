@@ -122,27 +122,7 @@
 			// }
 			?>
 
-	    	<!-- <div class="col-sm-12 single-post">
-	    		
-	    		<div class="col-sm-2">
-	    			<div class="blog-thumbnail">
-	    				<a href=""><img class="" src="https://placekitten.com/g/300/350"></a>
-	    			</div>
-	    		</div>
-
-	    		<div class="col-sm-10">
-	    			<div class="blog-excerpt">
-	    				
-		    				<h2>The State of American Theology in 2016: Proof that Church Attendance Matters"</h2>
-		    				<h5>January 12,2017</h5>
-		    				<h5>Jane Doe</h5>
-	    					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud...<a href="" class="read-more"><span>More</span></a></p>
-	    			</div>
-	    		</div>
-
-	    	</div>
-
-	    	-->
+	    	
 
 	    
 
@@ -152,17 +132,6 @@
 
 
 
-						<!-- <div>
-							<button type="button" class="prev">Previous</button>
-						</div>
-						
-						<div class="paging-info">
-							<h2>1 of 12</h2>
-						</div>
-						
-						<div>
-							<button type="button" class="next">Next</button>
-						</div> -->
 
 			</div>
 

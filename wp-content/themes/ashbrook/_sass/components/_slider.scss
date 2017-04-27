@@ -77,6 +77,7 @@
 		@include screen-xs {
 			font-size: 16px;
 			line-height: 1.8;
+			padding: 10px 20px 10px 40px;
 		}
 		
 		@include landscape {
@@ -94,6 +95,8 @@
     	right: 0%;
     	padding: 20px;
     	bottom: 10px;
+    	-webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 15% 100%);
+    	clip-path: polygon(0 0, 100% 0, 100% 100%, 15% 100%);
 	}
 	
 	
@@ -107,6 +110,9 @@
      bottom: 0;
     background: linear-gradient(to left bottom, rgba(241, 242, 242, 0.7) 50%, transparent 51%);
     -webkit-backface-visibility: hidden;
+    @include screen-xs {
+    	display: none;
+    }
   }
 
 

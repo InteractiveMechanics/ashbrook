@@ -5,7 +5,7 @@ h1, h3, h4, h5, h5, small, figcaption, input, button {
 
  
 
-h2, h6, p {
+h2, h6, p, table {
 	font-family: $vollkhorn;
 }
 
@@ -51,6 +51,14 @@ figcaption {
 
 input, button {
 	font-weight: 300;
+}
+
+tbody {
+	font-size: 20px;
+}
+
+td {
+	padding: 5px;
 }
 
 h1>a {

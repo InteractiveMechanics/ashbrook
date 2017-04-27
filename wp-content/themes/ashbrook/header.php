@@ -40,8 +40,26 @@
 		<link rel="stylesheet" href="<?php printThemePath(); ?>/dist/css/main.css">
 
 		<!-- favicons and icons go here-->
+		<link rel="apple-touch-icon" sizes="57x57" href="favicons/apple-icon-57x57.png">
+		<link rel="apple-touch-icon" sizes="60x60" href="favicons/apple-icon-60x60.png">
+		<link rel="apple-touch-icon" sizes="72x72" href="favicons/apple-icon-72x72.png">
+		<link rel="apple-touch-icon" sizes="76x76" href="favicons/apple-icon-76x76.png">
+		<link rel="apple-touch-icon" sizes="114x114" href="favicons/apple-icon-114x114.png">
+		<link rel="apple-touch-icon" sizes="120x120" href="favicons/apple-icon-120x120.png">
+		<link rel="apple-touch-icon" sizes="144x144" href="favicons/apple-icon-144x144.png">
+		<link rel="apple-touch-icon" sizes="152x152" href="favicons/apple-icon-152x152.png">
+		<link rel="apple-touch-icon" sizes="180x180" href="favicons/apple-icon-180x180.png">
+		<link rel="icon" type="image/png" sizes="192x192"  href="favicons/android-icon-192x192.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="favicons/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="96x96" href="favicons/favicon-96x96.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="favicons/favicon-16x16.png">
+		<link rel="manifest" href="favicons/manifest.json">
+		<meta name="msapplication-TileColor" content="#ffffff">
+		<meta name="msapplication-TileImage" content="favicons/ms-icon-144x144.png">
+		<meta name="theme-color" content="#ffffff">
 
 		<!-- google analytics goes here -->
+		<script> (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){ (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o), m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m) })(window,document,'script','https://www.google-analytics.com/analytics.js','ga'); ga('create', 'UA-97814213-1', 'auto'); ga('send', 'pageview'); </script>
 
 				<!--[if lt IE 9]>
 		<script src="<?php echo get_template_directory_uri(); ?>/js/html5.js"></script>
@@ -122,75 +140,6 @@
 				   
 
 
-				    <!-- Collect the nav links, forms, and other content for toggling -->
-				 <!-- 	<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-				 	  <div class="close-skew visible-xs"></div>
-				 	  <button class="mobile-menu-close visible-xs" type="button">X</button>
-				      <ul class="nav navbar-nav navbar-right">
-
-				        <li class="dropdown">
-				          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Library</a>
-				          	
-				         
-				          	<ul class="dropdown-menu multi-column columns-3 animated fadeIn">
-
-					          	<li class="col-sm-3 multi-column-dropdown-wrapper">
-
-					          		<ul class="multi-column-dropdown">
-
-						            	<li><a href="#">Sources</a></li>
-						            	<li><a href="#">Type</a></li>
-						            	<li><a href="#">Time Period</a></li>
-						            	<li><a href="#">Author</a></li>
-
-					            	</ul>
-
-					          	</li> -->
-				         
-
-				          	
-<!-- 
-					          	<li class="col-sm-3 multi-column-dropdown-wrapper">
-
-					          		<ul class="multi-column-dropdown">
-
-						            	<li><a href="#">Collections</a></li>
-						            	<li><a href="#">25 Core Documents</a></li>
-						            	<li><a href="#">Theme of the Month</a></li>
-						            	<li><a href="#">View All</a></li>
-
-					            	</ul>
-
-					          	</li>
-				          	
-
-				          	
-					          	<li class="col-sm-2 multi-column-dropdown-wrapper skew">
-
-					          		<ul class="multi-column-dropdown">
-
-						            	<li><a href="#">Analysis</a></li>
-						            	<li><a href="#">Art</a></li>
-						            	<li><a href="#">Essays</a></li>
-						            
-					            	</ul>
-
-					          	</li>
-
-					          	<li class="col-sm-4 multi-column-dropdown-wrapper">
-					          		<div class="nav-dropdown-img"></div>
-					        	</li>
-
-				          	</ul>
- -->
-				       <!--  </li> -->
-
-				        <!-- <li><a href="#" class="tiny-text-parent">Places <span class="tiny-text">of</span> Faith Map</a></li> -->
-				       <!--  <li class="hidden-xs"><a href="#">Search</a></li>
-				        <li class="visible-xs"><a href="#">About</a></li>
-				        <li class="visible-xs"><a href="#">Blog</a></li>
-				    
-				    </ul> -->
 
 				    <?php
 			            wp_nav_menu( array(
@@ -224,21 +173,6 @@
 			        ?>
 
 
-				  <!--   </div> --><!-- /.navbar-collapse -->
-
-				  <!--   <div class="nav navbar-nav navbar-right" id="subnav-wrapper">
-				    	<ul class="subnav visible-md visible-lg">
-
-				    		<li class="subnav-item">
-				    			<a href="">Blog</a>
-				    		</li>
-
-				    		<li class="subnav-item">
-				    			<a href="#">About</a>
-				    		</li>
-
-				    	</ul>
-				    </div> -->
 
 				  </div><!-- /.container-fluid -->
 				</nav>
