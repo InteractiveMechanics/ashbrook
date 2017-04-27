@@ -11,15 +11,29 @@
 
 		</div>
 
-		<div class="jumbotron slim-jumbotron" style="background-image:  linear-gradient(rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 0) 100%), url('<?php printThemePath(); ?>/img/header-img.jpg');">
+		
 
 			
 				<?php 
 					$term = get_queried_object();
 				 	$term_id = $term->taxonomy . '_' . $term->term_id;
 				   	$category_introduction = get_field('category_introduction', $term_id);
+				   	$cover_image = get_field('category_cover_image', $term_id);
+				   	$default_cover_image = get_field('default_cover_image', 'option');
+
+
 
 				   	if ( $term ):
+				   		if ($cover_image) { 
+						?>
+						<div class="jumbotron slim-jumbotron" style="background-image:  linear-gradient(rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 0) 100%), url('<?php echo $cover_image; ?>');">
+						<?php 
+						} else {
+						?>
+						<div class="jumbotron slim-jumbotron" style="background-image:  linear-gradient(rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 0) 100%), url('<?php echo $default_cover_image; ?>');">
+						<?php }
+						
+
 				   			if ($category_introduction):
 					   			echo '<div class="slim-jumbotron-callout">';
 								echo '<p>' . $category_introduction .'</p>';
@@ -67,11 +81,16 @@
 				 	$term_id = $term->taxonomy . '_' . $term->term_id;
 				   	$category_image = get_field('category_image', $term_id);
 				   	$category_introduction = get_field('category_introduction', $term_id);
+				   	$default_cat_image = get_field('default_category_image', 'option');
 
 
 				   	if ( $term ):
 							echo '<a href="'. esc_url(get_category_link($category->cat_ID)) . '">';
+							if ($category_image):
 							echo '<img src="' . $category_image .'">';
+							else: 
+							echo '<img src="' . $default_cat_image . '">';
+							endif;
 							echo '</a>';
 					endif;
 
@@ -89,10 +108,17 @@
 					echo '<p>' . $category_introduction . '</p>';
 
 				} else {
+					$default_cat_image = get_field('default_category_image', 'option');
+					$totm_archive_featured_image = get_field('totm_archive_featured_image', 'option');
+
 
 					 if ( $term ):
 							echo '<a href="'. esc_url(get_post_type_archive_link( 'totm')) . '">';
+							if ($totm_archive_featured_image):
 							echo '<img src="' . get_field('totm_archive_featured_image', 'option') . '">';
+							else:
+							echo '<img src="' . $default_cat_image . '">';
+							endif;
 							echo '</a>';
 					endif;
 
