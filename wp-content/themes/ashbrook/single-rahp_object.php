@@ -23,7 +23,7 @@
 		$study_questions = get_field('study_questions');
 		$study_questions_excerpt = get_field('study_questions_excerpt');
 		$compare = get_field('compare');
-		$core_docs_link = get_field('25_core_docs_link', 'option');
+		
 
 
 ?>
@@ -86,7 +86,12 @@
 	    		<?php if( get_field('25_core_document') ): ?>
 						
 						<div class="core-docs-tag">
-	    					<h3>One of the <a href="<?php echo $core_docs_link; ?>">25 Core Documents</a></h3>
+							 <?php 
+							 	$category_id = get_cat_ID( '25 Core Documents' ); 
+							 	$category_link = get_category_link( $category_id );
+							 ?>
+
+	    					<h3>One of the <a href="<?php echo esc_url( $category_link ); ?>" title="25 Core Documents">25 Core Documents</a></h3>
 	    		
 	    					<h3 class="visible-xs">Go to <a href="<?php echo $studyquestions; ?>">Study Questions</a></h3>
 	    				</div>
@@ -95,9 +100,9 @@
 
 
 	    		<ul class="sharing hidden-xs">
-	    			<li><h1><a href="">Print</a></h1></li>
+	    			<!-- <li><h1><a href="javascript:window.print()">Print</a></h1></li> -->
 	    			<li><h1><?php if ( function_exists( 'ADDTOANY_SHARE_SAVE_KIT' ) ) { ADDTOANY_SHARE_SAVE_KIT(); } ?></h1></li>
-	    			<li><h1><a href="">Download</a></h1></li>
+	    			<!-- <li><h1><a href="" download>>Download</a></h1></li> -->
 	    		</ul>
 	    	</div>
 	 
@@ -107,15 +112,7 @@
 	    			<div class="col-sm-12">
 	    				<?php echo $body; ?>
 
-		    			<!-- <figure class="col-sm-4">
-		    				<div class="lightgallery">
-		    					<a href="<?php printThemePath(); ?>/img/Capitol_Prayer_Room_stained_glass_window.jpg" data-sub-html="#caption1">
-		    						<img src="<?php printThemePath(); ?>/img/Capitol_Prayer_Room_stained_glass_window.jpg" class="lightgallery">
-		    						<div class="lightgallery-caption" id="caption1">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </div>
-		    					</a>
-		    				</div>
-		    				<figcaption>Capitol Prayer Room stained-glass window. <i>Suspendisse Vitae Risus Ipsum.</i> Etiam a tincidunt magna.</figcaption>
-		    			</figure> -->
+		    			
 
 		    			
 	    			</div>

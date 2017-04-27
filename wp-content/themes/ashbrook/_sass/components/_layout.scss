@@ -84,20 +84,24 @@ main {
 
 	@include screen-md {
 		width: 55%;
+		-webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 15% 100%);
+    	clip-path: polygon(0 0, 100% 0, 100% 100%, 15% 100%);
+    	p {
+  			padding-left: 15%;
+  			padding-right: 20px;
+  		}
+  		&:after {
+  			display: none;
+  		}
 	}
 
 	@include screen-xs {
 		width: 90%;
-    	right: -10%;
     	padding: 20px;
-    	-webkit-transform: skew(20deg);
-  		-moz-transform: skew(20deg);
-  		-o-transform: skew(20deg);
+    	-webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 15% 100%);
+    	clip-path: polygon(0 0, 100% 0, 100% 100%, 15% 100%);
   		p {
-  			-webkit-transform: skew(-20deg);
-  			-moz-transform: skew(-20deg);
-  			-o-transform: skew(-20deg);
-  			padding-left: 20px;
+  			padding-left: 15%;
   			padding-right: 20px;
   		}
   		&:after {
@@ -222,13 +226,6 @@ main {
 .trapezoid {
 
 	.trap-sq {
-		// position: absolute;
-		// bottom: 0px;
-		// right: 5%;
-		// width: 80%;
-		// height: 85px;
-		// padding: 10px;
-		// background-color: $bluealpha;
 		position: absolute;
 	    bottom: 0px;
 	    right: 5%;
@@ -249,24 +246,37 @@ main {
 			color: $white;
 			margin-top: 0px;
 			margin-bottom: 5px;
+			@include screen-md {
+				padding-left: 15%
+			}
+			@include screen-ltmd {
+				padding-left: 15%;
+			}
 		}
 		small {
 			color: $white;
 			font-weight: 300;
 			opacity: 0.75;
 			display: block;
+			@include screen-md {
+				padding-left: 15%;
+			}
+			@include screen-ltmd {
+				padding-left: 15%;
+			}
+		}
+		@include screen-md {
+			-webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 15% 100%);
+    		clip-path: polygon(0 0, 100% 0, 100% 100%, 15% 100%);
+    		width: 90%;
+		}
+		@include screen-ltmd {
+			-webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 15% 100%);
+    		clip-path: polygon(0 0, 100% 0, 100% 100%, 15% 100%);
+    		width: 90%;
 		}
 	}
-	.trap-tri {
-		// width: 0;
-		// height: 0;
-		// border-style: solid;
-		// border-width: 0 25px 85px 0;
-		// border-color: transparent $bluealpha transparent transparent;
-		// position: absolute;
-  //   	bottom: 0px;
-  //   	right: 85%;
-	}
+	
 }
 
 .parallelogram {
@@ -292,7 +302,7 @@ main {
     float: none;
     position: absolute;
     top: 0px;
-    left: 181px;
+    left: 46%;
 
 }
 
