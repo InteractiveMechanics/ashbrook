@@ -26,53 +26,67 @@ get_header(); ?>
 
 
 	<main role="main" class="blog-page">
+
 		<div class="container-fluid">
+			
 			<ul class="breadcrumb">
+				
 				<li><h5>Blog</h5></li>
+			
 			</ul>
 
 			<ul class="rahp-object-title">
+				
 				<?php 
+
 					$our_title = get_the_title( get_option('page_for_posts', true) );
+				
 				?>
+				
 				<li><h2><?php echo $our_title; ?></h2></li>
+			
 			</ul>
 
 		</div>
 
-		<?php if ($cover_image) { 
-		?>
-		<div class="jumbotron slim-jumbotron" style="background-image:  linear-gradient(rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 0) 100%), url('<?php echo $cover_image; ?>');">
-		<?php 
-		} else {
-		?>
-		<div class="jumbotron slim-jumbotron" style="background-image:  linear-gradient(rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 0) 100%), url('<?php echo $default_cover_image; ?>');">
-		<?php }
-		?>
+
+		<?php if ($cover_image): ?>
+
+			<div class="jumbotron slim-jumbotron" style="background-image:  linear-gradient(rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 0) 100%), url('<?php echo $cover_image; ?>');">
+		
+		<?php else: ?>
+
+			<div class="jumbotron slim-jumbotron" style="background-image:  linear-gradient(rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 0) 100%), url('<?php echo $default_cover_image; ?>');">
+		
+		<?php endif; ?>
+
+
 			<?php if ($introduction): ?>
+				
 				<div class="slim-jumbotron-callout">
-					<p><?php echo $introduction; ?></p>
+
+						<p><?php echo $introduction; ?></p>
+
 				</div>
 
-			<? endif; ?>
+			<?php endif; ?>
+	    
 	    </div>
+
 
 	    <div class="container-fluid blog-page-body">
 	    	
-	    <?php  get_template_part('loop', get_post_format()); ?>
-
-	    	
-
+	    	<?php  get_template_part('loop', get_post_format()); ?>
+	   
 	    	<div class="container-fluid pagination">
-	    				<?php wp_pagenavi(); ?>
-						
-					</div>
 
+	    		<?php wp_pagenavi(); ?>
 
-
-
+			</div>
 
 	    </div> <!-- /blog-body-page -->
+	
+
 	</main>
 
 

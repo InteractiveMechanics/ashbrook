@@ -25,85 +25,114 @@
 ?>
 
 	<main class="single-rahp-object">
+		
 		<div class="container-fluid">
+
 			<?php custom_breadcrumbs(); ?>
 
 			<ul class="rahp-object-title">
+
                 <li><h2><?php the_title(); ?></h2></li>
 
-				<?php if ($artist) {
-				?>
-					<li><h3><?php echo $artist; ?></h3></li>
-				<?php 
-				}
-				?>
 
-				<?php if ($artwork_year) {
-				?>
+				<?php if ($artist): ?>
+					
+					<li><h3><?php echo $artist; ?></h3></li>
+				
+				<?php endif; ?>
+
+
+				<?php if ($artwork_year): ?>
+
 				<li><h3><?php echo $artwork_year; ?></h3></li>
-				<?php }
-				?>
+
+				<?php endif; ?>
+
 			</ul>
 
 		</div>
 
 		
 
-		<?php if ($cover_image) { 
-		?>
-		<div class="jumbotron slim-jumbotron" style="background-image:  linear-gradient(rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 0) 100%), url('<?php echo $cover_image; ?>');">
-		<?php 
-		} else {
-		?>
-		<div class="jumbotron slim-jumbotron" style="background-image:  linear-gradient(rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 0) 100%), url('<?php echo $default_cover_image; ?>');">
-		<?php }
-		?>
+		<?php if ($cover_image): ?> 
+		
+			<div class="jumbotron slim-jumbotron" style="background-image:  linear-gradient(rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 0) 100%), url('<?php echo $cover_image; ?>');">
+		
+		<?php else: ?>
 
-			<?php if ($introduction) {
-			?>
-			<div class="slim-jumbotron-callout">
-				<p><?php echo $introduction; ?></p>
-			</div>
-			<?php }
-			?>
+			<div class="jumbotron slim-jumbotron" style="background-image:  linear-gradient(rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 0) 100%), url('<?php echo $default_cover_image; ?>');">
+		
+		<?php endif; ?>
+
+			
+			<?php if ($introduction): ?>
+
+				<div class="slim-jumbotron-callout">
+
+					<p><?php echo $introduction; ?></p>
+
+				</div>
+			
+			<?php endif; ?>
 
 	    </div> 
 
+
 	    <div class="rahp-object-subheading">
+
 	    	<div class="container-fluid">
+	    		
 	    		<ul class="sharing hidden-sm hidden-xs">
-	    			<li><h1><a href="">Print</a></h1></li>
+	    			
+	    			<!-- <li><h1><a href="">Print</a></h1></li> -->
+	    			
 	    			<li><h1><?php if ( function_exists( 'ADDTOANY_SHARE_SAVE_KIT' ) ) { ADDTOANY_SHARE_SAVE_KIT(); } ?></h1></li>
-	    			<li><h1><a href="" download>Download</a></h1></li>
+	    			
+	    			<!-- <li><h1><a href="" download>Download</a></h1></li> -->
+
 	    		</ul>
+	    	
 	    	</div>
+	    
 	    </div>
 
+
 	    <div class="container-fluid rahp-object-body">
+
 	    		<div class="row">
+
 	    			<div class="col-md-6 col-md-offset-3 col-sm-12">
+
 	    				<figure id="analysis-main-image" class="lightgallery">
+
 	    					<a href="<?php echo $image['url']; ?>" data-sub-html=".caption">
-	    					<img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>">	
-	    					<figcaption class="caption"><i><?php echo $artwork_title; ?></i> by <?php echo $artist; ?>. <?php echo $image['caption']; ?></figcaption>
+
+	    						<img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>">	
+	    					
+	    						<figcaption class="caption"><i><?php echo $artwork_title; ?></i> by <?php echo $artist; ?>. <?php echo $image['caption']; ?></figcaption>
+	    					
 	    					</a>
+
 	    				</figure>
 
 	    			</div>
-	    		</div>
 
-	    		
+	    		</div>
 	    		
 
 	    		<div class="row">
+	    			
 	    			<div class="col-sm-12">
 
 	    				<div class="analysis-slider">
 
 	    					<!-- ACF REPEATER STARTS -->
 							<?php if ( have_rows('image_details') ): ?>
+							
 							<?php while ( have_rows('image_details') ): the_row();
+								
 								$image = get_sub_field('image');
+								
 								$body = get_sub_field('body');
 
 							?>
@@ -114,11 +143,14 @@
 				    			<h2>Detail <span class="detail-count"></span></h2>
 				    			
 				    			<div class="col-sm-4">
+				    				
 				    				<div class="lightgallery">
 
 
 			  							<a href="<?php echo $image['url']; ?>" data-sub-html="#caption<?php echo count( get_field('image_details') ); ?>">
+			      							
 			      							<img src="<?php echo $image['url']; ?>" />
+			      							
 			      							<div class="lightgallery-caption" id="caption<?php echo count( get_field('image_details') ); ?>"><?php echo $image['caption']; ?></div>
 			      								
 			      							<h5>Click to Enlarge</h5>
@@ -126,6 +158,7 @@
 			  							</a>
 				    					
 				    				</div>
+
 				    			</div>
 				    			
 				    			<div class="col-sm-8">
@@ -147,6 +180,7 @@
 		    			<div class="paging-info"></div>
 
 	    			</div>
+	    			
 	    		</div>
 
 	    </div>
