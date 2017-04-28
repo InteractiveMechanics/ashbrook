@@ -1,0 +1,11 @@
+// ADDTOANY PLUGIN
+
+.addtoany_list.a2a_kit_size_32 a {
+	font-family: $lato;
+	@include gold-black-anchor;
+	font-size: 22px !important; 
+}
+
+.a2a_svg, .a2a_count { 
+	border-radius: 0 !important; 
+}

@@ -1,0 +1,154 @@
+.home-slider {
+	height: calc(100vh - 181px);
+	 @include landscape {
+	 	height: 600px;
+	 }
+}
+
+.home-single-slide {
+	background-position: center center;
+	background-size: cover;
+	height: calc(100vh - 181px); //header is 115px and footer is 66px
+	position: relative;
+	@include landscape {
+		height: 600px;
+	}
+}
+
+.home-single-slide-heading {
+	position: absolute;
+	bottom: 25px;
+	height: 300px;
+	right: 44%;
+	color: $white;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	h1, h2 {
+		text-align: right;
+		// TODO add text shadow
+	}
+	h1 {
+		letter-spacing: 1px;
+		text-transform: uppercase;
+		font-size: 3.3em;
+		margin-top: 5px;
+		@include screen-xxs {
+			font-size: 25px;
+		}
+		@include landscape {
+			font-size: 2.2em;
+		}
+	}
+	h2 {
+		margin-bottom: 0px;
+		@include screen-xxs {
+			font-size: 20px;
+		}
+		@include landscape {
+			font-size: 1.6em;
+		}
+	}
+	@include screen-ltmd {
+		bottom: initial;
+    	top: 0px;
+    	right: 50px;
+    	width: 90%;
+	}
+	@include screen-xxs {
+		height: initial;
+		right: 30px;
+	}
+
+}
+
+.home-single-slide-callout {
+		position: absolute;
+		bottom: 50px;
+		right: 5%;
+		width: 33%;
+		height: auto; // 332px
+		padding: 40px;
+		background-color: rgba(241, 242, 242, 0.7);
+
+	p {
+		font-size: 18px;
+		line-height: 30px;
+		@include screen-xs {
+			font-size: 16px;
+			line-height: 1.8;
+			padding: 10px 20px 10px 40px;
+		}
+		
+		@include landscape {
+			width: 100%;
+    		bottom: 150px;
+    		right: 15px;
+		}
+	}
+
+	@include screen-sm {
+		width: 75%;
+	}
+	@include screen-xs {
+		width: 80%;
+    	right: 0%;
+    	padding: 20px;
+    	bottom: 10px;
+    	-webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 15% 100%);
+    	clip-path: polygon(0 0, 100% 0, 100% 100%, 15% 100%);
+	}
+	
+	
+
+  	&:after {
+    width: 50px;
+    height: 100%;
+    position: absolute;
+    right: 100%;
+    content: "";
+     bottom: 0;
+    background: linear-gradient(to left bottom, rgba(241, 242, 242, 0.7) 50%, transparent 51%);
+    -webkit-backface-visibility: hidden;
+    @include screen-xs {
+    	display: none;
+    }
+  }
+
+
+ 
+
+}
+
+
+.slick-dotted.slick-slider {
+	margin-bottom: 0px;
+}
+
+.slick-dots {
+	bottom: 60px;
+	text-align: right;
+    right: 225px;
+    @include screen-xxs {
+    	right: 15px;
+    	bottom: 20px;
+    }
+    @include landscape {
+    	right: 15px;
+    	bottom: 20px;
+    }
+}
+
+.slick-dots li button:before {
+	content: '';
+	background-color: rgba(0,0,0, 0.5);
+	border-radius: 50%;
+	width: 10px;
+    height: 10px;
+    opacity: 0.75;
+}
+
+.slick-dots li.slick-active button:before {
+	background-color: transparent;
+	border: 2px solid rgba(0,0,0, 0.5);
+}

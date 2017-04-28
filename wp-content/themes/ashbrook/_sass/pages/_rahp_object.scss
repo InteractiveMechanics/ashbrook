@@ -1,0 +1,210 @@
+.rahp-object-title {
+	margin-left: 15px;
+	li {
+		display: inline;
+		&:first-child {
+			margin-right: 20px;
+		}
+		&:nth-of-type(n+2) {
+			margin-left: 0px;
+			&:after {
+				content: '\\';
+				color: $lightgray;
+				font-size: 1.4em;
+				padding-left: 10px;
+				padding-right: 10px;
+			}
+		}
+		&:last-child {
+			&:after {
+				content: "";
+			}
+		}
+		h2, h3 {
+			display: inline-block;
+		}
+		h3 {
+			color: $lightgray;
+			margin-top: 0px;
+		}
+	}
+	@include screen-xs {
+		margin-left: 0px;
+	}
+}
+
+.rahp-object-subheading {
+	padding-left: 80px;
+	padding-right: 80px;
+	@include screen-sm {
+		padding-left: 5%;
+		padding-right: 5%;
+	}
+	@include screen-xs {
+		padding-left: 5%;
+		padding-right: 5%;
+	}
+}
+
+.rahp-object-body {
+	padding-left: 80px;
+	padding-right: 80px;
+	padding-top: 20px;
+	position: relative;
+	figure {
+		float: right;
+		padding-right: 0px;
+		margin-left: 40px;
+    	margin-bottom: 10px;
+    	padding-left: 0px;
+		.lightgallery {
+			height: 400px;
+			overflow: hidden;
+		}
+		img {
+			width: 100%;
+		}
+		@include screen-xs {
+			float: none;
+			margin: 0 -20px 30px -20px;
+		}
+		figcaption {
+			@include screen-xs {
+				margin-left: 5%;
+				margin-right: 5%;
+			}
+		}
+	}
+	p {
+		max-width: 80%;
+		overflow-wrap: break-word;
+  		word-wrap: break-word;
+		&:last-child {
+			padding-bottom: 40px;
+		}
+		@include screen-xs {
+			max-width: 100%;
+		}
+	}
+	h1 {
+		font-family: $vollkhorn;
+		font-size: 30px;
+		font-style: italic;
+	}
+	@include screen-sm {
+		padding-left: 5%;
+		padding-right: 5%;
+	}
+	@include screen-xs {
+		padding-left: 5%;
+		padding-right: 5%;
+	}
+}
+
+.core-docs-tag {
+	float: left;
+	h3 {
+		font-family: $vollkhorn;
+		font-style: italic;
+		a {
+			font-family: $lato;
+			color: $gold;
+			text-transform: uppercase;
+			font-weight: 400;
+			letter-spacing: 2px;
+			font-style: initial;
+		}
+		&:first-of-type {
+			@include screen-xs {
+				&:after {
+					content: '\\';
+					color: #ccc;
+					padding-left: 7px;
+				}
+			}
+		}
+		@include screen-xs {
+			margin: 7px auto;
+		}
+	}
+
+	@include screen-sm {
+		float: none;
+    	text-align: center;
+	}
+}
+
+.references-wrapper {
+	margin-top: 60px;
+	@include screen-ltmd {
+		display: flex;
+		flex-direction: column;
+	}
+}
+
+
+.object-callouts {
+	position: relative;
+	float: right;
+	color: $gray;
+	position: relative;
+	//top: -80px;
+	h2, h1 {
+		//font-size: 1.5em;
+		margin: 0px;
+		line-height: initial;
+	}
+
+	h1 {
+		position: relative;
+		top: -7px;
+	}
+
+	.studyqs-headings-wrapper {
+		display: flex;
+		justify-content: space-between;
+		@include screen-xxxs {
+			display: initial;
+		}
+	}
+
+	.callout-studyqs, .callout-compare {
+		border-left: 2px solid $lightgray;
+		padding-left: 25px;
+		margin-bottom: 40px;
+		@include screen-ltmd {
+			border-left: none;
+			padding-left: 0px;
+
+		}
+	}
+	p {
+		font-family: $lato;
+		line-height: 1.8;
+		// TODO if/when callouts are removed from rahp-object-body can adjust padding
+		padding-bottom: 0px !important;
+		max-width: 100%;
+		@include screen-sm {
+			width: 80%;
+		}
+		@include screen-xs {
+			width: 100%;
+		}
+	}
+	@include screen-ltmd {
+		order: 5;
+		width: 100%
+	}
+}
+
+.object-references {
+	h2 {
+		margin-top: 0px;
+	}
+	p>a {
+		font-family: $lato;
+	}
+	@include screen-ltmd {
+		width: 100%;
+	}
+}
