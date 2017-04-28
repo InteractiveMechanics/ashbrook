@@ -34,49 +34,52 @@
 <?php while ( have_posts() ) : the_post();?>
 
 	<main class="single-rahp-object" id="post-<?php the_ID(); ?>">
+		
 		<div class="container-fluid">
+			
 			<?php custom_breadcrumbs(); ?>
 
 			<ul class="rahp-object-title">
+				
 				<li><h2><?php the_title(); ?></h2></li>
 
-				<?php if ($author) {
-				?>
+				<?php if ($author): ?>
+					
 					<li><h3><?php echo $author; ?></h3></li>
-				<?php 
-				}
-				?>
 
-				<?php if ($date) {
-				?>
-				<li><h3><?php echo $date; ?></h3></li>
-				<?php }
-				?>
+				<?php endif; ?>
+
+				<?php if ($date): ?>
+
+					<li><h3><?php echo $date; ?></h3></li>
+				
+				<?php endif; ?>
+			
 			</ul>
 
 		</div>
 
-		<?php if ($cover_image) { 
-		?>
-		<div class="jumbotron slim-jumbotron" style="background-image:  linear-gradient(rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 0) 100%), url('<?php echo $cover_image; ?>');">
-		<?php 
-		} else {
-		?>
-		<div class="jumbotron slim-jumbotron" style="background-image:  linear-gradient(rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 0) 100%), url('<?php echo $default_cover_image; ?>');">
-		<?php }
-		?>
+
+		<?php if ($cover_image): ?>
+		
+			<div class="jumbotron slim-jumbotron" style="background-image:  linear-gradient(rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 0) 100%), url('<?php echo $cover_image; ?>');">
+		
+		<?php else: ?>
+			
+			<div class="jumbotron slim-jumbotron" style="background-image:  linear-gradient(rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 0) 100%), url('<?php echo $default_cover_image; ?>');">
+		
+		<?php endif; ?>
 
 
-			<?php if ($introduction) {
-			?>
-			<div class="slim-jumbotron-callout">
+			<?php if ($introduction): ?>
 
-				<p><?php echo $introduction; ?></p>
+				<div class="slim-jumbotron-callout">
+
+					<p><?php echo $introduction; ?></p>
 				
-			</div>
-			<?php 
-				}
-			?>
+				</div>
+			<?php endif; ?>
+
 	    </div>
 
 
@@ -86,6 +89,7 @@
 	    		<?php if( get_field('25_core_document') ): ?>
 						
 						<div class="core-docs-tag">
+							 
 							 <?php 
 							 	$category_id = get_cat_ID( '25 Core Documents' ); 
 							 	$category_link = get_category_link( $category_id );
@@ -98,109 +102,123 @@
 
 	    		<?php endif; ?>
 
-
 	    		<ul class="sharing hidden-xs">
+	    			
 	    			<!-- <li><h1><a href="javascript:window.print()">Print</a></h1></li> -->
+	    			
 	    			<li><h1><?php if ( function_exists( 'ADDTOANY_SHARE_SAVE_KIT' ) ) { ADDTOANY_SHARE_SAVE_KIT(); } ?></h1></li>
+	    			
 	    			<!-- <li><h1><a href="" download>>Download</a></h1></li> -->
 	    		</ul>
+	    	
 	    	</div>
 	 
 
 	    	<div class="container-fluid rahp-object-body">
+	    		
 	    		<div class="row">
+	    			
 	    			<div class="col-sm-12">
+	    				
 	    				<?php echo $body; ?>
 
-		    			
-
-		    			
 	    			</div>
-				</div> <!-- /col-sm-12 -->
+
+				</div> <!-- /row -->
 
 				<div class="row references-wrapper">
 
+					
 					<!-- THESE CALLOUTS ONLY FOR 25 CORE DOCS -->
 
 					<?php if( get_field('25_core_document') ): ?>
 
 						<div class="object-callouts col-sm-5">
+								
 								<h1 class="visible-xs share-mobile"><?php if ( function_exists( 'ADDTOANY_SHARE_SAVE_KIT' ) ) { ADDTOANY_SHARE_SAVE_KIT(); } ?></h1>
+								
 								<div class="callout-studyqs">
+									
 									<div class="studyqs-headings-wrapper">
+										
 										<h2>Study Questions...</h2>
+										
 										<h1><a href="<?php echo $study_questions; ?>">View All</a></h1>
+									
 									</div>
+									
 									<p><?php echo $study_questions_excerpt; ?></p>
 								</div>
+								
 								<div class="callout-compare">
+									
 									<h2>Compare...</h2>
+									
 									<p><?php echo $compare; ?></p>
+								
 								</div>
 						</div>
-					<!-- END CALLOUT SECTION-->
+					
 					<?php endif; ?>
 
-					<div class="object-references col-sm-7">
-						<?php if ($footnotes) {
-						?>
-						
-						<h2>Notes</h2>
-						<?php echo $footnotes; ?>
-						
-						<?php 
-						}
-						?>
-					</div>
+					<!-- END CALLOUT SECTION-->
+
 
 					<div class="object-references col-sm-7">
-						<?php if ($citation) {
-						?>
-						<h2>Citation</h2>
-						<p><?php echo $citation; ?></p>
-						<?php 
-						}
-						?>
+
+						<?php if ($footnotes): ?>
+						
+							<h2>Notes</h2>
+							
+							<?php echo $footnotes; ?>
+
+						<?php endif; ?>
+
+					</div>
+
+
+					<div class="object-references col-sm-7">
+						
+						<?php if ($citation): ?>
+
+							<h2>Citation</h2>
+							
+							<p><?php echo $citation; ?></p>
+						<?php endif; ?>
+					
 					</div>
 
 					
 					<!-- ACF repeater starts -->
 					<?php if( have_rows('links') ): ?>
 
-					
 							<div class="object-references col-sm-7">
+								
 								<h2>External Links</h2>
 
 									<?php while (have_rows('links')): the_row(); 
+										
 										$link_url = get_sub_field('link_url');
 								    	$link_text = get_sub_field('link_text');
 								   
 									?>
 
-									<p><a href="<?php echo $link_url; ?>"><?php echo $link_text; ?></a></p>
+										<p><a href="<?php echo $link_url; ?>"><?php echo $link_text; ?></a></p>
 
 									<?php endwhile; ?>
 
-
 							</div>
-
-						
 
 					<?php endif; ?>
 					<!-- ACF repeater ends -->
+
 
 				</div>
 
 	    	</div>
 
-	    </div>
 	    	
 	    <?php get_template_part('content-rahp_relatedcontent', get_post_format()); ?>
-
-
-	    	
-
-	    	
 
 
 
