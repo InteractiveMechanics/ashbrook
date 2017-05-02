@@ -55,8 +55,6 @@
 				     	 	else:
 				     	 	echo '<small>' . $subcategory->count . ' Objects </small>';
 				     	 	endif; 
-
-
 				     	 endif;
 
 				         echo '</div>';
