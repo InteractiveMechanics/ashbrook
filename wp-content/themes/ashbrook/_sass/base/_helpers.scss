@@ -180,7 +180,7 @@ img.aligncenter {
 }
 
 .wp-caption-text {
-  color: $lightgray;
+  color: darken($lightgray, 25%);
   font-size: 14px;
   font-weight: 300;
   margin-top: 7px;
