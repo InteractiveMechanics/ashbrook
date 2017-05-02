@@ -146,7 +146,7 @@ img.aligncenter {
   padding-bottom: 40px; }
 
 .wp-caption-text {
-  color: #A5AEB6;
+  color: #626e79;
   font-size: 14px;
   font-weight: 300;
   margin-top: 7px;
@@ -222,6 +222,12 @@ h1 > a {
     color: #C49F21;
     text-decoration: none;
     border-bottom: 1px solid #000000; }
+
+h3 > a {
+  color: #ffffff; }
+  h3 > a:hover, h3 > a:active, h3 > a:focus {
+    color: #ffffff;
+    text-decoration: none; }
 
 h5 > a {
   color: #C49F21;
@@ -563,6 +569,11 @@ main {
   @media (max-width: 767px) {
     .navbar-default .navbar-nav > li > a {
       color: #ffffff; } }
+
+.dropdown-menu > .active > a,
+.dropdown-menu > .active > a:focus,
+.dropdown-menu > .active > a:hover {
+  background-color: transparent; }
 
 .navbar-default .navbar-nav > .active > a,
 .navbar-default .navbar-nav > .active > a:focus,

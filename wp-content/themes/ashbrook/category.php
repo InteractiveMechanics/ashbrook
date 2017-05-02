@@ -104,12 +104,20 @@
 					echo '<h5>' . $category->description . '</h2>';
 					endif;
 
+
+					if ($category->count == '1'):
+					echo '<h5>' . $category->count . ' object</h2>';
+					else:
 					echo '<h5>' . $category->count . ' objects</h2>';
+					endif;
+
 					echo '<p>' . $category_introduction . '</p>';
 
 				} else {
 					$default_cat_image = get_field('default_category_image', 'option');
 					$totm_archive_featured_image = get_field('totm_archive_featured_image', 'option');
+					$count_posts = wp_count_posts('totm');
+					$published_posts = $count_posts->publish;
 
 
 					 if ( $term ):
@@ -127,7 +135,13 @@
 					echo '<div class="col-sm-10">';
 					echo '<div class="blog-excerpt">';
 					echo '<h2>'  . get_field('totm_archive_title', 'option')  . '</h2>';
-					echo '<h5>' . $category->count . ' Themes of the Month</h2>';
+
+					if ($published_posts == '1'):
+					echo '<h5>' . $published_posts . ' Theme of the Month</h2>';
+					else:
+					echo '<h5>' . $published_posts . ' Themes of the Month</h2>';
+					endif;
+
 					echo '<p>' . get_field('totm_short_description', 'option') . '</p>';
 
 				}

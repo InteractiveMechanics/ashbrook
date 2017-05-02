@@ -135,7 +135,7 @@
 								</g>
 							</svg>
 				    	</button>
-				      	<a class="navbar-brand" href="<?php echo home_url(); ?>"><img src="<?php printTHemePath(); ?>/img/header-logo.svg" alt="logo"></a>
+				      	<a class="navbar-brand" href="<?php echo home_url(); ?>"><img src="<?php printTHemePath(); ?>/img/header-logo.svg" alt="Religion in America logo"></a>
 				    </div>
 
 				   
