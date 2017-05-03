@@ -32,6 +32,7 @@
 				    	 $term = $subcategory;
 				    	 $term_id = $term->taxonomy . '_' . $term->term_id;
 				    	 $category_image = get_field('category_image', $term_id);
+				    	 $category_dates = get_field('category_dates', $term_id);
 				    	
 				         echo '<div class="col-sm-3 library-single-slide">';
 				         echo '<div class="img-wrapper">';
@@ -45,7 +46,17 @@
 				         echo '<div class="trapezoid">';
 				         echo '<div class="trap-sq">';
 				         echo '<h3><a href="'. esc_url(get_category_link($subcategory->cat_ID)) . '">' . $subcategory->name .'</a></h3>';
-				         echo '<small>Authors A to Z</small>'; // the category desciption?
+
+				         if ($category_dates):
+				         echo '<small>' . $category_dates . '</small>'; // the category desciption?
+				     	 else:
+				     	 	if ($subcategory->count == '1'):
+				     	 	echo '<small>' . $subcategory->count . ' Object </small>';
+				     	 	else:
+				     	 	echo '<small>' . $subcategory->count . ' Objects </small>';
+				     	 	endif; 
+				     	 endif;
+
 				         echo '</div>';
 				         echo '<div class="trap-tri"></div>';
 				         echo '</div>'; // .trapezoid

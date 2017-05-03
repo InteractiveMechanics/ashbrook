@@ -66,6 +66,14 @@ h1>a {
 	font-size: 22px;
 }
 
+h3>a {
+	color: $white;
+	&:hover, &:active, &:focus {
+		color: $white;
+		text-decoration: none;
+	}
+}
+
 h5>a {
 	@include gold-black-anchor;
 }
