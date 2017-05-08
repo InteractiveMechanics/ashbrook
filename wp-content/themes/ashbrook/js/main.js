@@ -130,21 +130,72 @@ $(document).ready(function(){
     return decodeURIComponent(results[2].replace(/\+/g, " "));
   }
 
+  $('.search-label').hide();
+
   if (getParameterByName("post_tag")) {
-      $(".selectpicker[name='post_tag']").selectpicker("val", getParameterByName("post_tag") );
+      $(".selectpicker[name='post_tag']").selectpicker("val", [getParameterByName("post_tag")] );
   }
 
   if (getParameterByName("post_category")) {
-      $(".selectpicker[name='post_category']").selectpicker("val", getParameterByName("post_category"));
+      $(".selectpicker[name='post_category']").selectpicker("val", [getParameterByName("post_category")]);
   }
 
   if (getParameterByName("post_era")) {
-      $(".selectpicker[name='post_category']").selectpicker("val", getParameterByName("post_era"));
+      $(".selectpicker[name='post_category']").selectpicker("val", [getParameterByName("post_era")]);
   }
 
+  $('#search-form').on('submit', function(e) {
+        e.preventDefault();
+        var post_tag = "";
+        var post_era = "";
+        var post_category = "";
 
-  
+        var keyword = $('input[name="keyword"]').val();
+        if ($('.selectpicker[name="post_tag"]').val()) {
+          post_tag = $('.selectpicker[name="post_tag"]').val().join(',');
 
+        }
+        if ($('.selectpicker[name="post_era"]').val()) {
+          post_era = $('.selectpicker[name="post_era"]').val().join(',');
+        }
+        if ($('.selectpicker[name="post_category"]').val()) {
+          post_category = $('.selectpicker[name="post_category"]').val().join(',');
+          
+        }
+        var pg = $('#form-pagination').val();
+
+        window.location = '?keyword=' + keyword + "&post_tag=" + post_tag + "&post_era=" + post_era + "&post_category=" + post_category + "&pg=" + pg;
+    });
+
+    
+
+    var toggleFilterLabel = function(filter,label) {
+      if ( $(filter).val() ) {
+          $(label).show();
+          console.log('your label function is working');
+        } else {
+          $(label).hide();
+          console.log('and so is this part');
+       }
+
+    }
+
+    $("#post_category").change(function() {
+      toggleFilterLabel('#post_category', '#post_category_label');
+    });
+
+    $('#post_era').change(function() {
+       toggleFilterLabel('#post_era', '#post_era_label');
+    });
+
+    $('#post_tag').change(function() {
+       toggleFilterLabel('#post_tag', '#post_tag_label');
+    });
+
+
+
+
+    
 
 
 
@@ -162,9 +213,8 @@ $(document).ready(function(){
          }
     });
 
+
     
-
-
 
     // MOBILE MENU CLOSE
     $('.mobile-menu-close').click(function() {

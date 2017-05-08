@@ -65,7 +65,10 @@
 
 .bootstrap-select:not([class*=col-]):not([class*=form-control]):not(.input-group-btn) {
 	width: auto;
-	max-width: 300px;
+	max-width: 250px;
+	@include screen-ltxl {
+		max-width: 200px;
+	}
 	@include screen-ltmd {
 		display: none;
 	}
@@ -97,16 +100,20 @@ button[type="reset"] {
     	color: $darkgold;
     	border-color: $darkgold;
     }
-    @include screen-xs {
+    @include screen-md {
+    	float: none;
+    }
+    @include screen-ltmd {
     	display: none;
     }
+    
 
 }
 
 button[type="submit"] {
 	@extend button[type="reset"];
 	margin-right: 20px;
-	@include screen-xs {
+	@include screen-ltmd {
 		display: initial;
 		float: none;
 		margin-bottom: 20px;
@@ -127,4 +134,17 @@ button[type="submit"] {
 
 .search-result-filter {
 	font-style: initial;
+}
+
+.search-label {
+	color: $gold;
+	display: block;
+	font-weight: 300;
+	letter-spacing: 2px;
+	margin-bottom: 0px;
+	text-align: center;
+	text-transform: uppercase;
+	@include screen-ltmd {
+    	display: none;
+    }
 }

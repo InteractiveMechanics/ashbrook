@@ -1739,7 +1739,10 @@ footer {
 
 .bootstrap-select:not([class*=col-]):not([class*=form-control]):not(.input-group-btn) {
   width: auto;
-  max-width: 300px; }
+  max-width: 250px; }
+  @media (max-width: 1439px) {
+    .bootstrap-select:not([class*=col-]):not([class*=form-control]):not(.input-group-btn) {
+      max-width: 200px; } }
   @media (max-width: 991px) {
     .bootstrap-select:not([class*=col-]):not([class*=form-control]):not(.input-group-btn) {
       display: none; } }
@@ -1768,13 +1771,16 @@ button[type="reset"], button[type="submit"] {
   button[type="reset"]:hover, button[type="submit"]:hover, button[type="reset"]:active, button[type="submit"]:active, button[type="reset"]:focus, button[type="submit"]:focus, button[type="reset"]:active:focus, button[type="submit"]:active:focus {
     color: #8A721A;
     border-color: #8A721A; }
-  @media (max-width: 767px) {
+  @media (min-width: 992px) and (max-width: 1199px) {
+    button[type="reset"], button[type="submit"] {
+      float: none; } }
+  @media (max-width: 991px) {
     button[type="reset"], button[type="submit"] {
       display: none; } }
 
 button[type="submit"] {
   margin-right: 20px; }
-  @media (max-width: 767px) {
+  @media (max-width: 991px) {
     button[type="submit"] {
       display: initial;
       float: none;
@@ -1791,6 +1797,18 @@ button[type="submit"] {
 
 .search-result-filter {
   font-style: initial; }
+
+.search-label {
+  color: #C49F21;
+  display: block;
+  font-weight: 300;
+  letter-spacing: 2px;
+  margin-bottom: 0px;
+  text-align: center;
+  text-transform: uppercase; }
+  @media (max-width: 991px) {
+    .search-label {
+      display: none; } }
 
 .blog-page-body {
   padding-left: 80px;

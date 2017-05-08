@@ -7,7 +7,7 @@
 	</div>
 	
 	<?php
-		$html = '<div class="form-group"><select class="selectpicker show-tick" name="post_category" title="All Content Types"><option>All</option>';
+		$html = '<div class="form-group"><label class="search-label" id="post_category_label" for="post_category">Content Types</label><select id="post_category" class="selectpicker show-tick" multiple data-selected-text-format="count" name="post_category" title="All Content Types"><option>All</option>';
 		$categories = get_categories( array(
     		'orderby' => 'name',
     		'parent'  => 0
@@ -15,7 +15,7 @@
  
 		foreach ( $categories as $category ) {
    		
-   		$html .= "<option title='{$category->name}' value='{$category->name}'class='{$category->term_id}'>$category->name</option>";
+   		$html .= "<option title='{$category->name}' value='{$category->term_id}' class='{$category->term_id}'>$category->name</option>";
 		
 		}
 
@@ -24,7 +24,7 @@
 	?>
 
 	<?php
-		$html = '<div class="form-group"><select class="selectpicker show-tick" name="post_era" title="All Time Periods"><option>All</option>';
+		$html = '<div class="form-group"><label class="search-label" id="post_era_label" for="post_era">Time Periods</label><select id="post_era" class="selectpicker show-tick" multiple data-selected-text-format="count" name="post_era" title="All Time Periods"><option>All</option>';
 		$terms = get_terms( array(
     		'orderby' => 'name',
     		'taxonomy' => 'category',
@@ -33,7 +33,7 @@
  
 		foreach ( $terms as $term ) {
    		
-   		$html .= "<option title='{$term->name}' value='{$term->name}'class='{$term->term_id}'>$term->name</option>";
+   		$html .= "<option title='{$term->name}' value='{$term->term_id}' class='{$term->term_id}'>$term->name</option>";
 		
 		}
 
@@ -46,10 +46,10 @@
 
 	<?php 
 	$tags = get_tags();
-	$html = '<div class="form-group"><select class="selectpicker show-tick" name="post_tag" title="All Themes"><option>All</option>';
+	$html = '<div class="form-group"><label class="search-label" id="post_tag_label" for="post_tag">Themes</label><select id="post_tag" class="selectpicker show-tick" multiple data-selected-text-format="count" name="post_tag" title="All Themes"><option>All</option>';
 	foreach ( $tags as $tag ) {
 					
-		$html .= "<option title='{$tag->name}' value='{$tag->name}' class='{$tag->slug}'>$tag->name</option>";
+		$html .= "<option title='{$tag->name}' value='{$tag->term_id}' class='{$tag->slug}'>$tag->name</option>";
 	
 	}
 	$html .= '</select></div>';

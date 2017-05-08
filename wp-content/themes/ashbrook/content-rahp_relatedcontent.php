@@ -68,7 +68,7 @@
                                         $posttags = get_the_tags($post->ID);
                                         if ($posttags) {
                                             foreach($posttags as $tag) {
-                                                echo '<li><h5><a href="' . home_url() . '/search/?keyword=&post_category=&post_era=&post_tag=' . $tag->name . '&pg=1">' . $tag->name . '</a></h5></li>'; 
+                                                echo '<li><h5><a href="' . home_url() . '/search/?keyword=&post_category=&post_era=&post_tag=' . $tag->term_id . '&pg=1">' . $tag->name . '</a></h5></li>'; 
                                             }
                                         }
                                     ?>
