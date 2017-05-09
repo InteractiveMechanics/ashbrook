@@ -50,7 +50,9 @@
 													<!-- <div class="trap-tri"></div> -->
 												</div>
 			    							</a>
-		    						</div> 
+		    						</div>
+
+		    						
 								
 
 							<?php

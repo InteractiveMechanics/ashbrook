@@ -278,6 +278,55 @@ div[class$="body"] ul, div[class$="body"] ol {
   position: relative;
   top: 2px; }
 
+@media print {
+  nav, footer {
+    display: none; }
+
+  header:before {
+    display: block;
+    content: "Thank you for printing this content from ReligionInAmerica.net";
+    margin-bottom: 10px;
+    border: 1px solid #bbb;
+    padding: 3px 5px;
+    font-style: italic; }
+
+  body {
+    margin: 0.75in;
+    line-height: 1.5; }
+
+  img {
+    max-width: 500px; }
+
+  p a:after {
+    display: none; }
+
+  main {
+    width: 90%;
+    margin: 0px;
+    padding: 0px; }
+
+  .sharing {
+    display: none; }
+
+  .slim-jumbotron {
+    height: auto !important;
+    margin-top: 0.5in !important;
+    margin-bottom: 0.5in !important; }
+
+  .slim-jumbotron-callout {
+    position: static;
+    width: 100%;
+    right: auto !important;
+    left: auto !important;
+    padding: 0px; }
+    .slim-jumbotron-callout p {
+      font-size: 16px; }
+
+  .related-content {
+    display: none; }
+
+  .pagination {
+    display: none; } }
 main {
   margin-bottom: 100px; }
 
