@@ -85,26 +85,15 @@ $(document).ready(function(){
      subHtmlSelectorRelative: true
   }); 
 
-  
 
+  // SEARCH RESET
 
-  
-  // HIDE SEARCH SUBMIT BUTTON, SUBMIT ON PRESSING ENTER
-  // $('.search').each(function() {
-  //       $(this).find('input').keypress(function(e) {
-  //           // Enter pressed?
-  //           if(e.which == 10 || e.which == 13) {
-  //               this.form.submit();
-  //           }
-  //       });
-
-        //$(this).find('button[type=submit]').hide();
-    // });
 
   $('.search-reset').click(function(){
       $(".selectpicker[name='post_tag']").selectpicker("val", "" );
       $(".selectpicker[name='post_era']").selectpicker("val", "" );
       $(".selectpicker[name='post_category']").selectpicker("val", "" );
+      $(".search-label").hide();
   });
 
   $('.wp-pagenavi .previouspostslink').prev('.pages').addClass('no-margin');
@@ -151,6 +140,7 @@ $(document).ready(function(){
         var post_category = "";
 
         var keyword = $('input[name="keyword"]').val();
+
         if ($('.selectpicker[name="post_tag"]').val()) {
           post_tag = $('.selectpicker[name="post_tag"]').val().join(',');
 

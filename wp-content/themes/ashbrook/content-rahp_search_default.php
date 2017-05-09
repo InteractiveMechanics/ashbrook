@@ -55,9 +55,9 @@
 								echo '<h2 class="search-results">'. $the_query->found_posts . ' Search Results for ';
 
 								if (!empty($_GET['keyword'])) {
-									echo '<span class="search-result-filter">';
+									echo '<div class="search-result-filter">';
 									echo $_GET['keyword'];
-									echo '</span>';
+									echo '</div>';
 								}								
 
 
@@ -68,7 +68,7 @@
 									} else {
 										echo ' ';
 									}
-									echo '<span class="search-result-filter">';
+									echo '<div class="search-result-filter">';
 									if ($_GET['post_era'] == 'All') {
 										echo 'All Time Periods';
 									} else {
@@ -76,10 +76,10 @@
 										//$count_exploded = count($exploded);
 										//echo $count_exploded;
 										foreach($exploded as $era){
-											echo " " . get_cat_name($era) . " ";	
+											echo "<span> " . get_cat_name($era) . "</span> ";	
 										}
 									}
-									echo '</span>';
+									echo '</div>';
 
 								}
 
@@ -91,20 +91,20 @@
 									} else {
 										echo ' ';
 									}
-									echo '<span class="search-result-filter">';
+									echo '<div class="search-result-filter">';
 									if ($_GET['post_category'] == 'All') {
 										echo 'All Content Types';
 									} else {
 										$exploded = explode(',', $_GET['post_category']);
 									
 										foreach($exploded as $category){
-											echo " " . get_cat_name($category) . " ";	
+											echo "<span> " . get_cat_name($category) . "</span>";	
 										}
 
 									}
 
 
-									echo '</span>';
+									echo '</div>';
 								}
 
 								echo ' ';
@@ -115,7 +115,7 @@
 									} else {
 										echo ' ';
 									}
-									echo '<span class="search-result-filter">';
+									echo '<div class="search-result-filter">';
 									if ($_GET['post_tag'] == 'All') {
 										echo 'All Themes';
 									} else {
@@ -123,11 +123,11 @@
 									
 										foreach($exploded as $tag){
 											$tag_id = get_tag($tag);
-											echo " " . $tag_id->name . " ";	
+											echo "<span> " . $tag_id->name . "</span>";	
 										}
 									
 									}
-									echo '</span>';
+									echo '</div>';
 								}
 
 								echo '</h2>';

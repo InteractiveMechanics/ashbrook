@@ -1729,7 +1729,7 @@ footer {
 .search-input {
   border: none;
   padding: 12px;
-  width: 250px; }
+  width: 240px; }
   .search-input:focus, .search-input:active, .search-input:active:focus {
     outline: none !important;
     color: #000000; }
@@ -1796,7 +1796,15 @@ button[type="submit"] {
   margin-left: 30px; }
 
 .search-result-filter {
-  font-style: initial; }
+  font-style: initial;
+  display: inline-block; }
+  .search-result-filter span:after {
+    content: '\\';
+    color: #000000;
+    padding-left: 5px;
+    padding-right: 5px; }
+  .search-result-filter span:last-child:after {
+    content: ' '; }
 
 .search-label {
   color: #C49F21;

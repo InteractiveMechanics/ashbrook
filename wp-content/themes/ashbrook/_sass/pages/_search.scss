@@ -53,7 +53,7 @@
 .search-input {
 	border: none;
 	padding: 12px;
-	width: 250px;
+	width: 240px;
 	&:focus, &:active, &:active:focus {
 		outline: none !important;
 		color: $black;
@@ -134,7 +134,25 @@ button[type="submit"] {
 
 .search-result-filter {
 	font-style: initial;
+	display: inline-block;
+	span {
+		&:after {
+			content: '\\';
+			color: $black;
+			padding-left: 5px;
+			padding-right: 5px;
+		}
+
+		&:last-child {
+			&:after {
+				content: ' ';
+			}
+		}
+	}
 }
+
+
+
 
 .search-label {
 	color: $gold;
