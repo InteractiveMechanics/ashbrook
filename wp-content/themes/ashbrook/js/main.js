@@ -162,10 +162,8 @@ $(document).ready(function(){
     var toggleFilterLabel = function(filter,label) {
       if ( $(filter).val() ) {
           $(label).show();
-          console.log('your label function is working');
         } else {
           $(label).hide();
-          console.log('and so is this part');
        }
 
     }

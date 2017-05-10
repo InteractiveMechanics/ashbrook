@@ -51,14 +51,33 @@ get_header(); ?>
 
 
 		<?php if ($cover_image): ?>
-
-			<div class="jumbotron slim-jumbotron" style="background-image:  linear-gradient(rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 0) 100%), url('<?php echo $cover_image; ?>');">
+				<div class="jumbotron slim-jumbotron" style="background-image:  linear-gradient(rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 0) 100%), url('<?php echo $cover_image; ?>');">
 		
-		<?php else: ?>
-
-			<div class="jumbotron slim-jumbotron" style="background-image:  linear-gradient(rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 0) 100%), url('<?php echo $default_cover_image; ?>');">
+		<?php else:  
 		
-		<?php endif; ?>
+				$rows = get_field('default_cover_images', 'option');
+		            if($rows) $i=0; {
+			            shuffle( $rows );
+
+			        foreach($rows as $row) {
+				        $i++; if ($i==2) break;
+				        $cover_image = $row['default_cover_image'];
+
+				?>
+				       
+					<div class="jumbotron slim-jumbotron" style="background-image:  linear-gradient(rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 0) 100%), url('<?php echo $cover_image; ?>');">
+
+						
+					<?php 
+										        
+			        }
+			     
+			    }
+
+			endif;
+
+
+		?>
 
 
 			<?php if ($introduction): ?>
@@ -75,10 +94,10 @@ get_header(); ?>
 
 
 	    <div class="container-fluid blog-page-body">
-
-	    	<?php es_subbox( $namefield = "YES", $desc = "", $group = "Public" ); ?>
 	    	
 	    	<?php  get_template_part('loop', get_post_format()); ?>
+
+	    
 	   
 	    	<div class="container-fluid pagination">
 
@@ -87,6 +106,12 @@ get_header(); ?>
 			</div>
 
 	    </div> <!-- /blog-body-page -->
+
+
+	    	<div class="blog-sign-up">
+	    	<h2>Sign up for our blog!</h2>
+	    	<?php es_subbox( $namefield = "YES", $desc = "", $group = "Public" ); ?>
+	    	</div>
 	
 
 	</main>

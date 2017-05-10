@@ -326,7 +326,7 @@ div[class$="body"] ul, div[class$="body"] ol {
     display: none; }
 
   .pagination {
-    display: none; } }
+    display: none !important; } }
 main {
   margin-bottom: 100px; }
 
@@ -1935,5 +1935,10 @@ button[type="submit"] {
   @media (max-width: 767px) {
     .blog-excerpt {
       height: auto; } }
+
+.blog-sign-up {
+  background: #000000; }
+  .blog-sign-up h2 {
+    color: #ffffff; }
 
 /*# sourceMappingURL=main.css.map */
