@@ -53,6 +53,9 @@
 .dropdown-menu>.active>a:focus, 
 .dropdown-menu>.active>a:hover {
 	background-color: transparent;
+	@include screen-gtmd {
+		color: $black;
+	}
 }
 
 .navbar-default .navbar-nav>.active>a, 
