@@ -39,7 +39,7 @@ function create_custom_post_types() {
             'public' => true,
             'has_archive' => true,
             'taxonomies'  => array( 'category', 'post_tag'),
-            'supports' => array( 'title', 'editor', 'comments', 'author', 'custom-fields', 'thumbnail', 'post-thumbnails', 'custom-fields', 'post-templates'),
+            'supports' => array( 'title', 'editor', 'comments', 'author', 'custom-fields', 'thumbnail', 'post-thumbnails', 'custom-fields', 'post-templates', 'revisions'),
             'rewrite' => array( 'slug' => 'rahp_objects' ),
         )
     );
