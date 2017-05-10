@@ -75,6 +75,8 @@ get_header(); ?>
 
 
 	    <div class="container-fluid blog-page-body">
+
+	    	<?php es_subbox( $namefield = "YES", $desc = "", $group = "Public" ); ?>
 	    	
 	    	<?php  get_template_part('loop', get_post_format()); ?>
 	   

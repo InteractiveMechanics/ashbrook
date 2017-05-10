@@ -53,7 +53,7 @@
 .search-input {
 	border: none;
 	padding: 12px;
-	width: 250px;
+	width: 240px;
 	&:focus, &:active, &:active:focus {
 		outline: none !important;
 		color: $black;
@@ -65,7 +65,10 @@
 
 .bootstrap-select:not([class*=col-]):not([class*=form-control]):not(.input-group-btn) {
 	width: auto;
-	max-width: 300px;
+	max-width: 250px;
+	@include screen-ltxl {
+		max-width: 200px;
+	}
 	@include screen-ltmd {
 		display: none;
 	}
@@ -97,16 +100,20 @@ button[type="reset"] {
     	color: $darkgold;
     	border-color: $darkgold;
     }
-    @include screen-xs {
+    @include screen-md {
+    	float: none;
+    }
+    @include screen-ltmd {
     	display: none;
     }
+    
 
 }
 
 button[type="submit"] {
 	@extend button[type="reset"];
 	margin-right: 20px;
-	@include screen-xs {
+	@include screen-ltmd {
 		display: initial;
 		float: none;
 		margin-bottom: 20px;
@@ -127,4 +134,35 @@ button[type="submit"] {
 
 .search-result-filter {
 	font-style: initial;
+	display: inline-block;
+	span {
+		&:after {
+			content: '\\';
+			color: $black;
+			padding-left: 5px;
+			padding-right: 5px;
+		}
+
+		&:last-child {
+			&:after {
+				content: ' ';
+			}
+		}
+	}
+}
+
+
+
+
+.search-label {
+	color: $gold;
+	display: block;
+	font-weight: 300;
+	letter-spacing: 2px;
+	margin-bottom: 0px;
+	text-align: center;
+	text-transform: uppercase;
+	@include screen-ltmd {
+    	display: none;
+    }
 }

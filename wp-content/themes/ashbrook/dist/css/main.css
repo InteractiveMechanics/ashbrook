@@ -278,6 +278,55 @@ div[class$="body"] ul, div[class$="body"] ol {
   position: relative;
   top: 2px; }
 
+@media print {
+  nav, footer {
+    display: none; }
+
+  header:before {
+    display: block;
+    content: "Thank you for printing this content from ReligionInAmerica.net";
+    margin-bottom: 10px;
+    border: 1px solid #bbb;
+    padding: 3px 5px;
+    font-style: italic; }
+
+  body {
+    margin: 0.75in;
+    line-height: 1.5; }
+
+  img {
+    max-width: 500px; }
+
+  p a:after {
+    display: none; }
+
+  main {
+    width: 90%;
+    margin: 0px;
+    padding: 0px; }
+
+  .sharing {
+    display: none; }
+
+  .slim-jumbotron {
+    height: auto !important;
+    margin-top: 0.5in !important;
+    margin-bottom: 0.5in !important; }
+
+  .slim-jumbotron-callout {
+    position: static;
+    width: 100%;
+    right: auto !important;
+    left: auto !important;
+    padding: 0px; }
+    .slim-jumbotron-callout p {
+      font-size: 16px; }
+
+  .related-content {
+    display: none; }
+
+  .pagination {
+    display: none; } }
 main {
   margin-bottom: 100px; }
 
@@ -574,6 +623,11 @@ main {
 .dropdown-menu > .active > a:focus,
 .dropdown-menu > .active > a:hover {
   background-color: transparent; }
+  @media (min-width: 1200px) {
+    .dropdown-menu > .active > a,
+    .dropdown-menu > .active > a:focus,
+    .dropdown-menu > .active > a:hover {
+      color: #000000; } }
 
 .navbar-default .navbar-nav > .active > a,
 .navbar-default .navbar-nav > .active > a:focus,
@@ -1729,7 +1783,7 @@ footer {
 .search-input {
   border: none;
   padding: 12px;
-  width: 250px; }
+  width: 240px; }
   .search-input:focus, .search-input:active, .search-input:active:focus {
     outline: none !important;
     color: #000000; }
@@ -1739,7 +1793,10 @@ footer {
 
 .bootstrap-select:not([class*=col-]):not([class*=form-control]):not(.input-group-btn) {
   width: auto;
-  max-width: 300px; }
+  max-width: 250px; }
+  @media (max-width: 1439px) {
+    .bootstrap-select:not([class*=col-]):not([class*=form-control]):not(.input-group-btn) {
+      max-width: 200px; } }
   @media (max-width: 991px) {
     .bootstrap-select:not([class*=col-]):not([class*=form-control]):not(.input-group-btn) {
       display: none; } }
@@ -1768,13 +1825,16 @@ button[type="reset"], button[type="submit"] {
   button[type="reset"]:hover, button[type="submit"]:hover, button[type="reset"]:active, button[type="submit"]:active, button[type="reset"]:focus, button[type="submit"]:focus, button[type="reset"]:active:focus, button[type="submit"]:active:focus {
     color: #8A721A;
     border-color: #8A721A; }
-  @media (max-width: 767px) {
+  @media (min-width: 992px) and (max-width: 1199px) {
+    button[type="reset"], button[type="submit"] {
+      float: none; } }
+  @media (max-width: 991px) {
     button[type="reset"], button[type="submit"] {
       display: none; } }
 
 button[type="submit"] {
   margin-right: 20px; }
-  @media (max-width: 767px) {
+  @media (max-width: 991px) {
     button[type="submit"] {
       display: initial;
       float: none;
@@ -1790,7 +1850,27 @@ button[type="submit"] {
   margin-left: 30px; }
 
 .search-result-filter {
-  font-style: initial; }
+  font-style: initial;
+  display: inline-block; }
+  .search-result-filter span:after {
+    content: '\\';
+    color: #000000;
+    padding-left: 5px;
+    padding-right: 5px; }
+  .search-result-filter span:last-child:after {
+    content: ' '; }
+
+.search-label {
+  color: #C49F21;
+  display: block;
+  font-weight: 300;
+  letter-spacing: 2px;
+  margin-bottom: 0px;
+  text-align: center;
+  text-transform: uppercase; }
+  @media (max-width: 991px) {
+    .search-label {
+      display: none; } }
 
 .blog-page-body {
   padding-left: 80px;

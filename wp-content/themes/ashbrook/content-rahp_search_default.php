@@ -11,7 +11,8 @@
 									'orderby'	=> 'rand',
 									'order' 	=> 'ASC',
 									'posts_per_page' => 12,
-									'category__and' => array()
+									'category__and' => array(),
+									'tag__and' => array()
 								);
 
 								// conditionals that append to array the proper search filter
@@ -20,20 +21,27 @@
 									$args['orderby'] = 'title';
 								}
 								if (!empty($_GET['post_tag']) && $_GET['post_tag'] !== 'All') {
-									$tag = get_term_by( 'name', $_GET['post_tag'], 'post_tag' );
-									$args['tag_id'] = $tag->term_id;
+									$exploded = explode(',', $_GET['post_tag']);
+									foreach($exploded as $tag){
+										array_push($args['tag__and'], $tag);
+									}
 									$args['orderby'] = 'title';
 								}
 
 								if (!empty($_GET['post_category']) && $_GET['post_category'] !== 'All') {
-									array_push($args['category__and'], get_cat_id($_GET['post_category']));
+									$exploded = explode(',', $_GET['post_category']);
+									foreach($exploded as $cat){
+										array_push($args['category__and'], $cat);
+									}
 									$args['orderby'] = 'title';
 
 								}
 								if (!empty($_GET['post_era']) && $_GET['post_era'] !== 'All') {
-									array_push($args['category__and'], get_cat_id($_GET['post_era']));
+									$exploded = explode(',', $_GET['post_era']);
+									foreach($exploded as $cat){
+										array_push($args['category__and'], $cat);
+									}
 									$args['orderby'] = 'title';
-									//print_r($args['category__and']);
 								}
 
 								if (!empty($_GET['pg'])) {
@@ -47,9 +55,9 @@
 								echo '<h2 class="search-results">'. $the_query->found_posts . ' Search Results for ';
 
 								if (!empty($_GET['keyword'])) {
-									echo '<span class="search-result-filter">';
+									echo '<div class="search-result-filter">';
 									echo $_GET['keyword'];
-									echo '</span>';
+									echo '</div>';
 								}								
 
 
@@ -60,13 +68,18 @@
 									} else {
 										echo ' ';
 									}
-									echo '<span class="search-result-filter">';
+									echo '<div class="search-result-filter">';
 									if ($_GET['post_era'] == 'All') {
 										echo 'All Time Periods';
 									} else {
-										echo $_GET['post_era'];
+										$exploded = explode(',', $_GET['post_era']);
+										//$count_exploded = count($exploded);
+										//echo $count_exploded;
+										foreach($exploded as $era){
+											echo "<span> " . get_cat_name($era) . "</span> ";	
+										}
 									}
-									echo '</span>';
+									echo '</div>';
 
 								}
 
@@ -78,13 +91,20 @@
 									} else {
 										echo ' ';
 									}
-									echo '<span class="search-result-filter">';
+									echo '<div class="search-result-filter">';
 									if ($_GET['post_category'] == 'All') {
 										echo 'All Content Types';
 									} else {
-									echo $_GET['post_category'];
+										$exploded = explode(',', $_GET['post_category']);
+									
+										foreach($exploded as $category){
+											echo "<span> " . get_cat_name($category) . "</span>";	
+										}
+
 									}
-									echo '</span>';
+
+
+									echo '</div>';
 								}
 
 								echo ' ';
@@ -95,13 +115,19 @@
 									} else {
 										echo ' ';
 									}
-									echo '<span class="search-result-filter">';
-									if ($_GET['post_category'] == 'All') {
+									echo '<div class="search-result-filter">';
+									if ($_GET['post_tag'] == 'All') {
 										echo 'All Themes';
 									} else {
-									echo $_GET['post_tag'];
+										$exploded = explode(',', $_GET['post_tag']);
+									
+										foreach($exploded as $tag){
+											$tag_id = get_tag($tag);
+											echo "<span> " . $tag_id->name . "</span>";	
+										}
+									
 									}
-									echo '</span>';
+									echo '</div>';
 								}
 
 								echo '</h2>';
