@@ -109,7 +109,7 @@ get_header(); ?>
 
 
 	    	<div class="blog-sign-up">
-	    	<h2>Sign up for our blog!</h2>
+	    	<h2>Sign up for our blog...</h2>
 	    	<?php es_subbox( $namefield = "YES", $desc = "", $group = "Public" ); ?>
 	    	</div>
 	

@@ -1,3 +1,9 @@
+.blog-page, .single-post-page {
+	margin-bottom: 0px;
+}
+
+
+
 .blog-page-body {
 	padding-left: 80px;
 	padding-right: 80px;
@@ -84,7 +90,69 @@
 
 .blog-sign-up {
 	background: $black;
+	padding: 20px;
 	h2 {
 		color: $white;
+		@include screen-xs {
+			margin-bottom: 15px;
+		}
+		@include screen-xs {
+			margin-bottom: 15px;
+		}
 	}
+}
+
+.es_shortcode_form {
+	overflow: auto;
+}
+
+.es_lablebox {
+	display: none;
+}
+
+
+.es_textbox {
+	display: inline;
+	padding-right: 20px;
+	float: left;
+	input {
+		@extend .search-input;
+		@include screen-sm {
+			width: 300px;
+		}
+		@include screen-xs {
+			width: 300px;
+		}
+	}
+	@include screen-xs {
+		display: block;
+		margin-bottom: 15px;
+	}
+
+}
+
+.es_button {
+	display: inline;
+	float: left;
+	input {
+		@extend button[type="submit"];
+		height: 44px;
+    	top: -9px;
+	}
+	@include screen-xs {
+		display: block;
+	}
+}
+
+.es_msg {
+	color: $gold !important;
+	padding-top: 12px;
+	@include screen-sm {
+		display: inline-block;		
+	}
+}
+
+#es_msg_pg {
+	color: $gold;
+	@extend h5;
 }

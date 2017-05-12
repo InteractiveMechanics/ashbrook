@@ -223,6 +223,14 @@ $(document).ready(function(){
 
     $('.dropdown').children('.dropdown-menu').addClass('multi-column columns-3 animated fadeIn');
 
+
+    // BLOG SIGN UP
+
+    $('.es_textbox').append('<span class="parallelogram"></span>');
+
+    $("#es_txt_name_pg").attr("placeholder", "YOUR NAME...");
+
+    $("#es_txt_email_pg").attr("placeholder", "YOUR EMAIL...");
    
     
 
