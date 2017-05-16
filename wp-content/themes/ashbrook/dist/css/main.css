@@ -146,8 +146,8 @@ img.aligncenter {
   padding-bottom: 40px; }
 
 .wp-caption-text {
-  color: #626e79;
-  font-size: 14px;
+  color: #4b555d;
+  font-size: 16px;
   font-weight: 300;
   margin-top: 7px;
   line-height: 1.8;
@@ -278,55 +278,6 @@ div[class$="body"] ul, div[class$="body"] ol {
   position: relative;
   top: 2px; }
 
-@media print {
-  nav, footer {
-    display: none; }
-
-  header:before {
-    display: block;
-    content: "Thank you for printing this content from ReligionInAmerica.net";
-    margin-bottom: 10px;
-    border: 1px solid #bbb;
-    padding: 3px 5px;
-    font-style: italic; }
-
-  body {
-    margin: 0.75in;
-    line-height: 1.5; }
-
-  img {
-    max-width: 500px; }
-
-  p a:after {
-    display: none; }
-
-  main {
-    width: 90%;
-    margin: 0px;
-    padding: 0px; }
-
-  .sharing {
-    display: none; }
-
-  .slim-jumbotron {
-    height: auto !important;
-    margin-top: 0.5in !important;
-    margin-bottom: 0.5in !important; }
-
-  .slim-jumbotron-callout {
-    position: static;
-    width: 100%;
-    right: auto !important;
-    left: auto !important;
-    padding: 0px; }
-    .slim-jumbotron-callout p {
-      font-size: 16px; }
-
-  .related-content {
-    display: none; }
-
-  .pagination {
-    display: none !important; } }
 main {
   margin-bottom: 100px; }
 
@@ -379,7 +330,7 @@ main {
     font-weight: 400;
     line-height: 30px;
     max-height: 250px;
-    overflow-y: auto; }
+    overflow-y: hidden; }
   .slim-jumbotron-callout:after {
     width: 50px;
     height: 100%;
@@ -575,6 +526,11 @@ main {
 .lightgallery a {
   transition: all 0.5s; }
   .lightgallery a:hover img, .lightgallery a:active img, .lightgallery a:focus img {
+    opacity: 0.75; }
+
+.lightgallery-inline a {
+  transition: all 0.5s; }
+  .lightgallery-inline a:hover img, .lightgallery-inline a:active img, .lightgallery-inline a:focus img {
     opacity: 0.75; }
 
 .navbar {
@@ -1991,5 +1947,117 @@ button[type="submit"], .es_button input {
 
 #es_msg_pg {
   color: #C49F21; }
+
+@media print {
+  html, body {
+    height: 99%;
+    position: relative;
+    page-break-before: none;
+    break-before: none;
+    page-break-after: none;
+    break-after: none;
+    page-break-inside: avoid;
+    break-inside: avoid; }
+
+  nav, footer {
+    display: none; }
+
+  header:before {
+    display: block;
+    content: "Thank you for printing this content from ReligionInAmerica.net";
+    margin-bottom: 10px;
+    border: 1px solid #bbb;
+    padding: 3px 5px;
+    font-style: italic; }
+
+  body {
+    margin: 0.5in; }
+
+  h1, h2 {
+    page-break-after: avoid; }
+
+  p {
+    page-break-inside: avoid; }
+
+  img {
+    max-width: 500px; }
+
+  a:after {
+    display: none; }
+
+  main {
+    width: 90%;
+    margin: 0px;
+    padding: 0px; }
+
+  .container-fluid {
+    padding-left: 0px;
+    padding-right: 0px; }
+
+  .breadcrumb {
+    padding: 0px; }
+
+  .sharing {
+    display: none; }
+
+  .share-mobile {
+    display: none !important; }
+
+  .slim-jumbotron {
+    height: auto !important; }
+
+  .slim-jumbotron-callout {
+    position: static;
+    width: 100%;
+    right: auto !important;
+    left: auto !important;
+    padding: 0px; }
+    .slim-jumbotron-callout p {
+      font-size: 16px; }
+
+  .jumbotron {
+    padding-top: 0px;
+    padding-bottom: 0px; }
+
+  .rahp-object-title {
+    margin-left: 0px; }
+
+  .rahp-object-body {
+    padding-left: 0px;
+    padding-right: 0px;
+    position: relative;
+    height: auto; }
+
+  .rahp-object-subheading {
+    padding-left: initial; }
+
+  .related-content {
+    display: none !important;
+    margin: 0px;
+    padding: 0px;
+    height: 0px;
+    width: 0px; }
+
+  .references-wrapper {
+    margin-top: 30px; }
+
+  .col-sm-5 {
+    width: 100%; }
+
+  .object-references {
+    width: 100%; }
+
+  .object-callouts .callout-studyqs, .object-callouts .callout-compare {
+    border-left: none;
+    padding-left: initial; }
+
+  .callout-studyqs, .callout-compare {
+    width: 100%; }
+
+  .pagination {
+    display: none !important; }
+
+  .blog-sign-up {
+    display: none !important; } }
 
 /*# sourceMappingURL=main.css.map */

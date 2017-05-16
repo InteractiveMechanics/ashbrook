@@ -1,4 +1,15 @@
 @media print {
+
+	html, body {
+		height: 99%;
+		position: relative;
+		page-break-before: none;
+		break-before: none;
+  		page-break-after: none;
+  		break-after: none;
+  		page-break-inside: avoid;
+  		break-inside: avoid;
+	}
  
  	nav, footer {
  		display: none;
@@ -16,17 +27,26 @@
  	}
 
  	body {
-  		margin: 0.75in;
-  		line-height: 1.5;
+  		margin: 0.5in;
+	}
+
+	h1, h2 {
+		page-break-after: avoid;
+	}
+
+	p {
+		page-break-inside: avoid;
 	}
 
 	img {
 		max-width: 500px;
 	}
 
-	p a:after {
+	a:after {
 		display: none;
 	}
+
+
 
  	main {
  		width: 90%;
@@ -34,14 +54,25 @@
  		padding: 0px;
  	}
 
+ 	.container-fluid {
+ 		padding-left: 0px;
+ 		padding-right: 0px;
+ 	}
+
+ 	.breadcrumb {
+ 		padding: 0px;
+ 	}
+
  	.sharing {
  		display: none;
  	}
 
+ 	.share-mobile {
+ 		display: none !important;
+ 	}
+
  	.slim-jumbotron {
  		height: auto !important;
- 		margin-top: 0.5in !important;
-    	margin-bottom: 0.5in !important;
  	}
 
  	.slim-jumbotron-callout {
@@ -55,11 +86,61 @@
     	}
  	}
 
- 	.related-content {
- 		display: none;
+ 	.jumbotron {
+ 		padding-top: 0px;
+ 		padding-bottom: 0px;
  	}
 
+ 	.rahp-object-title {
+ 		margin-left: 0px;
+ 	}
+
+ 	.rahp-object-body {
+ 		padding-left: 0px;
+		padding-right: 0px;
+		position: relative;
+		height: auto;
+ 	}
+
+ 	.rahp-object-subheading {
+ 		padding-left: initial;
+ 	}
+
+ 	.related-content {
+ 		display: none !important;
+ 		margin: 0px;
+ 		padding: 0px;
+ 		height: 0px;
+ 		width: 0px;
+ 	}
+
+ 	.references-wrapper {
+ 		margin-top: 30px;
+ 	}
+
+ 	.col-sm-5 {
+ 		width: 100%;
+ 	}
+
+ 	.object-references {
+ 		width: 100%;
+ 	}
+
+ 	.object-callouts .callout-studyqs, .object-callouts .callout-compare {
+ 		border-left: none;
+ 		padding-left: initial;
+ 	}
+
+ 	.callout-studyqs, .callout-compare {
+ 		width: 100%;
+ 	}
+ 	
+
  	.pagination {
+ 		display: none !important;
+ 	}
+
+ 	.blog-sign-up {
  		display: none !important;
  	}
 
