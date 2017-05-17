@@ -1,7 +1,7 @@
 @media print {
 
 	html, body {
-		height: 99%;
+		height: auto;
 		position: relative;
 		page-break-before: none;
 		break-before: none;
@@ -35,7 +35,12 @@
 	}
 
 	p {
-		page-break-inside: avoid;
+		//page-break-inside: avoid;
+		max-width: 100% !important;
+	}
+
+	blockquote, pre {
+	    page-break-inside: initial;
 	}
 
 	img {
@@ -49,7 +54,7 @@
 
 
  	main {
- 		width: 90%;
+ 		width: 100%;
  		margin: 0px;
  		padding: 0px;
  	}
