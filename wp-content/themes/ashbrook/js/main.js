@@ -75,15 +75,17 @@ $(document).ready(function(){
   // LIGHTGALLERY 
 
   if (!$('.wp-caption').hasClass('lightgallery')) {
-    $('.wp-caption').addClass('lightgallery');
-    console.log('your function is working');
+    $('.wp-caption').addClass('lightgallery-inline');
   }
 
+  
 
 
   $(".lightgallery").lightGallery({
-     subHtmlSelectorRelative: true
+    subHtmlSelectorRelative: true
   }); 
+
+  
 
 
   // SEARCH RESET
@@ -231,7 +233,29 @@ $(document).ready(function(){
     $("#es_txt_name_pg").attr("placeholder", "YOUR NAME...");
 
     $("#es_txt_email_pg").attr("placeholder", "YOUR EMAIL...");
+
+
+    
+     
+
+
+      $('.lightgallery-inline').each(function() {
+        $(this).wrapInner("<div></div>");
+        $(this).find('img').addClass('lightgallery-item');
+        var imageSource = $(this).find('img').attr('src');
+        console.log(imageSource);
+        $(this).find('div').attr('data-src', imageSource).attr('data-sub-html', '.wp-caption-text');
+       
+      });
+
+
+        $('.lightgallery-inline').lightGallery();
+
+    
+  
+
    
+
     
 
 
