@@ -1492,6 +1492,11 @@ footer {
 .a2a_svg, .a2a_count {
   border-radius: 0 !important; }
 
+#map {
+  height: 500px;
+  width: 100%;
+  background-color: #C49F21; }
+
 .home-main {
   margin-bottom: 0px; }
 

@@ -9,29 +9,71 @@
 
 get_header(); ?>
 
+<?php while ( have_posts() ) : the_post();
+	$introduction = get_field('introduction');
+	$cover_image = get_field('cover_image');
+	$default_cover_image = get_field('default_cover_image', 'option');
+
+?>
+
 <main>
 	<div class="container-fluid">
-			<ul class="breadcrumb">
-				<li><h5>Map</h5></li>
-			</ul>
+			<?php custom_breadcrumbs(); ?>
 
 			<ul class="rahp-object-title">
-				<li><h2>Places of Faith Map</h2></li>
+				<li><h2><?php the_title(); ?></h2></li>
 			</ul>
 
-		</div>
+	</div>
 
-		<div class="jumbotron slim-jumbotron" style="background-image:  linear-gradient(rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 0) 100%), url('<?php printThemePath(); ?>/img/header-img.jpg');">
+	<?php if ($cover_image): ?>
+				<div class="jumbotron slim-jumbotron" style="background-image:  linear-gradient(rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 0) 100%), url('<?php echo $cover_image; ?>');">
+		
+	<?php else:  
+		
+			$rows = get_field('default_cover_images', 'option');
+		        if($rows) $i=0; {
+			        shuffle( $rows );
+
+			    foreach($rows as $row) {
+				    $i++; if ($i==2) break;
+				    $cover_image = $row['default_cover_image'];
+
+			?>
+				       
+				<div class="jumbotron slim-jumbotron" style="background-image:  linear-gradient(rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 0) 100%), url('<?php echo $cover_image; ?>');">
+
+						
+			<?php 
+										        
+			    }
+			     
+			}
+
+		
+		endif;
+
+
+		?>
+			
+		<?php if ($introduction): ?>
 			<div class="slim-jumbotron-callout">
-				<p>Upon his election as President, many churches, congregations, and religious societies wrote to George Washington to congratulate him on his new office, and he replied to each of them with personalized messages of thanks for their well-wishes. In his reply to the Hebrew Congregation of Newport, Washington applauded the people of the United States for rejecting the European practice of religious "toleration," embracing instead the "large and liberal policy" that religious liberty is a natural right -- and not a gift of government -- which all citizens are equally free to exercise.</p>
+				<p><?php echo $introduction; ?></p>
 			</div>
+		<?php endif; ?>
+
 	    </div>
+
+
+
+		
 
 	   	<div class="container-fluid rahp-object-body">
 	    	<div class="row">
 	    		<div class="col-sm-12">
-	    			<h1>Map Integration Will Take Place Later</h1>
-	    		</div>
+	    			 <div class="map-container">
+        				<div id="map"></div>
+	    			</div>
 	    	</div>
 	   </div>
 	    		
@@ -39,6 +81,7 @@ get_header(); ?>
 
 
 </main>
+<?php endwhile; ?>
 
 
 <?php get_footer(); ?>
