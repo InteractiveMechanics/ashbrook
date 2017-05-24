@@ -26,7 +26,9 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.13/jquery.mousewheel.min.js"></script>
 <script src="<?php printThemePath(); ?>/js/lib/lightGallery/js/lightgallery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/js/bootstrap-select.min.js"></script>
+<script src="https://unpkg.com/leaflet@1.0.0/dist/leaflet.js"></script>
 <script type="text/javascript" src="<?php printThemePath(); ?>/js/main.js"></script>
+<script type="text/javascript" src="<?php printThemePath(); ?>/js/map.js"></script>
 
 </body>
 </html>
