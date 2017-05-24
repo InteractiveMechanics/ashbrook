@@ -31,6 +31,8 @@
 
 
 
+
+
 <?php while ( have_posts() ) : the_post();?>
 
 	<main class="single-rahp-object" id="post-<?php the_ID(); ?>">
@@ -61,14 +63,34 @@
 
 
 		<?php if ($cover_image): ?>
+				<div class="jumbotron slim-jumbotron" style="background-image:  linear-gradient(rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 0) 100%), url('<?php echo $cover_image; ?>');">
 		
-			<div class="jumbotron slim-jumbotron" style="background-image:  linear-gradient(rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 0) 100%), url('<?php echo $cover_image; ?>');">
+		<?php else:  
 		
-		<?php else: ?>
-			
-			<div class="jumbotron slim-jumbotron" style="background-image:  linear-gradient(rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 0) 100%), url('<?php echo $default_cover_image; ?>');">
-		
-		<?php endif; ?>
+				$rows = get_field('default_cover_images', 'option');
+		            if($rows) $i=0; {
+			            shuffle( $rows );
+
+			        foreach($rows as $row) {
+				        $i++; if ($i==2) break;
+				        $cover_image = $row['default_cover_image'];
+
+				?>
+				       
+					<div class="jumbotron slim-jumbotron" style="background-image:  linear-gradient(rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 0) 100%), url('<?php echo $cover_image; ?>');">
+
+						
+					<?php 
+										        
+			        }
+			     
+			    }
+
+			endif;
+
+
+		?>
+
 
 
 			<?php if ($introduction): ?>
@@ -104,7 +126,7 @@
 
 	    		<ul class="sharing hidden-xs">
 	    			
-	    			<!-- <li><h1><a href="javascript:window.print()">Print</a></h1></li> -->
+	    			<li><h1><a href="javascript:window.print()">Print</a></h1></li>
 	    			
 	    			<li><h1><?php if ( function_exists( 'ADDTOANY_SHARE_SAVE_KIT' ) ) { ADDTOANY_SHARE_SAVE_KIT(); } ?></h1></li>
 	    			

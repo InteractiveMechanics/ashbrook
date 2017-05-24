@@ -4,7 +4,6 @@
 @import "base/mixins";
 @import "base/helpers";
 @import "base/typography";
-@import "base/print";
 
 @import "components/layout";
 @import "components/header";
@@ -22,3 +21,5 @@
 @import "pages/analysis";
 @import "pages/search";
 @import "pages/blog";
+
+@import "base/print";
