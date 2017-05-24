@@ -30,7 +30,7 @@ var dataSuccess = function(data) {
 
 };
 
+console.log(jsonData);
 
 
-
-$.getJSON('http://localhost/wp-json/wp/v2/rahp_object', dataSuccess);
+$.getJSON('http://localhost/wp-json/rest-routes/v2/locations', dataSuccess);
