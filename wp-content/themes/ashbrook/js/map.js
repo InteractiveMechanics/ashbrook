@@ -20,17 +20,62 @@ var dataSuccess = function(data) {
 	        dataToAdd["properties"] = {};
 	        dataToAdd["properties"]["ID"] = value.ID;
 	        dataToAdd["properties"]["title"] = value.post_title;
+	        dataToAdd["properties"]["slug"] = value.post_name;
 	        dataToAdd["properties"]["location"] = value.location;
+	        dataToAdd["properties"]["date"] = value.object_date;
+	       
 
 	        jsonData["features"].push(dataToAdd);
 
 	    }
+    	
+    }); // end each
 
-	});
+     var layerOptions = {
+        pointToLayer: function(featureData, latlng) {
+
+        	var objectID = (featureData.properties.ID)
+        	var objectTitle = (featureData.properties.title);
+        	var objectSlug = (featureData.properties.slug);
+        	var objectLocation = (featureData.properties.location);
+        	var objectDate = (featureData.properties.date);
+
+            
+			
+
+
+			var myIcon = L.icon({
+			    iconUrl: 'http://localhost/wp-content/themes/ashbrook/img/icon-map-marker.svg',
+			    iconSize:      [26, 30],
+			    iconAnchor:   [12, 30]
+			});
+
+			var markerOptions = {
+				icon: myIcon,
+				riseOnHover: true
+			}
+
+			var popupOptions = {
+				maxWidth: 220
+			};
+
+			var popupContent = "<div class='map-popup' id='object-" + objectID + "'><a class='map-link' href='http://localhost/rahp_objects/" + objectSlug + "/' target='_blank'>" + objectTitle + "</a><div><small>" + objectLocation + "</small></div><div><small>" + objectDate + "</small></div></div>"  ;
+
+
+			return L.marker(latlng, markerOptions).bindPopup(popupContent, popupOptions);
+			console.log(objectTitle);
+
+		}
+	};
+
+	var inventoryLayer = L.geoJson(jsonData, layerOptions);
+	map.addLayer(inventoryLayer);
+
+
 
 };
 
 console.log(jsonData);
 
 
-$.getJSON('http://localhost/wp-json/rest-routes/v2/locations', dataSuccess);
+$.getJSON('http://dev.interactivemechanics.com/ashbrook/wp-json/rest-routes/v2/locations', dataSuccess);
