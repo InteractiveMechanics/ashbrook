@@ -224,6 +224,9 @@ $(document).ready(function(){
      $('#menu-item-157').after('<li class="col-sm-4 multi-column-dropdown-wrapper nav-dropdown-image-wrapper"><div class="nav-dropdown-img"></div></li>');
 
     $('.dropdown').children('.dropdown-menu').addClass('multi-column columns-3 animated fadeIn');
+    
+
+    $('.map-nav').find('a').html('Places <small>of</small> Faith');
 
 
     // BLOG SIGN UP
