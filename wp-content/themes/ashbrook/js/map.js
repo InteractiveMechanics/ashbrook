@@ -45,10 +45,10 @@ var dataSuccess = function(data) {
 
 
 			var myIcon = L.icon({
-			    iconUrl: 'http://localhost/wp-content/themes/ashbrook/img/icon-map-marker.svg',
+			    iconUrl:   script_var.templateUrl + '/img/icon-map-marker.svg',
 			    iconSize:      [26, 30],
 			    iconAnchor:   [12, 30],
-			    shadowUrl: 'http://localhost/wp-content/themes/ashbrook/img/icon-map-marker-shadow.svg',
+			    shadowUrl:  script_var.templateUrl + '/img/icon-map-marker-shadow.svg',
 			    shadowSize: [23, 52],
     			shadowAnchor: [-1, 32]
 			});
