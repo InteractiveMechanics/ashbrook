@@ -1,7 +1,9 @@
-var map = L.map('map', {zoomControl:true }).setView([38.014040, -93.938758], 4.35);
+var map = L.map('map', {animate:true }).setView([38.014040, -93.938758], 4.35);
 
 L.tileLayer('https://api.mapbox.com/styles/v1/interactivemech/cj30j5gyu00022smsa3qsecld/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoiaW50ZXJhY3RpdmVtZWNoIiwiYSI6InJlcUtqSk0ifQ.RUwHuEkBbXoJ6SgOnXmYFg', {
-    attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+    attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors',
+    maxZoom: 14,
+    minZoom: 3
 }).addTo(map);
 
 // ADD DATA TO MAP
@@ -44,25 +46,30 @@ var dataSuccess = function(data) {
 			
 
 
-			var myIcon = L.icon({
-			    iconUrl:   script_var.templateUrl + '/img/icon-map-marker.svg',
-			    iconSize:      [26, 30],
-			    iconAnchor:   [12, 30],
-			    shadowUrl:  script_var.templateUrl + '/img/icon-map-marker-shadow.svg',
-			    shadowSize: [23, 52],
-    			shadowAnchor: [-1, 32]
+			var masterIcon = L.Icon.extend({
+				options: {
+				    iconUrl:   script_var.templateUrl + '/img/icon-map-marker.svg',
+				    iconSize:      [26, 30],
+				    iconAnchor:   [12, 30],
+				    shadowUrl:  script_var.templateUrl + '/img/icon-map-marker-shadow.svg',
+				    shadowSize: [23, 52],
+	    			shadowAnchor: [-1, 32]
+    			}
 			});
 
+			ashbrookIcon = new masterIcon();
+
 			var markerOptions = {
-				icon: myIcon,
+				icon: ashbrookIcon,
 				riseOnHover: true
 			}
 
 			var popupOptions = {
-				maxWidth: 220
+				maxWidth: 220,
+				autoPanPaddingTopLeft: L.point(40, 40)
 			};
 
-			var popupContent = "<div class='map-popup' id='object-" + objectID + "'><a class='map-link' href='http://localhost/rahp_objects/" + objectSlug + "/' target='_blank'>" + objectTitle + "</a><div><small>" + objectLocation + "</small></div><div><small>" + objectDate + "</small></div></div>"  ;
+			var popupContent = "<div class='map-popup' id='object-" + objectID + "'><a class='map-link' href='" + script_var.templateUrl + "/rahp_objects/" + objectSlug + "/' target='_blank'>" + objectTitle + "</a><div><small>" + objectLocation + "</small></div><div><small>" + objectDate + "</small></div></div>"  ;
 
 
 			return L.marker(latlng, markerOptions).bindPopup(popupContent, popupOptions);
@@ -81,4 +88,6 @@ var dataSuccess = function(data) {
 console.log(jsonData);
 
 
-$.getJSON('http://dev.interactivemechanics.com/ashbrook/wp-json/rest-routes/v2/locations', dataSuccess);
+$.getJSON("http://dev.interactivemechanics.com/ashbrook/wp-json/rest-routes/v2/locations", dataSuccess);
+
+
