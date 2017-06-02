@@ -3,3 +3,57 @@
 	width: 100%;
 	background-color: $gold;
 }
+
+.leaflet-popup-content-wrapper {
+	background: $bluealpha;
+	color: $white;
+}
+
+.leaflet-popup-tip {
+	background: rgba(69, 85, 102, 0.56);
+	color: $white;
+}
+
+.leaflet-container a.leaflet-popup-close-button {
+	color: $white;
+	font-weight: initial;
+	font-family: $lato;
+	transition: $transition;
+	&:hover {
+		color: $gold;
+	}
+}
+
+
+.leaflet-popup-content-wrapper,
+.leaflet-bar {
+	border-radius: 0px;
+}
+
+.leaflet-popup-content {
+	margin: 13px;
+	padding: 10px;
+}
+
+.leaflet-popup {
+	bottom: 24px !important;
+}
+
+.map-link {
+	color: $white !important;
+	font-weight: 500;
+	transition: $transition;
+	&:hover, &:focus, &:active {
+		color: $gold !important;
+	}
+}
+
+
+.map-popup {
+	div small {
+		font-weight: 300;
+	}
+}
+
+
+
