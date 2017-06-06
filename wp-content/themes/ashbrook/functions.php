@@ -5,6 +5,7 @@ function printThemePath() {
    echo get_site_url() . '/wp-content/themes/' . get_template();
 }
 
+
 add_theme_support( 'post-thumbnails' );
 add_theme_support( 'post-formats', array( 'image', 'gallery', 'aside' ) );  
 
@@ -38,6 +39,7 @@ function create_custom_post_types() {
             ),
             'public' => true,
             'has_archive' => true,
+            'show_in_rest' => true,
             'taxonomies'  => array( 'category', 'post_tag'),
             'supports' => array( 'title', 'editor', 'comments', 'author', 'custom-fields', 'thumbnail', 'post-thumbnails', 'custom-fields', 'post-templates', 'revisions'),
             'rewrite' => array( 'slug' => 'rahp_objects' ),
@@ -509,6 +511,18 @@ function custom_breadcrumbs() {
     }
 
 
+    
+    function my_local_script() {
+      wp_enqueue_script( 'ashbrook_local_script',  get_template_directory_uri() . '/js/map.js'); 
+      //after wp_enqueue_script
+      wp_localize_script( 'ashbrook_local_script', 'script_var', array( 'templateUrl' => get_template_directory_uri() ));
+    }
+
+    add_action('wp_enqueue_scripts', 'my_local_script');
+
+
+
+    
 
 
 
