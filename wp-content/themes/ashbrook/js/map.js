@@ -88,6 +88,6 @@ var dataSuccess = function(data) {
 console.log(jsonData);
 
 
-$.getJSON(script_var.templateUrl + "/wp-json/rest-routes/v2/locations", dataSuccess);
+$.getJSON(window.location.protocol + "//" + window.location.host + "/wp-json/rest-routes/v2/locations", dataSuccess);
 
 
