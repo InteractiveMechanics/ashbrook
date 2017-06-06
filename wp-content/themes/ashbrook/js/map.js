@@ -88,6 +88,6 @@ var dataSuccess = function(data) {
 console.log(jsonData);
 
 
-$.getJSON("http://dev.interactivemechanics.com/ashbrook/wp-json/rest-routes/v2/locations", dataSuccess);
+$.getJSON(script_var.templateUrl + "/wp-json/rest-routes/v2/locations", dataSuccess);
 
 
