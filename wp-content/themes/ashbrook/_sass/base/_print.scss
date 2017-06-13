@@ -1,5 +1,10 @@
 @media print {
 
+	* {
+		transition: none !important;
+	}
+
+
 	html, body {
 		height: auto;
 		position: relative;
@@ -18,7 +23,7 @@
  	header {
  		&:before {
  			display: block;
-			content: "Thank you for printing this content from ReligionInAmerica.net";
+			content: "Thank you for printing this content from ReligionInAmerica.org";
 			margin-bottom: 10px;
 			border: 1px solid #bbb;
 			padding: 3px 5px;
@@ -35,7 +40,7 @@
 	}
 
 	p {
-		//page-break-inside: avoid;
+		page-break-inside: avoid;
 		max-width: 100% !important;
 	}
 
@@ -44,7 +49,12 @@
 	}
 
 	img {
-		max-width: 500px;
+		max-width: 100%;
+	}
+
+	.alignleft, .alignright, .aligncenter {
+		//display: inline-block;
+		max-width: 50%;
 	}
 
 	a:after {
@@ -123,6 +133,10 @@
  		margin-top: 30px;
  	}
 
+ 	.col-sm-12 {
+    	float: left;
+  	}
+
  	.col-sm-5 {
  		width: 100%;
  	}
@@ -149,5 +163,8 @@
  		display: none !important;
  	}
 
+
+
+ 	
 
 }
