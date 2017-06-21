@@ -2032,7 +2032,15 @@ button[type="submit"], .es_button input {
     max-width: 100%; }
 
   .alignleft, .alignright, .aligncenter {
-    max-width: 50%; }
+    max-width: 50% !important; }
+
+  .alignleft {
+    float: left !important;
+    margin-right: 20px !important; }
+
+  .alignright {
+    float: right !important;
+    margin-left: 20px !important; }
 
   a:after {
     display: none; }
