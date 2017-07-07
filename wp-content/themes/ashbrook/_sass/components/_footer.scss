@@ -2,15 +2,17 @@ footer {
 	color: $gray;
 	padding-top: 15px;
 	padding-bottom: 15px;
-	height: 66px;
+	height: 70px; //66px
 	h5{
 		margin: 0px;
+		font-size: 17px;
 		@include screen-xs {
 			letter-spacing: 7px;
 			margin-bottom: 10px;
 		}
 	}
 	h6 {
+		font-size: 14px;
 		margin-top: 5px;
 		margin-bottom: 0px;
 	}
