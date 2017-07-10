@@ -500,9 +500,9 @@ function custom_breadcrumbs() {
         
     }
     
-    if( strlen($value) > 567 ) {
+    if( strlen($value) > 402 ) {
         
-        $valid = 'You have exceed the maximum character count of 567 (around 94 words)';
+        $valid = 'You have exceed the maximum character count of 402 (around 62 words)';
         
     }
     
