@@ -54,8 +54,16 @@
 
 	.alignleft, .alignright, .aligncenter {
 		//display: inline-block;
-		max-width: 50%;
+		max-width: 50% !important;
 	}
+    .alignleft {
+        float: left !important;
+        margin-right: 20px !important;
+    }
+    .alignright {
+        float: right !important;
+        margin-left: 20px !important;
+    }
 
 	a:after {
 		display: none;

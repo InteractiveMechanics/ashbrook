@@ -325,12 +325,15 @@ main {
   background-color: rgba(241, 242, 242, 0.7);
   max-height: 350px; }
   .slim-jumbotron-callout p {
-    font-family: "Lato", "Helvetica-Neue", Helvetica, Ariel, sans-serif;
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 30px;
+    font-family: "Vollkorn", Garamond, Georgia, serif;
     max-height: 250px;
-    overflow-y: hidden; }
+    overflow-y: hidden;
+    font-size: 18px;
+    line-height: 30px; }
+    @media (max-width: 767px) {
+      .slim-jumbotron-callout p {
+        font-size: 16px;
+        line-height: 1.8; } }
   .slim-jumbotron-callout:after {
     width: 50px;
     height: 100%;
@@ -1047,14 +1050,16 @@ footer {
   color: #555457;
   padding-top: 15px;
   padding-bottom: 15px;
-  height: 66px; }
+  height: 70px; }
   footer h5, footer #es_msg_pg {
-    margin: 0px; }
+    margin: 0px;
+    font-size: 17px; }
     @media (max-width: 767px) {
       footer h5, footer #es_msg_pg {
         letter-spacing: 7px;
         margin-bottom: 10px; } }
   footer h6 {
+    font-size: 14px;
     margin-top: 5px;
     margin-bottom: 0px; }
   @media (max-width: 767px) {
@@ -1070,7 +1075,7 @@ footer {
       height: auto; } }
 
 .home-slider {
-  height: calc(100vh - 181px); }
+  height: calc(100vh - 185px); }
   @media only screen and (max-width: 767px) and (orientation: landscape) {
     .home-slider {
       height: 600px; } }
@@ -2032,7 +2037,15 @@ button[type="submit"], .es_button input {
     max-width: 100%; }
 
   .alignleft, .alignright, .aligncenter {
-    max-width: 50%; }
+    max-width: 50% !important; }
+
+  .alignleft {
+    float: left !important;
+    margin-right: 20px !important; }
+
+  .alignright {
+    float: right !important;
+    margin-left: 20px !important; }
 
   a:after {
     display: none; }

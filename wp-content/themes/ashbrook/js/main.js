@@ -67,6 +67,7 @@ $(document).ready(function(){
   $('.analysis-slider').slick({
       arrows: true,
       dots: true,
+      adaptiveHeight: true
   });
 
 
