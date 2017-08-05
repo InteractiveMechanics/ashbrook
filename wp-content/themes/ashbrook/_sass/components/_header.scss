@@ -10,7 +10,7 @@
 .navbar-default {
 	background-color: $white;
 	border: none;
-	z-index: 1;
+	z-index: 10000;
 }
 
 .navbar-nav {
@@ -172,6 +172,7 @@
     }
     @include screen-xs {
     	min-width: auto;
+        float: none !important;
     }
 }
 
@@ -181,6 +182,7 @@
 	@include screen-xs {
 		padding-left: 40px;
 		padding-bottom: 10px;
+        height: auto;
 	}
 }
 
@@ -547,6 +549,7 @@ ul.nav li.dropdown:hover > ul.dropdown-menu {
 	}
 	@include screen-xs {
 		padding: 0px;
+        float: none !important;
 	}
 
 }
